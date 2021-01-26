@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { FC, useRef, useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
-import s from './DropdownMenu.module.css'
+
 import { Avatar } from '@components/common'
 import { Moon, Sun } from '@components/icons'
 import { useUI } from '@components/ui/context'
@@ -60,23 +60,16 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false }) => {
   return (
     <ClickOutside active={display} onClick={() => setDisplay(false)}>
       <div>
-        <button
-          className={s.avatarButton}
-          onClick={() => setDisplay(!display)}
-          aria-label="Menu"
-        >
+        <button onClick={() => setDisplay(!display)} aria-label="Menu">
           <Avatar />
         </button>
         {display && (
-          <ul className={s.dropdownMenu} ref={ref}>
+          <ul ref={ref}>
             {LINKS.map(({ name, href }) => (
               <li key={href}>
                 <div>
                   <Link href={href}>
                     <a
-                      className={cn(s.link, {
-                        [s.active]: pathname === href,
-                      })}
                       onClick={() => {
                         setDisplay(false)
                         closeSidebarIfPresent()
@@ -90,7 +83,6 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false }) => {
             ))}
             <li>
               <a
-                className={cn(s.link, 'justify-between')}
                 onClick={() => {
                   theme === 'dark' ? setTheme('light') : setTheme('dark')
                   setDisplay(false)
@@ -109,12 +101,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false }) => {
               </a>
             </li>
             <li>
-              <a
-                className={cn(s.link, 'border-t border-accents-2 mt-4')}
-                onClick={() => logout()}
-              >
-                Logout
-              </a>
+              <a onClick={() => logout()}>Logout</a>
             </li>
           </ul>
         )}

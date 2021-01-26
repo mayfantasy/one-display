@@ -1,6 +1,5 @@
 import cn from 'classnames'
 import dynamic from 'next/dynamic'
-import s from './Layout.module.css'
 import { useRouter } from 'next/router'
 import React, { FC } from 'react'
 import { useUI } from '@components/ui/context'
@@ -55,7 +54,7 @@ const Layout: FC<Props> = ({ children, pageProps }) => {
 
   return (
     <CommerceProvider locale={locale}>
-      <div className={cn(s.root)}>
+      <div>
         <Navbar />
         <main className="fit">{children}</main>
         <Footer pages={pageProps.pages} />

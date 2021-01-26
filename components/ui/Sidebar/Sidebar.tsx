@@ -1,4 +1,3 @@
-import s from './Sidebar.module.css'
 import Portal from '@reach/portal'
 import { FC, useEffect, useRef } from 'react'
 import {
@@ -32,7 +31,7 @@ const Sidebar: FC<Props> = ({ children, open = false, onClose }) => {
   return (
     <Portal>
       {open ? (
-        <div className={s.root} ref={ref}>
+        <div ref={ref}>
           <div className="absolute inset-0 overflow-hidden">
             <div
               className="absolute inset-0 bg-black bg-opacity-50 transition-opacity"

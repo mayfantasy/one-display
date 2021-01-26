@@ -2,8 +2,6 @@ import { FC, useState } from 'react'
 import cn from 'classnames'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
-
-import s from './ProductView.module.css'
 import { useUI } from '@components/ui/context'
 import { Swatch, ProductSlider } from '@components/product'
 import { Button, Container, Text } from '@components/ui'
@@ -74,23 +72,22 @@ const ProductView: FC<Props> = ({ product }) => {
           ],
         }}
       />
-      <div className={cn(s.root, 'fit')}>
-        <div className={cn(s.productDisplay, 'fit')}>
-          <div className={s.nameBox}>
-            <h1 className={s.name}>{product.name}</h1>
-            <div className={s.price}>
+      <div>
+        <div>
+          <div>
+            <h1>{product.name}</h1>
+            <div>
               {price}
               {` `}
               {product.prices?.price.currencyCode}
             </div>
           </div>
 
-          <div className={s.sliderContainer}>
+          <div>
             <ProductSlider key={product.entityId}>
               {product.images.edges?.map((image, i) => (
-                <div key={image?.node.urlOriginal} className={s.imageContainer}>
+                <div key={image?.node.urlOriginal}>
                   <Image
-                    className={s.img}
                     src={image?.node.urlOriginal!}
                     alt={image?.node.altText || 'Product Image'}
                     width={1050}
@@ -104,7 +101,7 @@ const ProductView: FC<Props> = ({ product }) => {
           </div>
         </div>
 
-        <div className={s.sidebar}>
+        <div>
           <section>
             {options?.map((opt: any) => (
               <div className="pb-4" key={opt.displayName}>
@@ -143,7 +140,6 @@ const ProductView: FC<Props> = ({ product }) => {
             <Button
               aria-label="Add to Cart"
               type="button"
-              className={s.button}
               onClick={addToCart}
               loading={loading}
               disabled={!variant}
@@ -154,7 +150,6 @@ const ProductView: FC<Props> = ({ product }) => {
         </div>
 
         <WishlistButton
-          className={s.wishlistButton}
           productId={product.entityId}
           variant={product.variants.edges?.[0]!}
         />

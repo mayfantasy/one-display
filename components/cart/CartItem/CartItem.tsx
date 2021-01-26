@@ -6,7 +6,6 @@ import { Trash, Plus, Minus } from '@components/icons'
 import usePrice from '@framework/use-price'
 import useUpdateItem from '@framework/cart/use-update-item'
 import useRemoveItem from '@framework/cart/use-remove-item'
-import s from './CartItem.module.css'
 
 const CartItem = ({
   item,
@@ -76,7 +75,6 @@ const CartItem = ({
     >
       <div className="w-16 h-16 bg-violet relative overflow-hidden">
         <Image
-          className={s.productImage}
           src={item.image_url}
           width={150}
           height={150}
@@ -102,7 +100,6 @@ const CartItem = ({
               type="number"
               max={99}
               min={0}
-              className={s.quantity}
               value={quantity}
               onChange={handleQuantity}
               onBlur={handleBlur}

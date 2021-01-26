@@ -1,7 +1,6 @@
 import React, { CSSProperties } from 'react'
 import cn from 'classnames'
 import px from '@lib/to-pixels'
-import s from './Skeleton.module.css'
 
 interface Props {
   width?: string | number
@@ -33,11 +32,6 @@ const Skeleton: React.FC<Props> = ({
 
   return (
     <span
-      className={cn(s.skeleton, className, {
-        [s.show]: show,
-        [s.wrapper]: shouldAutoSize,
-        [s.loaded]: !shouldAutoSize && !!children,
-      })}
       style={
         shouldAutoSize
           ? {}

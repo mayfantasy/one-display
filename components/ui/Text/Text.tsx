@@ -3,8 +3,6 @@ import React, {
   JSXElementConstructor,
   CSSProperties,
 } from 'react'
-import cn from 'classnames'
-import s from './Text.module.css'
 
 interface Props {
   variant?: Variant
@@ -45,20 +43,7 @@ const Text: FunctionComponent<Props> = ({
     : {}
 
   return (
-    <Component
-      className={cn(
-        s.root,
-        {
-          [s.body]: variant === 'body',
-          [s.heading]: variant === 'heading',
-          [s.pageHeading]: variant === 'pageHeading',
-          [s.sectionHeading]: variant === 'sectionHeading',
-        },
-        className
-      )}
-      style={style}
-      {...htmlContentProps}
-    >
+    <Component style={style} {...htmlContentProps}>
       {children}
     </Component>
   )

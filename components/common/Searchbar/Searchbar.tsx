@@ -1,6 +1,6 @@
 import { FC, useEffect, useMemo } from 'react'
 import cn from 'classnames'
-import s from './Searchbar.module.css'
+
 import { useRouter } from 'next/router'
 
 interface Props {
@@ -17,18 +17,12 @@ const Searchbar: FC<Props> = ({ className, id = 'search' }) => {
 
   return useMemo(
     () => (
-      <div
-        className={cn(
-          'relative text-sm bg-accents-1 text-base w-full transition-colors duration-150',
-          className
-        )}
-      >
+      <div>
         <label className="hidden" htmlFor={id}>
           Search
         </label>
         <input
           id={id}
-          className={s.input}
           placeholder="Search for products..."
           defaultValue={router.query.q}
           onKeyUp={(e) => {
@@ -48,8 +42,8 @@ const Searchbar: FC<Props> = ({ className, id = 'search' }) => {
             }
           }}
         />
-        <div className={s.iconContainer}>
-          <svg className={s.icon} fill="currentColor" viewBox="0 0 20 20">
+        <div>
+          <svg fill="currentColor" viewBox="0 0 20 20">
             <path
               fillRule="evenodd"
               clipRule="evenodd"

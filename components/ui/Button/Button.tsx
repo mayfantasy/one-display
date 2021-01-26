@@ -6,7 +6,6 @@ import React, {
   useRef,
 } from 'react'
 import mergeRefs from 'react-merge-refs'
-import s from './Button.module.css'
 import { LoadingDots } from '@components/ui'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -36,22 +35,11 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
   } = props
   const ref = useRef<typeof Component>(null)
 
-  const rootClassName = cn(
-    s.root,
-    {
-      [s.slim]: variant === 'slim',
-      [s.loading]: loading,
-      [s.disabled]: disabled,
-    },
-    className
-  )
-
   return (
     <Component
       aria-pressed={active}
       data-variant={variant}
       ref={mergeRefs([ref, buttonRef])}
-      className={rootClassName}
       disabled={disabled}
       style={{
         width,

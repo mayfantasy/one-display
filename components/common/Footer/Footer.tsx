@@ -7,7 +7,6 @@ import getSlug from '@lib/get-slug'
 import { Github, Vercel } from '@components/icons'
 import { Logo, Container } from '@components/ui'
 import { I18nWidget } from '@components/common'
-import s from './Footer.module.css'
 
 interface Props {
   className?: string
@@ -87,7 +86,6 @@ const Footer: FC<Props> = ({ className, pages }) => {
               <a
                 aria-label="Github Repository"
                 href="https://github.com/vercel/commerce"
-                className={s.link}
               >
                 <Github />
               </a>

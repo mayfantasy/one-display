@@ -2,7 +2,6 @@ import { FC } from 'react'
 import Link from 'next/link'
 import { Grid } from '@components/ui'
 import { ProductCard } from '@components/product'
-import s from './HomeAllProductsGrid.module.css'
 import { getCategoryPath, getDesignerPath } from '@lib/search'
 
 interface Props {
@@ -13,9 +12,9 @@ interface Props {
 
 const Head: FC<Props> = ({ categories, brands, newestProducts }) => {
   return (
-    <div className={s.root}>
-      <div className={s.asideWrapper}>
-        <div className={s.aside}>
+    <div>
+      <div>
+        <div>
           <ul className="mb-10">
             <li className="py-1 text-base font-bold tracking-wide">
               <Link href={getCategoryPath('')}>

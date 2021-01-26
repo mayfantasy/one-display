@@ -6,7 +6,6 @@ import useCustomer from '@framework/use-customer'
 import { Heart, Bag } from '@components/icons'
 import { useUI } from '@components/ui/context'
 import DropdownMenu from './DropdownMenu'
-import s from './UserNav.module.css'
 import { Avatar } from '@components/common'
 
 interface Props {
@@ -24,29 +23,25 @@ const UserNav: FC<Props> = ({ className, children, ...props }) => {
   const itemsCount = Object.values(data?.line_items ?? {}).reduce(countItems, 0)
 
   return (
-    <nav className={cn(s.root, className)}>
-      <div className={s.mainContainer}>
-        <ul className={s.list}>
-          <li className={s.item} onClick={toggleSidebar}>
+    <nav>
+      <div>
+        <ul>
+          <li onClick={toggleSidebar}>
             <Bag />
-            {itemsCount > 0 && <span className={s.bagCount}>{itemsCount}</span>}
+            {itemsCount > 0 && <span>{itemsCount}</span>}
           </li>
-          <li className={s.item}>
+          <li>
             <Link href="/wishlist">
               <a onClick={closeSidebarIfPresent} aria-label="Wishlist">
                 <Heart />
               </a>
             </Link>
           </li>
-          <li className={s.item}>
+          <li>
             {customer ? (
               <DropdownMenu />
             ) : (
-              <button
-                className={s.avatarButton}
-                aria-label="Menu"
-                onClick={() => openModal()}
-              >
+              <button aria-label="Menu" onClick={() => openModal()}>
                 <Avatar />
               </button>
             )}

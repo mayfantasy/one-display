@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from 'react'
 import Link from 'next/link'
-import s from './Navbar.module.css'
+
 import { Logo, Container } from '@components/ui'
 import { Searchbar, UserNav } from '@components/common'
 import cn from 'classnames'
@@ -33,7 +33,7 @@ const Navbar = (props: IProps) => {
   }, [])
 
   return (
-    <div className={cn(s.root, { 'shadow-magical': hasScrolled })}>
+    <div>
       <Container>
         <div className="flex flex-row justify-between">
           <div className="header__logo">

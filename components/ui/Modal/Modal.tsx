@@ -1,6 +1,5 @@
 import { FC, useRef, useEffect, useCallback } from 'react'
 import Portal from '@reach/portal'
-import s from './Modal.module.css'
 import { Cross } from '@components/icons'
 import {
   disableBodyScroll,
@@ -46,8 +45,8 @@ const Modal: FC<Props> = ({ children, open, onClose, onEnter = null }) => {
   return (
     <Portal>
       {open ? (
-        <div className={s.root}>
-          <div className={s.modal} role="dialog" ref={ref}>
+        <div>
+          <div role="dialog" ref={ref}>
             <button
               onClick={() => onClose()}
               aria-label="Close panel"

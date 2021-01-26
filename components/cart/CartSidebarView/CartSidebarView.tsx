@@ -7,7 +7,6 @@ import { useUI } from '@components/ui/context'
 import useCart from '@framework/cart/use-cart'
 import usePrice from '@framework/use-price'
 import CartItem from '../CartItem'
-import s from './CartSidebarView.module.css'
 
 const CartSidebarView: FC = () => {
   const { closeSidebar } = useUI()
@@ -32,13 +31,7 @@ const CartSidebarView: FC = () => {
   const success = null
 
   return (
-    <div
-      className={cn(s.root, {
-        [s.empty]: error,
-        [s.empty]: success,
-        [s.empty]: isEmpty,
-      })}
-    >
+    <div>
       <header className="px-4 pt-6 pb-4 sm:px-6">
         <div className="flex items-start justify-between space-x-3">
           <div className="h-7 flex items-center">

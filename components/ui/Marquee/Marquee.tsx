@@ -1,5 +1,4 @@
 import cn from 'classnames'
-import s from './Marquee.module.css'
 import { FC, ReactNode, Component } from 'react'
 import Ticker from 'react-ticker'
 
@@ -14,20 +13,9 @@ const Maquee: FC<Props> = ({
   children,
   variant = 'primary',
 }) => {
-  const rootClassName = cn(
-    s.root,
-    {
-      [s.primary]: variant === 'primary',
-      [s.secondary]: variant === 'secondary',
-    },
-    className
-  )
-
   return (
-    <div className={rootClassName}>
-      <Ticker offset={80}>
-        {() => <div className={s.container}>{children}</div>}
-      </Ticker>
+    <div>
+      <Ticker offset={80}>{() => <div>{children}</div>}</Ticker>
     </div>
   )
 }
