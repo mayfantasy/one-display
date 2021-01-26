@@ -7,16 +7,25 @@ import {
   clearAllBodyScrollLocks,
 } from 'body-scroll-lock'
 import FocusTrap from '@lib/focus-trap'
-interface Props {
+import { useUI } from '../context'
+interface IProps {
   className?: string
   children?: any
   open?: boolean
   onClose: () => void
   onEnter?: () => void | null
+  bgColor?: string
 }
 
-const Modal: FC<Props> = ({ children, open, onClose, onEnter = null }) => {
+const Modal: FC<IProps> = ({
+  children,
+  open,
+  onClose,
+  onEnter = null,
+  bgColor,
+}) => {
   const ref = useRef() as React.MutableRefObject<HTMLDivElement>
+  const { setModalView, closeModal } = useUI()
 
   const handleKey = useCallback(
     (e: KeyboardEvent) => {
@@ -45,10 +54,18 @@ const Modal: FC<Props> = ({ children, open, onClose, onEnter = null }) => {
   return (
     <Portal>
       {open ? (
-        <div>
-          <div role="dialog" ref={ref}>
+        <div className="fixed text-primary flex items-center inset-0 z-50 justify-center bg-black bg-opacity-50">
+          <div
+            style={{ backgroundColor: bgColor || 'white' }}
+            className="p-8 border border-accents-2 relative rounded"
+            role="dialog"
+            ref={ref}
+          >
             <button
-              onClick={() => onClose()}
+              onClick={() => {
+                onClose()
+                setModalView('LOGIN_VIEW')
+              }}
               aria-label="Close panel"
               className="hover:text-gray-500 transition ease-in-out duration-150 focus:outline-none absolute right-0 top-0 m-6"
             >

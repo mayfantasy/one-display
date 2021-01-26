@@ -11,6 +11,8 @@ import { CartSidebarView } from '@components/cart'
 import LoginView from '@components/auth/LoginView'
 import { CommerceProvider } from '@framework'
 import type { Page } from '@framework/api/operations/get-all-pages'
+import { IBg } from 'types/ui.types'
+import Banner from './Banner'
 
 const Loading = () => (
   <div className="w-80 h-80 flex items-center text-center justify-center p-3">
@@ -36,12 +38,17 @@ const FeatureBar = dynamic(
 )
 
 interface Props {
-  pageProps: {
-    pages?: Page[]
+  children?: React.ReactNode
+  header?: {
+    navColor?: string
+  }
+  banner?: {
+    bg: IBg
+    content?: React.ReactNode
   }
 }
 
-const Layout: FC<Props> = ({ children, pageProps }) => {
+const Layout: FC<Props> = ({ children, banner, header }) => {
   const {
     displaySidebar,
     displayModal,
@@ -52,12 +59,21 @@ const Layout: FC<Props> = ({ children, pageProps }) => {
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   const { locale = 'en-US' } = useRouter()
 
+  const $header = <Navbar navColor={header?.navColor} />
   return (
     <CommerceProvider locale={locale}>
       <div>
-        <Navbar />
-        <main className="fit">{children}</main>
-        <Footer pages={pageProps.pages} />
+        {banner ? (
+          <Banner bg={banner.bg}>
+            {$header}
+            {banner.content}
+          </Banner>
+        ) : (
+          $header
+        )}
+        {children && <main>{children}</main>}
+
+        {/* <Footer pages={pageProps.pages} /> */}
 
         <Sidebar open={displaySidebar} onClose={closeSidebar}>
           <CartSidebarView />

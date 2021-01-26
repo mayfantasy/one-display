@@ -9,7 +9,6 @@ import useAddItem from '@framework/cart/use-add-item'
 import { useUI } from '@components/ui/context'
 import { Button, Text } from '@components/ui'
 import { Trash } from '@components/icons'
-import s from './WishlistCard.module.css'
 
 interface Props {
   item: WishlistItem
@@ -54,8 +53,8 @@ const WishlistCard: FC<Props> = ({ item }) => {
   }
 
   return (
-    <div className={cn(s.root, { 'opacity-75 pointer-events-none': removing })}>
-      <div className={`col-span-3 ${s.productBg}`}>
+    <div>
+      <div>
         <Image
           src={product.images.edges?.[0]?.node.urlOriginal!}
           width={400}

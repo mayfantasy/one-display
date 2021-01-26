@@ -83,70 +83,94 @@ export default function Home({
   newestProducts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div>
-      <Grid>
-        {featured.slice(0, 3).map(({ node }, i) => (
-          <ProductCard
-            key={node.path}
-            product={node}
-            imgWidth={i === 0 ? 1080 : 540}
-            imgHeight={i === 0 ? 1080 : 540}
-            imgPriority
-            imgLoading="eager"
-          />
-        ))}
-      </Grid>
-      <Marquee variant="secondary">
-        {bestSelling.slice(3, 6).map(({ node }) => (
-          <ProductCard
-            key={node.path}
-            product={node}
-            variant="slim"
-            imgWidth={320}
-            imgHeight={320}
-            imgLayout="fixed"
-          />
-        ))}
-      </Marquee>
-      <Hero
-        headline="Release Details: The Yeezy BOOST 350 V2 ‘Natural'"
-        description="
+    <Layout
+      banner={{
+        bg: { src: '/bg/home.png', mask: 'rgba(0,0,0,0.2)' },
+        content: (
+          <div className="container m-auto">
+            <div className="w-full mt-56">
+              <h1 className="text-white text-5xl text-right leading-tight mb-8">
+                <span className="max-w-lg inline-block">
+                  Lorem ipsum dolor sit consectetur adipiscing
+                </span>
+              </h1>
+              <p className="text-white text-right">
+                <span className="max-w-lg inline-block">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna a
+                  liqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco
+                </span>
+              </p>
+            </div>
+          </div>
+        ),
+      }}
+      header={{ navColor: 'white' }}
+    >
+      <div>
+        <Grid>
+          {featured.slice(0, 3).map(({ node }, i) => (
+            <ProductCard
+              key={node.path}
+              product={node}
+              imgWidth={i === 0 ? 1080 : 540}
+              imgHeight={i === 0 ? 1080 : 540}
+              imgPriority
+              imgLoading="eager"
+            />
+          ))}
+        </Grid>
+        <Marquee variant="secondary">
+          {bestSelling.slice(3, 6).map(({ node }) => (
+            <ProductCard
+              key={node.path}
+              product={node}
+              variant="slim"
+              imgWidth={320}
+              imgHeight={320}
+              imgLayout="fixed"
+            />
+          ))}
+        </Marquee>
+        <Hero
+          headline="Release Details: The Yeezy BOOST 350 V2 ‘Natural'"
+          description="
         The Yeezy BOOST 350 V2 lineup continues to grow. We recently had the
         ‘Carbon’ iteration, and now release details have been locked in for
         this ‘Natural’ joint. Revealed by Yeezy Mafia earlier this year, the
         shoe was originally called ‘Abez’, which translated to ‘Tin’ in
         Hebrew. It’s now undergone a name change, and will be referred to as
         ‘Natural’."
-      />
-      <Grid layout="B">
-        {featured.slice(3, 6).map(({ node }, i) => (
-          <ProductCard
-            key={node.path}
-            product={node}
-            imgWidth={i === 1 ? 1080 : 540}
-            imgHeight={i === 1 ? 1080 : 540}
-          />
-        ))}
-      </Grid>
-      <Marquee>
-        {bestSelling.slice(0, 3).map(({ node }) => (
-          <ProductCard
-            key={node.path}
-            product={node}
-            variant="slim"
-            imgWidth={320}
-            imgHeight={320}
-            imgLayout="fixed"
-          />
-        ))}
-      </Marquee>
-      <HomeAllProductsGrid
-        categories={categories}
-        brands={brands}
-        newestProducts={newestProducts}
-      />
-    </div>
+        />
+        <Grid layout="B">
+          {featured.slice(3, 6).map(({ node }, i) => (
+            <ProductCard
+              key={node.path}
+              product={node}
+              imgWidth={i === 1 ? 1080 : 540}
+              imgHeight={i === 1 ? 1080 : 540}
+            />
+          ))}
+        </Grid>
+        <Marquee>
+          {bestSelling.slice(0, 3).map(({ node }) => (
+            <ProductCard
+              key={node.path}
+              product={node}
+              variant="slim"
+              imgWidth={320}
+              imgHeight={320}
+              imgLayout="fixed"
+            />
+          ))}
+        </Marquee>
+        <HomeAllProductsGrid
+          categories={categories}
+          brands={brands}
+          newestProducts={newestProducts}
+        />
+      </div>
+    </Layout>
   )
 }
-
-Home.Layout = Layout

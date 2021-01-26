@@ -45,11 +45,12 @@ const Navbar = (props: IProps) => {
             ))}
           </nav>
           <div className="flex flex-row items-center">
-            <Link href={pageRoutes.loginPage.url!}>
+            <UserNav navColor={navColor} />
+            {/* <Link href={pageRoutes.loginPage.url!}>
               <a>
                 <Button primary>Login</Button>
               </a>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </Container>

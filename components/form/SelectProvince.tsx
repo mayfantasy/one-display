@@ -1,4 +1,4 @@
-import { canadianProvinces } from '@helpers/province.helpers'
+import { canadianProvinces } from 'helpers/province.helpers'
 import Select from './Select'
 
 interface IProps {
