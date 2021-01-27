@@ -9,14 +9,18 @@ interface IProps {
 }
 const NavItem = (props: IProps) => {
   const { className, navItem, navColor } = props
+  const $link = (
+    <a
+      className="flex flex-row items-center cursor-pointer"
+      style={{ color: navColor }}
+    >
+      <span>{navItem.name}</span>
+      {navItem.children && <CaretDownOutlined className="ml-2" />}
+    </a>
+  )
   return (
-    <div className={`p-3 ${className}`}>
-      <Link href={navItem.url!}>
-        <a className="flex flex-row items-center" style={{ color: navColor }}>
-          <span>{navItem.name}</span>
-          {navItem.children && <CaretDownOutlined className="ml-2" />}
-        </a>
-      </Link>
+    <div className={`px-4 ${className || ''}`} onClick={navItem.onClick}>
+      {navItem.url ? <Link href={navItem.url}>{$link}</Link> : $link}
     </div>
   )
 }

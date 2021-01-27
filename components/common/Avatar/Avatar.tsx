@@ -7,7 +7,7 @@ interface Props {
   children?: any
 }
 
-const Avatar: FC<Props> = ({}) => {
+const Avatar: FC<Props> = ({ className }) => {
   const [bg] = useState(useMemo(() => getRandomPairOfColors, []))
   let ref = useRef() as React.MutableRefObject<HTMLInputElement>
 
@@ -20,7 +20,9 @@ const Avatar: FC<Props> = ({}) => {
   return (
     <div
       ref={ref}
-      className="inline-block h-8 w-8 rounded-full border-2 border-primary hover:border-secondary focus:border-secondary transition linear-out duration-150"
+      className={`inline-block h-8 w-8 rounded-full border-2 border-primary hover:border-secondary focus:border-secondary transition linear-out duration-150 ${
+        className || ''
+      }`}
     >
       {/* Add an image - We're generating a gradient as placeholder  <img></img> */}
     </div>

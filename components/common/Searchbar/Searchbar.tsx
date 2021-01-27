@@ -1,59 +1,90 @@
-import { FC, useEffect, useMemo } from 'react'
+import { FC, useEffect, useMemo, useState } from 'react'
 import cn from 'classnames'
 
 import { useRouter } from 'next/router'
+import { CloseOutlined, SearchOutlined } from '@ant-design/icons'
+import { useUI } from '@components/ui/context'
 
 interface Props {
   className?: string
   id?: string
+  navColor?: string
 }
 
-const Searchbar: FC<Props> = ({ className, id = 'search' }) => {
+const Searchbar: FC<Props> = ({ className, id = 'search', navColor }) => {
   const router = useRouter()
+  const q = router.query.q as string
+  const [key, setKey] = useState('')
+
+  const { closeSearchbar } = useUI()
 
   useEffect(() => {
     router.prefetch('/search')
   }, [])
 
-  return useMemo(
-    () => (
-      <div>
-        <label className="hidden" htmlFor={id}>
-          Search
-        </label>
+  useEffect(() => {
+    console.log(q)
+    if (q) {
+      setKey(q)
+    }
+  }, [router.query])
+
+  const handleSearch = () => {
+    router.push(
+      {
+        pathname: `/search`,
+        query: key ? { key } : {},
+      },
+      undefined,
+      { shallow: true }
+    )
+  }
+
+  return (
+    <div className="w-full flex flex-row items-center">
+      <label className="hidden" htmlFor={id}>
+        Search
+      </label>
+      <div className="w-full flex flex-row items-center border-b-2">
+        {/* Search Icon */}
+        <div
+          onClick={handleSearch}
+          style={{ color: navColor }}
+          className="text-black h-8 p-2 flex items-center cursor-pointer"
+        >
+          <SearchOutlined />
+        </div>
+
+        {/* Input Box */}
         <input
+          type="text"
+          style={{ color: navColor }}
+          className="flex-1 border-none bg-transparent h-8 p-2 placeholder-gray-300 outline-none"
           id={id}
+          value={key}
+          onChange={(e) => {
+            setKey(e.target.value)
+          }}
           placeholder="Search for products..."
-          defaultValue={router.query.q}
           onKeyUp={(e) => {
-            e.preventDefault()
-
             if (e.key === 'Enter') {
-              const q = e.currentTarget.value
-
-              router.push(
-                {
-                  pathname: `/search`,
-                  query: q ? { q } : {},
-                },
-                undefined,
-                { shallow: true }
-              )
+              handleSearch()
             }
           }}
         />
-        <div>
-          <svg fill="currentColor" viewBox="0 0 20 20">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-            />
-          </svg>
+        {/* Clear */}
+        <div
+          style={{ color: navColor }}
+          onClick={() => {
+            setKey('')
+            closeSearchbar()
+          }}
+          className="text-black h-8 p-2 flex items-center cursor-pointer"
+        >
+          <CloseOutlined />
         </div>
       </div>
-    ),
-    []
+    </div>
   )
 }
 

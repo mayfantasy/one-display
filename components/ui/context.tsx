@@ -8,6 +8,8 @@ export interface State {
   displayToast: boolean
   modalView: string
   toastText: string
+  displaySearchbar: boolean
+  displayProductMenu: boolean
 }
 
 const initialState = {
@@ -17,6 +19,8 @@ const initialState = {
   modalView: 'LOGIN_VIEW',
   displayToast: false,
   toastText: '',
+  displaySearchbar: false,
+  displayProductMenu: false,
 }
 
 type Action =
@@ -51,6 +55,18 @@ type Action =
   | {
       type: 'SET_MODAL_VIEW'
       view: MODAL_VIEWS
+    }
+  | {
+      type: 'OPEN_SEARCHBAR'
+    }
+  | {
+      type: 'CLOSE_SEARCHBAR'
+    }
+  | {
+      type: 'OPEN_PRODUCT_MENU'
+    }
+  | {
+      type: 'CLOSE_PRODUCT_MENU'
     }
 
 type MODAL_VIEWS = 'SIGNUP_VIEW' | 'LOGIN_VIEW' | 'FORGOT_VIEW'
@@ -122,6 +138,30 @@ function uiReducer(state: State, action: Action) {
         toastText: action.text,
       }
     }
+    case 'OPEN_SEARCHBAR': {
+      return {
+        ...state,
+        displaySearchbar: true,
+      }
+    }
+    case 'CLOSE_SEARCHBAR': {
+      return {
+        ...state,
+        displaySearchbar: false,
+      }
+    }
+    case 'OPEN_PRODUCT_MENU': {
+      return {
+        ...state,
+        displayProductMenu: true,
+      }
+    }
+    case 'CLOSE_PRODUCT_MENU': {
+      return {
+        ...state,
+        displayProductMenu: false,
+      }
+    }
   }
 }
 
@@ -146,6 +186,12 @@ export const UIProvider: FC = (props) => {
   const openToast = () => dispatch({ type: 'OPEN_TOAST' })
   const closeToast = () => dispatch({ type: 'CLOSE_TOAST' })
 
+  const openSearchbar = () => dispatch({ type: 'OPEN_SEARCHBAR' })
+  const closeSearchbar = () => dispatch({ type: 'CLOSE_SEARCHBAR' })
+
+  const openProductMenu = () => dispatch({ type: 'OPEN_PRODUCT_MENU' })
+  const closeProductMenu = () => dispatch({ type: 'CLOSE_PRODUCT_MENU' })
+
   const setModalView = (view: MODAL_VIEWS) =>
     dispatch({ type: 'SET_MODAL_VIEW', view })
 
@@ -163,6 +209,10 @@ export const UIProvider: FC = (props) => {
       setModalView,
       openToast,
       closeToast,
+      openSearchbar,
+      closeSearchbar,
+      openProductMenu,
+      closeProductMenu,
     }),
     [state]
   )

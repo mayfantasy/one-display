@@ -1,20 +1,25 @@
 import { INavItem } from 'types/nav.types'
 
 export const pageRoutes = {
-  loginPage: {
-    key: 'login-page',
-    name: 'Login',
-    url: '/login',
-  } as INavItem,
-  registerPage: {
-    key: 'register-page',
-    name: 'Register',
-    url: '/register',
-  } as INavItem,
-  accountPage: {
+  // loginPage: {
+  //   key: 'login-page',
+  //   name: 'Login',
+  //   url: '/login',
+  // } as INavItem,
+  // registerPage: {
+  //   key: 'register-page',
+  //   name: 'Register',
+  //   url: '/register',
+  // } as INavItem,
+  accountInfoPage: {
     key: 'account-page',
     name: 'My Account',
-    url: '/account',
+    url: '/account/info',
+  } as INavItem,
+  accountOrdersPage: {
+    key: 'orders-page',
+    name: 'My Orders',
+    url: '/account/orders',
   } as INavItem,
   homePage: {
     key: 'home-page',
@@ -26,11 +31,18 @@ export const pageRoutes = {
     name: 'About Us',
     url: '/about-us',
   } as INavItem,
-  categoryPage: {
-    key: 'category',
+  categoryListPage: {
+    key: 'categories',
     name: 'Categories',
     url: '/categories',
   } as INavItem,
+  categoryPage: (categoryId: number) => {
+    return {
+      key: 'category',
+      name: 'Category',
+      url: `/category/${categoryId}`,
+    } as INavItem
+  },
   contactPage: {
     key: 'contact',
     name: 'Contact Us',

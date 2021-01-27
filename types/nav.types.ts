@@ -6,4 +6,5 @@ export interface IRouteItem {
 
 export interface INavItem extends IRouteItem {
   children?: boolean
+  onClick?: () => void
 }

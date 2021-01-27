@@ -8,33 +8,31 @@ import { useUI } from '@components/ui/context'
 import DropdownMenu from './DropdownMenu'
 import { Avatar } from '@components/common'
 import Button from '../Button'
+import { ShoppingCartOutlined, ShoppingOutlined } from '@ant-design/icons'
 
 interface IProps {
   className?: string
   navColor?: string
 }
 
-const countItem = (count: number, item: any) => count + item.quantity
-const countItems = (count: number, items: any[]) =>
-  items.reduce(countItem, count)
-
 const UserNav: FC<IProps> = ({ className, children, navColor, ...props }) => {
   const { data } = useCart()
   const { data: customer } = useCustomer()
-  const { toggleSidebar, closeSidebarIfPresent, openModal } = useUI()
-  const itemsCount = Object.values(data?.line_items ?? {}).reduce(countItems, 0)
+  const { openModal } = useUI()
 
   return (
     <div className="flex flex-row items-center">
-      <div className="mr-4">
+      {/* <div className="mr-2">
         <span onClick={toggleSidebar} style={{ color: navColor }}>
-          Cart
+          <ShoppingOutlined className="text-2xl text-gray-400" />
           {itemsCount > 0 && <span>{itemsCount}</span>}
         </span>
-      </div>
+      </div> */}
       <div>
         {customer ? (
-          <DropdownMenu />
+          <div className="z-50">
+            <DropdownMenu navColor={navColor} />
+          </div>
         ) : (
           <Button primary aria-label="Menu" onClick={() => openModal()}>
             Login
