@@ -1,5 +1,5 @@
 import { ISimpleCategory } from 'types/category.types'
-export const getCategoryByIdPath = (
+export const getCategoryTreeByIdPath = (
   path: number[]
 ): ISimpleCategory | undefined => {
   if (path.length === 1) {
@@ -12,7 +12,7 @@ export const getCategoryByIdPath = (
   return
 }
 export const getSubCategoryBlockId = (id: number) => {
-  return `#sc_${id}`
+  return `sc_${id}`
 }
 export const categoryTree: ISimpleCategory[] = [
   {
@@ -21,6 +21,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Acrylic Sign Products',
     is_visible: true,
     url: '/acrylic-sign-products/',
+    description:
+      'We carry a wide range of countertop sign holders, business card holders, wall mount holders, ballot boxes, merchandise holders to provide the versatility in different POP display applications. Customize is available.',
+    main_image: {
+      src: '/categories/Acrylic Sign Products.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 101,
@@ -124,6 +131,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Backdrop Stands & Pop–Up Display',
     is_visible: true,
     url: '/backdrop-stands-pop-up-display/',
+    description:
+      'Exhibition display presents a visual representation of a company’s brand and products, which is ideal for the trade show display, convention conferences, retail promotion and more events.',
+    main_image: {
+      src: '/categories/Backdrop Stand.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 43,
@@ -195,6 +209,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Banner Stands',
     is_visible: true,
     url: '/banner-stands/',
+    description:
+      'Banner stand incorporate basic design features, functionality and reliability. All banner stand includes a carry bag.',
+    main_image: {
+      src: '/categories/Banner Stand.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 46,
@@ -228,6 +249,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Brochure & Newspaper Holders',
     is_visible: true,
     url: '/brochure-newspaper-holders/',
+    description:
+      'Popular brochure and newspaper holder are perfect fit for selling and displaying literature, magazines and newspapers for retails store, restaurant and supermarket.',
+    main_image: {
+      src: '/categories/Brochure _ Newspaper Holders.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 49,
@@ -253,6 +281,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Crowd Control Systems',
     is_visible: true,
     url: '/crowd-control-systems/',
+    description:
+      'Crowd control stanchions are excellent line management system. Stanchions make line barrier and relied upon to direct the flow of crowds. ',
+    main_image: {
+      src: '/categories/Crowd Control System.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 51,
@@ -286,6 +321,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Flags',
     is_visible: true,
     url: '/flags/',
+    description:
+      'Wide range selection of flag kit and accessories such as teardrop, feather, block flagpoles and various bases. It can easily place outdoor and indoor for attracting attention to special offers and sales. ',
+    main_image: {
+      src: '/categories/Flags.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 54,
@@ -327,6 +369,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Floor Sign Holder',
     is_visible: true,
     url: '/floor-sign-holder/',
+    description:
+      'Floor Sign Holders are available in several sizes and perfect for any retail setting, such as department store, banks, restaurants and etc. Excellent business marketing tools for advertising in a professional manner.',
+    main_image: {
+      src: '/categories/Floor Sign Holder.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 58,
@@ -376,6 +425,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Metal A-Frame Sign Holders',
     is_visible: true,
     url: '/metal-a-frame-sign-holders/',
+    description:
+      'Sidewalk sign holders are one of the most cost effective and excellent marketing tools for outdoor and indoor advertising. Our own manufacturer provides high quality and versatile ways of durable products to meet the market demand.',
+    main_image: {
+      src: '/categories/Metal Aframe Sign Holder.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 63,
@@ -417,6 +473,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Metal Lawn Sign Holders',
     is_visible: true,
     url: '/metal-lawn-sign-holders/',
+    description:
+      'Metal lawn sign holder is the most common product to advertise for real estate and retail market. It is the best way to give attention to your potential customers.',
+    main_image: {
+      src: '/categories/Metal-Lawn-Sign-Holder.png',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 67,
@@ -442,6 +505,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'PVC A-Boards',
     is_visible: true,
     url: '/pvc-a-boards/',
+    description:
+      'Our exclusive PVC A-Board is made of durable PVC Board with removable feature. White powder coated metal wrap provides extra protection of the PVC Board. ',
+    main_image: {
+      src: '/categories/PVC A-Board.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 69,
@@ -466,7 +536,13 @@ export const categoryTree: ISimpleCategory[] = [
     parent_id: 0,
     name: 'Sign Brackets & Banner Hangers',
     is_visible: true,
-    url: '/sign-brackets-banner-hangers/',
+    url: '/sign-brackets-banner-hangers',
+    description: 'Sign Brackets & Banner Hangers',
+    main_image: {
+      src: '/categories/Sign Brackets.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 71,
@@ -484,6 +560,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Frame Sign Holders',
     is_visible: true,
     url: '/frame-sign-holders/',
+    description:
+      'Wall mounted frame sign holders include snap frame and magnetic frame, which feature poster and graphics in a quick and effortless change.',
+    main_image: {
+      src: '/categories/Frame Sign Holders.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 72,
@@ -528,6 +611,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Standoffs & Cable wire System',
     is_visible: true,
     url: '/standoffs-cable-wire-system/',
+    description:
+      'Each standoff consists of a cap and base which comes in different finishes and lengths. ',
+    main_image: {
+      src: '/categories/Standoffs _ Cable wire system.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 74,
@@ -638,6 +728,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Way–Finding Signs',
     is_visible: true,
     url: '/way-finding-signs/',
+    description:
+      'Way Finding Sign and Information Sign are very noticeable placard that inform people of the purpose of an object.',
+    main_image: {
+      src: '/categories/Wayfinding Signs.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [
       {
         id: 77,
@@ -679,6 +776,13 @@ export const categoryTree: ISimpleCategory[] = [
     name: 'Wind Resistant Sign Holders',
     is_visible: true,
     url: '/wind-resistant-sign-holders/',
+    description:
+      'Wind Resistant Sign Holder with flexible spring legs will give you peace of mind that your outdoor advertising is safe. Upright snap frame with rounded corner is completely enclosed for moisture resistant.',
+    main_image: {
+      src: '/categories/Wind Resistant.jpg',
+      width: 500,
+      height: 500,
+    },
     children: [],
   },
 ]

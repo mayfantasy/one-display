@@ -8,7 +8,7 @@ export const useNav = (): INavItem[] => {
     pageRoutes.homePage,
     pageRoutes.aboutPage,
     {
-      key: pageRoutes.categoryListPage.key,
+      key: 'products',
       name: 'Products',
       children: true,
       onClick: () => {
@@ -19,6 +19,7 @@ export const useNav = (): INavItem[] => {
         }
       },
     },
+    pageRoutes.categoryListPage,
     pageRoutes.contactPage,
   ]
 }

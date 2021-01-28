@@ -21,7 +21,7 @@ const UserNav: FC<IProps> = ({ className, children, navColor, ...props }) => {
   const { openModal } = useUI()
 
   return (
-    <div className="flex flex-row items-center">
+    <div className="flex flex-row items-center z-50">
       {/* <div className="mr-2">
         <span onClick={toggleSidebar} style={{ color: navColor }}>
           <ShoppingOutlined className="text-2xl text-gray-400" />
@@ -30,7 +30,7 @@ const UserNav: FC<IProps> = ({ className, children, navColor, ...props }) => {
       </div> */}
       <div>
         {customer ? (
-          <div className="z-50">
+          <div>
             <DropdownMenu navColor={navColor} />
           </div>
         ) : (

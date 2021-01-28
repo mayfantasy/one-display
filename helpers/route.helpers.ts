@@ -1,5 +1,10 @@
 import { INavItem } from 'types/nav.types'
 
+export const getHashFromPath = (path: string): string | undefined => {
+  const hash = path.split('#')?.[1]
+  return hash ? `#${hash}` : undefined
+}
+
 export const pageRoutes = {
   // loginPage: {
   //   key: 'login-page',
@@ -43,6 +48,13 @@ export const pageRoutes = {
       url: `/category/${categoryId}`,
     } as INavItem
   },
+  productPage: (productId: number) => {
+    return {
+      key: 'product',
+      name: 'Product',
+      url: `/product/${productId}`,
+    } as INavItem
+  },
   contactPage: {
     key: 'contact',
     name: 'Contact Us',
@@ -78,13 +90,6 @@ export const pageRoutes = {
     name: 'Search Products',
     url: '/products/search',
   },
-  productDetailPage: (handle: string) =>
-    ({
-      key: 'product-detail-page',
-      name: 'Product Detail',
-      url: `/product/${handle}`,
-      dynamicUrl: '/products/[collectionHandle]/[productHandle]',
-    } as INavItem),
   productListPage: (handle: string) =>
     ({
       key: 'product-list-page',

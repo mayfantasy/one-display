@@ -12,7 +12,7 @@ import {
 import { getEnabledCategories } from 'trace_events'
 import {
   categoryTree,
-  getCategoryByIdPath,
+  getCategoryTreeByIdPath,
   getSubCategoryBlockId,
 } from 'helpers/category.helpers'
 import { useEffect, useState } from 'react'
@@ -28,27 +28,23 @@ const ProductMenu = (props: IProps) => {
 
   const [activeCategory, setActiveCategory] = useState<
     ISimpleCategory | undefined
-  >(getCategoryByIdPath([24]))
+  >(getCategoryTreeByIdPath([24]))
 
   const [activeSubCategory, setActiveSubCategory] = useState<
     ISimpleCategory | undefined
-  >(getCategoryByIdPath([24, 39]))
-
-  // useEffect(() => {
-  //   setActiveSubCategory(undefined)
-  // }, [activeCategory])
+  >(getCategoryTreeByIdPath([24, 39]))
 
   const { displayProductMenu, closeProductMenu } = useUI()
   useEscClose(closeProductMenu, displayProductMenu)
 
   return (
-    <Portal>
+    <div>
       {displayProductMenu && (
         <ScrollLock>
-          <div style={{ top: NAV_HEIGHT }} className="fixed w-full p-4">
+          <div style={{ top: NAV_HEIGHT }} className="fixed w-full p-4 z-40">
             <div
               role="dialog"
-              className="bg-white container m-auto rounded p-6"
+              className="bg-white container m-auto rounded p-6 border shadow-lg"
               style={{ height: `calc(100vh - ${NAV_HEIGHT * 2}px)` }}
               // ref={ref}
             >
@@ -71,7 +67,11 @@ const ProductMenu = (props: IProps) => {
                       <li
                         key={c.id}
                         className="text-gray-500 cursor-pointer"
-                        onMouseEnter={() => setActiveCategory(c)}
+                        onMouseEnter={() => {
+                          setActiveCategory(c)
+                          setActiveSubCategory(c.children?.[0])
+                        }}
+                        onClick={() => closeProductMenu()}
                       >
                         <Link href={pageRoutes.categoryPage(c.id).url!}>
                           <a
@@ -105,12 +105,13 @@ const ProductMenu = (props: IProps) => {
                           key={sc.id}
                           className="text-gray-500 cursor-pointer"
                           onMouseEnter={() => setActiveSubCategory(sc)}
+                          onClick={() => closeProductMenu()}
                         >
                           <Link
                             href={
                               `${
                                 pageRoutes.categoryPage(activeCategory.id).url
-                              }${getSubCategoryBlockId(sc.id)}`!
+                              }#${getSubCategoryBlockId(sc.id)}`!
                             }
                           >
                             <a
@@ -154,7 +155,7 @@ const ProductMenu = (props: IProps) => {
           </div>
         </ScrollLock>
       )}
-    </Portal>
+    </div>
   )
 }
 

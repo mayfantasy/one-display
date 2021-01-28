@@ -33,6 +33,7 @@ export function CommerceProvider({ children, config }: CommerceProps) {
   }
 
   const fetcherRef = useRef(config.fetcher)
+
   // Because the config is an object, if the parent re-renders this provider
   // will re-render every consumer unless we memoize the config
   const cfg = useMemo(
