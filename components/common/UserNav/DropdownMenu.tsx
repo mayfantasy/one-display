@@ -17,7 +17,7 @@ import {
 } from 'body-scroll-lock'
 
 import useLogout from '@framework/use-logout'
-import useCustomer from '@framework/use-customer'
+import useCustomer, { Customer } from '@framework/use-customer'
 import {
   LogoutOutlined,
   OrderedListOutlined,
@@ -26,24 +26,31 @@ import {
   TagOutlined,
   UserOutlined,
 } from '@ant-design/icons'
-import useCart from '@framework/cart/use-cart'
 import { pageRoutes } from 'helpers/route.helpers'
+import { ICart } from 'types/cart.types'
+import { useCart } from 'hooks/cart.hooks'
 
 interface DropdownMenuProps {
+  customer: Customer
   open?: boolean
   navColor?: string
 }
 
-const countItem = (count: number, item: any) => count + item.quantity
-const countItems = (count: number, items: any[]) =>
-  items.reduce(countItem, count)
-
-const DropdownMenu: FC<DropdownMenuProps> = ({ open = false, navColor }) => {
+const DropdownMenu: FC<DropdownMenuProps> = ({
+  open = false,
+  navColor,
+  customer,
+}) => {
   const logout = useLogout()
   const { pathname } = useRouter()
   const { theme, setTheme } = useTheme()
   const [display, setDisplay] = useState(false)
-  const { toggleSidebar, closeSidebarIfPresent, openModal } = useUI()
+  const {
+    toggleSidebar,
+    closeSidebarIfPresent,
+    openModal,
+    cartItemsCount,
+  } = useUI()
   const ref = useRef() as React.MutableRefObject<HTMLUListElement>
 
   useEffect(() => {
@@ -59,30 +66,25 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false, navColor }) => {
     }
   }, [display])
 
-  const { data: customerData } = useCustomer()
+  const { cart } = useCart()
 
-  const { data: cartData } = useCart()
-  const itemsCount = Object.values(cartData?.line_items ?? {}).reduce(
-    countItems,
-    0
-  )
-
-  const $count = itemsCount > 0 && <span>{itemsCount}</span>
+  const $count = cartItemsCount > 0 && <span>{cartItemsCount}</span>
 
   return (
     <ClickOutside active={display} onClick={() => setDisplay(false)}>
       <div onClick={() => setDisplay(!display)}>
         <div
+          style={{ color: navColor }}
           // onClick={() => setDisplay(!display)}
           aria-label="Menu"
           className="flex flex-row items-center cursor-pointer"
         >
           {/* Avata */}
           {/* <Avatar className="mr-2" /> */}
-          <span style={{ color: navColor }}>
+          <span className="mr-2">
             <ShoppingFilled className="text-2xl" />
-            {$count}
           </span>
+          <span>{$count}</span>
 
           {/* Name and email */}
           {/* <div>
@@ -102,7 +104,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false, navColor }) => {
         {/* Dropdown */}
         <div className="relative">
           {display && (
-            <div className="absolute left-2/4 w-40 pt-1">
+            <div className="absolute right-0 w-52 pt-1">
               <ul
                 className="
                 bg-white
@@ -112,13 +114,27 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false, navColor }) => {
                 divide-y
                 divide-gray-200
               "
-                style={{ transform: 'translateX(-50%)' }}
+                // style={{ transform: 'translateX(-50%)' }}
               >
                 {[
                   {
                     label: (
+                      <div className="text-center w-full">
+                        <h3 className="font-bold">
+                          {customer.firstName} {customer.lastName}
+                        </h3>
+                        <div className="text-xs text-gray-400">
+                          {customer.email}
+                        </div>
+                      </div>
+                    ),
+                  },
+                  {
+                    label: (
                       <>
-                        <ShoppingOutlined className="mr-2" /> Cart {$count}
+                        <ShoppingOutlined className="mr-2" />
+                        <span className="mr-2">Cart</span>
+                        <span>{$count}</span>
                       </>
                     ),
                     onClick: toggleSidebar,

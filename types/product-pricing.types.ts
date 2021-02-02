@@ -1,3 +1,16 @@
+export interface IPricing {
+  as_entered: number
+  entered_inclusive: boolean
+  tax_exclusive: number
+  tax_inclusive: number
+}
+
+export interface IBulkPricing {
+  minimum: number
+  maximum: number
+  discount_amount: number
+  discount_type: 'PERCENT'
+}
 export interface IProductPricingPayload {
   channel_id?: number
   currency_code?: string
@@ -19,70 +32,18 @@ export interface IProductPrice {
       value_id: number
     }
   ]
-  retail_price: {
-    as_entered: number
-    entered_inclusive: boolean
-    tax_exclusive: number
-    tax_inclusive: number
-  }
-  sale_price: {
-    as_entered: number
-    entered_inclusive: boolean
-    tax_exclusive: number
-    tax_inclusive: number
-  }
-  minimum_advertised_price: {
-    as_entered: number
-    entered_inclusive: boolean
-    tax_exclusive: number
-    tax_inclusive: number
-  }
-  price: {
-    as_entered: number
-    entered_inclusive: boolean
-    tax_exclusive: number
-    tax_inclusive: number
-  }
-  calculated_price: {
-    as_entered: number
-    entered_inclusive: boolean
-    tax_exclusive: number
-    tax_inclusive: number
-  }
+  retail_price: IPricing
+  sale_price: IPricing
+  minimum_advertised_price: IPricing
+  price: IPricing
+  calculated_price: IPricing
   price_range: {
-    minimum: {
-      as_entered: number
-      entered_inclusive: boolean
-      tax_exclusive: number
-      tax_inclusive: number
-    }
-    maximum: {
-      as_entered: number
-      entered_inclusive: boolean
-      tax_exclusive: number
-      tax_inclusive: number
-    }
+    minimum: IPricing
+    maximum: IPricing
   }
   retail_price_range: {
-    minimum: {
-      as_entered: number
-      entered_inclusive: boolean
-      tax_exclusive: number
-      tax_inclusive: number
-    }
-    maximum: {
-      as_entered: number
-      entered_inclusive: boolean
-      tax_exclusive: number
-      tax_inclusive: number
-    }
+    minimum: IPricing
+    maximum: IPricing
   }
-  bulk_pricing: [
-    {
-      minimum: number
-      maximum: number
-      discount_amount: number
-      discount_type: 'PERCENT'
-    }
-  ]
+  bulk_pricing: IBulkPricing[]
 }

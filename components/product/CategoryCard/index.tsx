@@ -11,9 +11,9 @@ const CategoryCard = (props: IProps) => {
   const { category } = props
   return (
     <Link href={pageRoutes.categoryPage(category.id).url!}>
-      <a className="block w-full rounded border border-gray-300 hover:border-blue-700 overflow-hidden cursor-pointer">
+      <a className="block w-full rounded border border-gray-300 hover:border-blue-700 overflow-hidden cursor-pointer bg-gray-100">
         {/* Image */}
-        <div className="w-full flex flex-row justify-center relative overflow-hidden">
+        <div className="w-full flex flex-row justify-center relative overflow-hidden bg-white">
           <div className="responsive-square" />
           <div className="w-full h-full absolute flex flex-row items-center">
             <img
@@ -25,7 +25,7 @@ const CategoryCard = (props: IProps) => {
         </div>
 
         {/* Description */}
-        <div className="bg-gray-100 h-52 rounded-b py-10 px-4">
+        <div className="rounded-b py-10 px-4">
           <div className="w-full top-10">
             <h2 className="text-lg text-center mb-4">
               <strong>{category.name}</strong>

@@ -41,7 +41,7 @@ const ProductMenu = (props: IProps) => {
     <div>
       {displayProductMenu && (
         <ScrollLock>
-          <div style={{ top: NAV_HEIGHT }} className="fixed w-full p-4 z-40">
+          <div style={{ top: NAV_HEIGHT }} className="fixed w-full p-4 z-20">
             <div
               role="dialog"
               className="bg-white container m-auto rounded p-6 border shadow-lg"
@@ -143,7 +143,7 @@ const ProductMenu = (props: IProps) => {
 
                 {/* Images */}
                 {activeSubCategory && (
-                  <div className="w-2/4">
+                  <div className="w-2/4 overflow-scroll">
                     <Gallery
                       columns={2}
                       photos={activeSubCategory.images || []}

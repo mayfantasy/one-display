@@ -7,6 +7,7 @@ import type { AppProps } from 'next/app'
 
 import { ManagedUIContext } from '@components/ui/context'
 import { Head } from '@components/common'
+import { CookiesProvider } from 'react-cookie'
 
 const Noop: FC = ({ children }) => <>{children}</>
 
@@ -20,11 +21,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head />
-      <ManagedUIContext>
-        <Layout pageProps={pageProps}>
-          <Component {...pageProps} />
-        </Layout>
-      </ManagedUIContext>
+      <CookiesProvider>
+        <ManagedUIContext>
+          <Layout pageProps={pageProps}>
+            <Component {...pageProps} />
+          </Layout>
+        </ManagedUIContext>
+      </CookiesProvider>
     </>
   )
 }

@@ -10,6 +10,7 @@ export interface State {
   toastText: string
   displaySearchbar: boolean
   displayProductMenu: boolean
+  cartItemsCount: number
 }
 
 const initialState = {
@@ -21,6 +22,7 @@ const initialState = {
   toastText: '',
   displaySearchbar: false,
   displayProductMenu: false,
+  cartItemsCount: 0,
 }
 
 type Action =
@@ -67,6 +69,10 @@ type Action =
     }
   | {
       type: 'CLOSE_PRODUCT_MENU'
+    }
+  | {
+      type: 'SET_CART_ITEMS_COUNT'
+      count: number
     }
 
 type MODAL_VIEWS = 'SIGNUP_VIEW' | 'LOGIN_VIEW' | 'FORGOT_VIEW'
@@ -162,6 +168,12 @@ function uiReducer(state: State, action: Action) {
         displayProductMenu: false,
       }
     }
+    case 'SET_CART_ITEMS_COUNT': {
+      return {
+        ...state,
+        cartItemsCount: action.count,
+      }
+    }
   }
 }
 
@@ -195,6 +207,10 @@ export const UIProvider: FC = (props) => {
   const setModalView = (view: MODAL_VIEWS) =>
     dispatch({ type: 'SET_MODAL_VIEW', view })
 
+  const setCartItemsCount = (count: number) => {
+    dispatch({ type: 'SET_CART_ITEMS_COUNT', count })
+  }
+
   const value = useMemo(
     () => ({
       ...state,
@@ -213,6 +229,7 @@ export const UIProvider: FC = (props) => {
       closeSearchbar,
       openProductMenu,
       closeProductMenu,
+      setCartItemsCount,
     }),
     [state]
   )

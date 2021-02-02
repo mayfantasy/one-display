@@ -72,7 +72,7 @@ const CategoryPage = () => {
           return a
         }, {} as IProductPriceMap)
         setPricing(map)
-
+        console.log(pricing)
         setPricingLoading(false)
       })
     }
@@ -93,6 +93,24 @@ const CategoryPage = () => {
       }
     }
   }, [router.asPath, products])
+
+  const getProductLinesBySubCategoryId = (id: number) => {
+    const subCategoryProducts = products?.filter((p) =>
+      p.categories.includes(id)
+    )
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+        {subCategoryProducts &&
+          subCategoryProducts.map((p) => (
+            <ProductCard
+              key={p.id}
+              product={p}
+              productPrice={pricing?.[p.id]}
+            />
+          ))}
+      </div>
+    )
+  }
 
   return (
     <Layout
@@ -132,20 +150,12 @@ const CategoryPage = () => {
                   >
                     {sc.name}
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-                    {products &&
-                      products.map((p) => (
-                        <ProductCard key={p.id} product={p} />
-                      ))}
-                  </div>
+                  {getProductLinesBySubCategoryId(sc.id)}
                 </div>
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-              {products &&
-                products.map((p) => <ProductCard key={p.id} product={p} />)}
-            </div>
+            getProductLinesBySubCategoryId(Number(categoryId))
           )}
         </div>
       </div>

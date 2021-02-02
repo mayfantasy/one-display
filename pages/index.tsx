@@ -9,6 +9,7 @@ import { getConfig } from '@framework/api'
 import getAllProducts from '@framework/api/operations/get-all-products'
 import getSiteInfo from '@framework/api/operations/get-site-info'
 import getAllPages from '@framework/api/operations/get-all-pages'
+import Subscribe from '@components/form/Subscribe'
 
 export async function getStaticProps({
   preview,
@@ -94,7 +95,7 @@ export default function Home({
                   Lorem ipsum dolor sit consectetur adipiscing
                 </span>
               </h1>
-              <p className="text-white text-right">
+              <p className="text-white text-right mb-8">
                 <span className="max-w-lg inline-block">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna a
@@ -102,6 +103,9 @@ export default function Home({
                   ullamco
                 </span>
               </p>
+              <div className="flex flex-row justify-end text-white">
+                <Subscribe />
+              </div>
             </div>
           </div>
         ),

@@ -10,15 +10,15 @@ import updateItem from './handlers/update-item'
 import removeItem from './handlers/remove-item'
 
 type OptionSelections = {
-	option_id: Number
-	option_value: Number|String
+  option_id: Number
+  option_value: Number | String
 }
 
 export type ItemBody = {
   productId: number
   variantId: number
-	quantity?: number
-	optionSelections?: OptionSelections
+  quantity?: number
+  optionSelections?: OptionSelections
 }
 
 export type AddItemBody = { item: ItemBody }
@@ -79,18 +79,22 @@ const cartApi: BigcommerceApiHandler<Cart, CartHandlers> = async (
     // Return current cart info
     if (req.method === 'GET') {
       const body = { cartId }
+      console.log(cartId)
       return await handlers['getCart']({ req, res, config, body })
     }
 
     // Create or add an item to the cart
     if (req.method === 'POST') {
+      console.log('Add to cart')
       const body = { ...req.body, cartId }
+      console.log(body)
       return await handlers['addItem']({ req, res, config, body })
     }
 
     // Update item in cart
     if (req.method === 'PUT') {
       const body = { ...req.body, cartId }
+      console.log(body)
       return await handlers['updateItem']({ req, res, config, body })
     }
 

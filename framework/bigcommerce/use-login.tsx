@@ -24,11 +24,13 @@ export const fetcher: HookFetcher<null, LoginBody> = (
     })
   }
 
-  return fetch({
+  const res = fetch({
     ...defaultOpts,
     ...options,
     body: { email, password },
   })
+
+  return res
 }
 
 export function extendHook(customFetcher: typeof fetcher) {

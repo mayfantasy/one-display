@@ -74,4 +74,35 @@ export interface IProduct {
   price_hidden_label: string
 
   bulk_pricing_rules: IBulkPricingRule[]
+
+  variants: IVariant[]
+}
+
+export interface IVariant {
+  bin_picking_number: string
+  calculated_price: number
+  calculated_weight: number
+  cost_price: number
+  depth: number
+  fixed_cost_shipping_price: number
+  gtin: string
+  height: number
+  id: number
+  image_url: string
+  inventory_level: number
+  inventory_warning_level: number
+  is_free_shipping: boolean
+  map_price: number
+  mpn: string
+  price: number
+  product_id: number
+  purchasing_disabled: boolean
+  purchasing_disabled_message: string
+  retail_price: number
+  sale_price: number
+  sku: string
+  sku_id: number | null
+  upc: string
+  weight: number
+  width: number
 }

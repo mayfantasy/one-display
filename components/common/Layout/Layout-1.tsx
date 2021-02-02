@@ -5,7 +5,7 @@ import React, { FC } from 'react'
 import { useUI } from '@components/ui/context'
 import { Navbar, Footer } from '@components/common'
 import { useAcceptCookies } from '@lib/hooks/useAcceptCookies'
-import { Sidebar, Button, Modal, LoadingDots } from '@components/ui'
+import { Sidebar, Modal, LoadingDots } from '@components/ui'
 import { CartSidebarView } from '@components/cart'
 
 import LoginView from '@components/auth/LoginView'
@@ -13,6 +13,7 @@ import { CommerceProvider } from '@framework'
 import type { Page } from '@framework/api/operations/get-all-pages'
 import { IBg } from 'types/ui.types'
 import Banner from './Banner'
+import Button from '../Button'
 
 const Loading = () => (
   <div className="w-80 h-80 flex items-center text-center justify-center p-3">
@@ -59,18 +60,11 @@ const Layout: FC<Props> = ({ children, banner, header }) => {
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   const { locale = 'en-US' } = useRouter()
 
-  const $header = <Navbar navColor={header?.navColor} />
   return (
     <CommerceProvider locale={locale}>
-      <div>
-        {banner ? (
-          <Banner bg={banner.bg}>
-            {$header}
-            {banner.content}
-          </Banner>
-        ) : (
-          $header
-        )}
+      <Navbar navColor={header?.navColor} />
+      <div style={{ zIndex: -1, marginTop: -60 }}>
+        {banner && <Banner bg={banner.bg}>{banner.content}</Banner>}
         {children && <main>{children}</main>}
 
         {/* <Footer pages={pageProps.pages} /> */}
@@ -89,7 +83,7 @@ const Layout: FC<Props> = ({ children, banner, header }) => {
           title="This site uses cookies to improve your experience. By clicking, you agree to our Privacy Policy."
           hide={acceptedCookies}
           action={
-            <Button className="mx-5" onClick={() => onAcceptCookies()}>
+            <Button primary className="mx-5" onClick={() => onAcceptCookies()}>
               Accept cookies
             </Button>
           }

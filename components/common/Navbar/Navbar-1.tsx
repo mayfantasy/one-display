@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from 'react'
 import Link from 'next/link'
-
+import Navigation from 'components/libs/react-sticky-nav'
 import { Logo, Container } from '@components/ui'
 import { Searchbar, UserNav } from '@components/common'
 import cn from 'classnames'
@@ -14,6 +14,7 @@ import { useUI } from '@components/ui/context'
 import { useNav } from 'hooks/nav.hooks'
 import ProductMenu from '../ProductMenu'
 import { NAV_HEIGHT } from 'helpers/constant.helpers'
+import Portal from '@reach/portal'
 
 interface IProps {
   navColor?: string
@@ -39,57 +40,71 @@ const Navbar = (props: IProps) => {
   }, [])
 
   return (
-    <div>
-      <Container>
-        <div
-          style={{ height: NAV_HEIGHT }}
-          className="flex flex-row justify-between"
-        >
-          {/* Left Logo */}
-          <div className="header__logo">
-            <Link href={pageRoutes.homePage.url!}>
-              <a>
-                <Image src="/logo/logo.png" width="60" height="60" />
-              </a>
-            </Link>
-          </div>
+    <Navigation>
+      {(position) => {
+        const isSticked = position !== 'sticky-unfixed'
+        return (
+          <div
+            className="z-90 top-0 w-full"
+            style={{ backgroundColor: isSticked ? 'white' : 'transparent' }}
+          >
+            <Container>
+              <div
+                style={{ height: NAV_HEIGHT }}
+                className="flex flex-row justify-between"
+              >
+                {/* Left Logo */}
+                <div className="header__logo">
+                  <Link href={pageRoutes.homePage.url!}>
+                    <a>
+                      <Image src="/logo/logo.png" width="60" height="60" />
+                    </a>
+                  </Link>
+                </div>
 
-          {/* Nav Display */}
-          {!displaySearchbar && (
-            <nav className="flex flex-row items-center">
-              {navItems.map((item) => (
-                <NavItem navItem={item} key={item.key} navColor={navColor} />
-              ))}
-            </nav>
-          )}
+                {/* Nav Display */}
+                {!displaySearchbar && (
+                  <nav className="flex flex-row items-center">
+                    {navItems.map((item) => (
+                      <NavItem
+                        navItem={item}
+                        key={item.key}
+                        navColor={isSticked ? 'black' : navColor}
+                      />
+                    ))}
+                  </nav>
+                )}
 
-          {/* SearchBar display */}
-          {displaySearchbar && (
-            <div className="w-full flex flex-row items-center max-w-3xl">
-              <Searchbar navColor={navColor} />
-            </div>
-          )}
+                {/* SearchBar display */}
+                {displaySearchbar && (
+                  <div className="w-full flex flex-row items-center max-w-3xl">
+                    <Searchbar navColor={isSticked ? 'black' : navColor} />
+                  </div>
+                )}
 
-          {/* Right section */}
-          <div className="flex flex-row items-center">
-            <SearchOutlined
-              className="text-2xl mr-4 cursor-pointer"
-              style={{ color: navColor }}
-              onClick={() => openSearchbar()}
-            />
-            <UserNav navColor={navColor} />
-            {/* <Link href={pageRoutes.loginPage.url!}>
+                {/* Right section */}
+                <div className="flex flex-row items-center">
+                  <SearchOutlined
+                    className="text-2xl mr-4 cursor-pointer"
+                    style={{ color: isSticked ? 'black' : navColor }}
+                    onClick={() => openSearchbar()}
+                  />
+                  <UserNav navColor={isSticked ? 'black' : navColor} />
+                  {/* <Link href={pageRoutes.loginPage.url!}>
               <a>
                 <Button primary>Login</Button>
               </a>
             </Link> */}
-          </div>
+                </div>
 
-          {/* Product Menu */}
-        </div>
-      </Container>
-      <ProductMenu />
-    </div>
+                {/* Product Menu */}
+              </div>
+            </Container>
+            <ProductMenu />
+          </div>
+        )
+      }}
+    </Navigation>
   )
 }
 

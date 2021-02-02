@@ -9,11 +9,11 @@ interface IProps {
 }
 
 const Button = (props: IProps) => {
-  const { children, primary, onClick, disabled } = props
+  const { children, primary, onClick, disabled, className } = props
   return (
     <div
       onClick={onClick}
-      className={`${
+      className={`${className || ''} ${
         primary ? 'bg-blue-900 hover:bg-blue-800' : ''
       } px-4 py-2 text-white rounded cursor-pointer`}
       style={{

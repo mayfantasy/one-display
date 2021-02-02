@@ -6,60 +6,27 @@ import { Trash, Plus, Minus } from '@components/icons'
 import usePrice from '@framework/use-price'
 import useUpdateItem from '@framework/cart/use-update-item'
 import useRemoveItem from '@framework/cart/use-remove-item'
+import Button from '@components/common/Button'
+import QuantityInput from '@components/form/QuantityInput'
+import { ICart, ILineItem } from 'types/cart.types'
+import {
+  updateCartItemRequest,
+  removeCartItemRequest,
+} from 'requests/cart.request'
+import { CURRENCY_PREFIX } from 'helpers/constant.helpers'
 
-const CartItem = ({
-  item,
-  currencyCode,
-}: {
-  item: any
-  currencyCode: string
-}) => {
-  const { price } = usePrice({
-    amount: item.extended_sale_price,
-    baseAmount: item.extended_list_price,
-    currencyCode,
-  })
-  const updateItem = useUpdateItem(item)
-  const removeItem = useRemoveItem()
+interface IProps {
+  cart: ICart
+  item: ILineItem
+  setCart: (cart: ICart) => void
+  getCart: () => void
+}
+
+const CartItem = (props: IProps) => {
+  const { cart, item, setCart, getCart } = props
+
+  // Handle local quantity change
   const [quantity, setQuantity] = useState(item.quantity)
-  const [removing, setRemoving] = useState(false)
-  const updateQuantity = async (val: number) => {
-    await updateItem({ quantity: val })
-  }
-  const handleQuantity = (e: ChangeEvent<HTMLInputElement>) => {
-    const val = Number(e.target.value)
-
-    if (Number.isInteger(val) && val >= 0) {
-      setQuantity(e.target.value)
-    }
-  }
-  const handleBlur = () => {
-    const val = Number(quantity)
-
-    if (val !== item.quantity) {
-      updateQuantity(val)
-    }
-  }
-  const increaseQuantity = (n = 1) => {
-    const val = Number(quantity) + n
-
-    if (Number.isInteger(val) && val >= 0) {
-      setQuantity(val)
-      updateQuantity(val)
-    }
-  }
-  const handleRemove = async () => {
-    setRemoving(true)
-
-    try {
-      // If this action succeeds then there's no need to do `setRemoving(true)`
-      // because the component will be removed from the view
-      await removeItem({ id: item.id })
-    } catch (error) {
-      setRemoving(false)
-    }
-  }
-
   useEffect(() => {
     // Reset the quantity state if the item quantity changes
     if (item.quantity !== Number(quantity)) {
@@ -67,6 +34,62 @@ const CartItem = ({
     }
   }, [item.quantity])
 
+  const handleQuantity = (e: ChangeEvent<HTMLInputElement>) => {
+    const val = Number(e.target.value)
+
+    if (Number.isInteger(val) && val >= 0) {
+      setQuantity(val)
+    }
+  }
+
+  const handleBlur = () => {
+    const val = Number(quantity)
+
+    if (val !== item.quantity) {
+      updateQuantity(val)
+    }
+  }
+
+  // Update
+  const updateQuantity = async (val: number) => {
+    updateCartItemRequest(cart.id, item.id, {
+      line_item: { quantity: val, product_id: item.product_id },
+    }).then((res) => {
+      setCart(res.data.result.cart)
+    })
+  }
+
+  // Add
+  const increaseQuantity = (n = 1) => {
+    const val = Number(quantity) + n
+
+    if (Number.isInteger(val)) {
+      if (val > 0) {
+        setQuantity(val)
+        updateQuantity(val)
+      }
+      if (val === 0) {
+        setQuantity(val)
+        handleRemove()
+      }
+    }
+  }
+
+  // Remove
+  const [removing, setRemoving] = useState(false)
+  const handleRemove = async () => {
+    setRemoving(true)
+
+    try {
+      removeCartItemRequest(cart.id, item.id).then((res) => {
+        getCart()
+      })
+    } catch (error) {
+      setRemoving(false)
+    }
+  }
+
+  // Render
   return (
     <li
       className={cn('flex flex-row space-x-8 py-8', {
@@ -92,26 +115,18 @@ const CartItem = ({
         </Link>
 
         <div className="flex items-center">
-          <button type="button" onClick={() => increaseQuantity(-1)}>
-            <Minus width={18} height={18} />
-          </button>
-          <label>
-            <input
-              type="number"
-              max={99}
-              min={0}
-              value={quantity}
-              onChange={handleQuantity}
-              onBlur={handleBlur}
-            />
-          </label>
-          <button type="button" onClick={() => increaseQuantity(1)}>
-            <Plus width={18} height={18} />
-          </button>
+          <QuantityInput
+            quantity={quantity}
+            increaseQuantity={increaseQuantity}
+            handleQuantity={handleQuantity}
+            handleBlur={handleBlur}
+          />
         </div>
       </div>
       <div className="flex flex-col justify-between space-y-2 text-base">
-        <span>{price}</span>
+        <span>
+          {CURRENCY_PREFIX} {item.extended_list_price.toFixed(2)}
+        </span>
         <button className="flex justify-end" onClick={handleRemove}>
           <Trash />
         </button>
