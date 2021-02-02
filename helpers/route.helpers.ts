@@ -11,11 +11,11 @@ export const pageRoutes = {
   //   name: 'Login',
   //   url: '/login',
   // } as INavItem,
-  // registerPage: {
-  //   key: 'register-page',
-  //   name: 'Register',
-  //   url: '/register',
-  // } as INavItem,
+  resetPasswordPage: {
+    key: 'reset-password-page',
+    name: 'Reset Password',
+    url: '/reset-password',
+  } as INavItem,
   accountInfoPage: {
     key: 'account-page',
     name: 'My Account',

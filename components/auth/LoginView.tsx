@@ -102,13 +102,23 @@ const LoginView: FC<Props> = () => {
 
         <div className="flex flex-row justify-between items-center">
           <div className="text-gray-700">
-            <span>Not a member yet?</span> Please{' '}
-            <a
-              className="underline text-blue-800 cursor-pointer"
-              onClick={() => setModalView('SIGNUP_VIEW')}
-            >
-              Sign Up
-            </a>
+            <div>
+              <span>Not a member yet?</span> Please{' '}
+              <a
+                className="underline text-blue-800 cursor-pointer"
+                onClick={() => setModalView('SIGNUP_VIEW')}
+              >
+                Sign Up
+              </a>
+            </div>
+            <div>
+              <a
+                className="underline text-blue-800 cursor-pointer"
+                onClick={() => setModalView('FORGOT_VIEW')}
+              >
+                Forgot Password
+              </a>
+            </div>
           </div>
           <Button primary onClick={handleLogin} disabled={disabled}>
             {loading ? 'Logining...' : 'Login'}

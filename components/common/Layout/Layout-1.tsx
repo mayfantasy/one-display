@@ -14,6 +14,7 @@ import type { Page } from '@framework/api/operations/get-all-pages'
 import { IBg } from 'types/ui.types'
 import Banner from './Banner'
 import Button from '../Button'
+import ForgotView from '@components/auth/ForgotView'
 
 const Loading = () => (
   <div className="w-80 h-80 flex items-center text-center justify-center p-3">
@@ -76,7 +77,7 @@ const Layout: FC<Props> = ({ children, banner, header }) => {
         <Modal open={displayModal} onClose={closeModal}>
           {modalView === 'LOGIN_VIEW' && <LoginView />}
           {modalView === 'SIGNUP_VIEW' && <SignUpView />}
-          {modalView === 'FORGOT_VIEW' && <ForgotPassword />}
+          {modalView === 'FORGOT_VIEW' && <ForgotView />}
         </Modal>
 
         <FeatureBar
