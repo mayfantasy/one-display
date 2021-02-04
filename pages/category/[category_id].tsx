@@ -122,7 +122,7 @@ const CategoryPage = () => {
         },
         content: (
           <div className="container m-auto">
-            <div className="w-full mt-16">
+            <div className="w-full mt-36">
               <h1 className="text-white text-5xl text-center leading-tight mb-8">
                 <span className="max-w-lg inline-block">{category?.name}</span>
               </h1>

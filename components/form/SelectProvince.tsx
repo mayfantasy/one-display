@@ -15,7 +15,10 @@ const SelectProvince = (props: IProps) => {
       onChange={onChange}
       label="Province"
       placeholder="Please select a province"
-      options={canadianProvinces}
+      options={canadianProvinces.map((p) => ({
+        label: p.label,
+        value: p.label,
+      }))}
     />
   )
 }

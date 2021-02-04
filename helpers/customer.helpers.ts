@@ -1,0 +1,18 @@
+export const customerAttributeMap = {
+  dba: 2,
+  telephone: 3,
+  fax: 4,
+  mobile: 5,
+  taxContactFirstName: 6,
+  taxContactLastName: 7,
+  taxTelephone: 8,
+  taxMobile: 9,
+  taxable: 10,
+  noneTaxableReason: 11,
+  pst: 12,
+  hst: 13,
+  referredFrom: 14,
+  subscribe: 15,
+  password: 16,
+  underScreening: 17,
+}

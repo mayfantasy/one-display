@@ -11,7 +11,7 @@ const ContactPage = () => {
         },
         content: (
           <div className="container m-auto">
-            <div className="w-full mt-16 flex flex-row">
+            <div className="w-full mt-36 flex flex-row">
               <div className="mr-3" style={{ width: 300 }}>
                 <div className="bg-white bg-opacity-50 w-full mb-3 p-3 rounded">
                   <h2 className="font-bold text-xl mb-4">
