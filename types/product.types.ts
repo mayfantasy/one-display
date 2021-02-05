@@ -1,16 +1,9 @@
+import { IProductImageData } from './image.types'
+
 export enum IProductStatus {
   available,
   disabled,
   preorder,
-}
-
-export interface IProductImage {
-  id: number
-  image_file: string
-  is_thumbnail: boolean
-  sort_order: number
-  url_standard: string
-  url_thumbnail: string
 }
 
 export interface IBulkPricingRule {
@@ -64,8 +57,8 @@ export interface IProduct {
   weight: number
   width: number
 
-  images: IProductImage[]
-  primary_image: IProductImage
+  images: IProductImageData[]
+  primary_image: IProductImageData
 
   price: number
   retail_price: number

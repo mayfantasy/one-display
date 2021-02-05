@@ -35,7 +35,7 @@ const AccountLayout = (props: IProps) => {
             )}
           </ul>
         </div>
-        <div className="flex-1 px-16">{children}</div>
+        <div className="flex-1 px-4 overflow-hidden">{children}</div>
       </div>
     </Layout>
   )

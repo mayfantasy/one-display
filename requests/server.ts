@@ -3,6 +3,7 @@ import Axios, { AxiosError, AxiosRequestConfig } from 'axios'
 export const baseURL = `${process.env.BIGCOMMERCE_STORE_API_URL}/v3`
 export const headers = {
   'X-Auth-Token': process.env.BIGCOMMERCE_STORE_API_TOKEN!,
+  Accept: 'application/json',
 }
 
 const api = Axios.create({

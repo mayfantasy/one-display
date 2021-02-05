@@ -20,11 +20,13 @@ import { ISimpleCategory } from 'types/category.types'
 import { pageRoutes } from 'helpers/route.helpers'
 import Link from 'next/link'
 import Gallery from 'react-photo-gallery'
+import { useRouter } from 'next/router'
 
 interface IProps {}
 
 const ProductMenu = (props: IProps) => {
   const {} = props
+  const router = useRouter()
 
   const [activeCategory, setActiveCategory] = useState<
     ISimpleCategory | undefined
@@ -36,6 +38,10 @@ const ProductMenu = (props: IProps) => {
 
   const { displayProductMenu, closeProductMenu } = useUI()
   useEscClose(closeProductMenu, displayProductMenu)
+
+  useEffect(() => {
+    closeProductMenu()
+  }, [router.asPath])
 
   return (
     <div>
