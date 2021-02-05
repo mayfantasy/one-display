@@ -22,8 +22,8 @@ export enum IOrderSortValue {
 }
 
 export enum IOrderStatus {
-  Awaiting = 'Awaiting',
-  Fulfillment = 'Fulfillment',
+  'Awaiting Fulfillment' = 'Awaiting Fulfillment',
+  'Incomplete' = 'Incomplete',
 }
 
 export enum IPaymentStatus {

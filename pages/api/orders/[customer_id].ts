@@ -7,6 +7,7 @@ import {
   IOrder,
   IOrderProduct,
   IOrderProductWithImages,
+  IOrderStatus,
 } from 'types/order.types'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -20,7 +21,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       )
 
       res.statusCode = 200
-      res.json({ result: { orders: orderRes.data } })
+      res.json({
+        result: {
+          orders: orderRes.data.filter(
+            (o) => o.status !== IOrderStatus.Incomplete
+          ),
+        },
+      })
     } catch (e) {
       res.statusCode = 500
       res.json({ error: e.message })

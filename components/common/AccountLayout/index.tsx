@@ -15,7 +15,7 @@ const AccountLayout = (props: IProps) => {
   return (
     <Layout>
       <div className="container m-auto flex flex-row py-32">
-        <div className="w-60">
+        <div className="w-40">
           <ul>
             {[pageRoutes.accountInfoPage, pageRoutes.accountOrdersPage].map(
               (n) => (
@@ -26,7 +26,7 @@ const AccountLayout = (props: IProps) => {
                   key={n.key}
                 >
                   <Link href={n.url!}>
-                    <div className="h-full w-full px-8 py-4 ">
+                    <div className="h-full w-full px-8 py-2 ">
                       <a>{n.name}</a>
                     </div>
                   </Link>

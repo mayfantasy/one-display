@@ -15,7 +15,11 @@ const OrderCollapsable = (props: IProps) => {
   return (
     <div>
       {/* Row */}
-      <div className="flex flex-row p-2 bg-gray-200 border-b border-gray-700 text-center">
+      <div
+        className={`flex flex-row p-2 border-b border-gray-700 text-center ${
+          order ? '' : 'bg-gray-200'
+        }`}
+      >
         <div className="w-28">
           {order ? (
             format(new Date(order.date_created), 'yyyy-MM-dd')

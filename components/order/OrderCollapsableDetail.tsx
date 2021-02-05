@@ -18,7 +18,7 @@ const OrderCollapsableDetail = (props: IProps) => {
   return (
     <div>
       {/* Products */}
-      {loadingProducts && <span>Loading products...</span>}
+      {loadingProducts && <span>Loading items...</span>}
       {products?.map((p) => (
         <div className="flex items-center mb-1" key={p.product.id}>
           <div className="mr-2">
