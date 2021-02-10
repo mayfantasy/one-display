@@ -34,9 +34,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         // 2. Send email with reset password link
         await monfent.post(`/email/send`, {
           meta: {
-            collection_handle: 'propromo',
-            schema_handle: 'email_template',
-            id: '289449657430442502',
+            collection_handle: 'jw-beaver-website',
+            schema_handle: 'jwbeaver_email_template',
+            id: '290180250431652354',
           },
           to_email: email,
           data: {
