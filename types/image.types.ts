@@ -7,6 +7,7 @@ export interface IProductImageData {
   image_file: string
   is_thumbnail: boolean
   sort_order: number
+  url_zoom: string
   url_standard: string
   url_thumbnail: string
 }

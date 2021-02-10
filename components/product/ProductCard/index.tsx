@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ISimpleCategory } from 'types/category.types'
 import { IProductPrice } from 'types/product-pricing.types'
-import { IProduct } from 'types/product.types'
+import { IProductData } from 'types/product.types'
 import BasicPrice from '../BasicPrice'
 import PriceRange from '../MyPrice'
 import MyPrice from '../MyPrice'
@@ -14,59 +14,32 @@ import { useState } from 'react'
 import { useUI } from '@components/ui/context'
 import { addCartItemRequest } from 'requests/cart.request'
 import { getCartItemsCount } from 'helpers/cart.helpers'
-import { useCart } from 'hooks/cart.hooks'
+import { useAddToCart, useCart } from 'hooks/cart.hooks'
 import { useCookies } from 'react-cookie'
 import { useCartId } from 'hooks/cart-id.hooks'
+import SquareImage from '@components/SquareImage'
 
 interface IProps {
-  product: IProduct
+  product: IProductData
   productPrice?: IProductPrice
 }
 
 const ProductCard = (props: IProps) => {
   const { product, productPrice } = props
 
-  const { openSidebar, setCartItemsCount } = useUI()
-  const cartId = useCartId()
-
   // Handle add to cart
-  const [loading, setLoading] = useState(false)
+  const { addToCart, loading } = useAddToCart(product.id)
 
-  const addToCart = async () => {
-    if (cartId) {
-      setLoading(true)
-      try {
-        const newCart = await addCartItemRequest(cartId, {
-          line_items: [
-            {
-              product_id: product.id,
-              quantity: 1,
-            },
-          ],
-        })
-        setCartItemsCount(getCartItemsCount(newCart.data.result.cart))
-        openSidebar()
-        setLoading(false)
-      } catch (err) {
-        setLoading(false)
-      }
-    }
-  }
+  // Render
   return (
     <div>
       <Link href={pageRoutes.productPage(product.id).url!}>
         <a className="block w-full rounded border border-gray-300 hover:border-blue-700 overflow-hidden cursor-pointer bg-gray-100">
           {/* Image */}
-          <div className="w-full flex flex-row justify-center relative overflow-hidden bg-white">
-            <div className="responsive-square" />
-            <div className="w-full h-full absolute flex flex-row items-center">
-              <img
-                className="w-full transform hover:scale-125 transition duration-200"
-                alt={product.name}
-                src={product.primary_image?.url_standard || '/logo/logo.png'}
-              />
-            </div>
-          </div>
+          <SquareImage
+            src={product.primary_image?.url_standard}
+            alt={product.name}
+          />
 
           <div className="py-10 px-4 rounded-b">
             {/* Description */}

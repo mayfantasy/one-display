@@ -7,7 +7,7 @@ import {
   IProductPrice,
   IProductPricingPayload,
 } from 'types/product-pricing.types'
-import { IProduct } from 'types/product.types'
+import { IProductData } from 'types/product.types'
 
 export const getProductPricingRequest = (
   payload: IProductPricingPayload

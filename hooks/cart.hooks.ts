@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import { useUI } from '@components/ui/context'
-import { getCartRequest } from 'requests/cart.request'
+import { addCartItemRequest, getCartRequest } from 'requests/cart.request'
 import { getCartItemsCount } from 'helpers/cart.helpers'
 import {
   _30_DAYS_COOKIE_DURATION,
   _3_YEARS_COOKIE_DURATION,
 } from 'helpers/constant.helpers'
 import { ICart } from 'types/cart.types'
+import { useCartId } from './cart-id.hooks'
 
 export const useCart = () => {
   const [cart, setCart] = useState<ICart>()
@@ -40,4 +41,31 @@ export const useCart = () => {
   }, [])
 
   return { cart, loading, setCart, getCart }
+}
+
+export const useAddToCart = (product_id?: number, quantity?: number) => {
+  const [loading, setLoading] = useState(false)
+  const { openSidebar, setCartItemsCount } = useUI()
+  const cartId = useCartId()
+  const addToCart = async () => {
+    if (cartId && product_id) {
+      setLoading(true)
+      try {
+        const newCart = await addCartItemRequest(cartId, {
+          line_items: [
+            {
+              product_id,
+              quantity: quantity || 1,
+            },
+          ],
+        })
+        setCartItemsCount(getCartItemsCount(newCart.data.result.cart))
+        openSidebar()
+        setLoading(false)
+      } catch (err) {
+        setLoading(false)
+      }
+    }
+  }
+  return { addToCart, loading }
 }

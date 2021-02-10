@@ -1,8 +1,8 @@
 import { CURRENCY_PREFIX } from 'helpers/constant.helpers'
-import { IProduct } from 'types/product.types'
+import { IProductData } from 'types/product.types'
 
 interface IProps {
-  product: IProduct
+  product: IProductData
 }
 
 const BasicPrice = (props: IProps) => {

@@ -1,4 +1,5 @@
 import { IProductImageData } from './image.types'
+import { IBulkPricingDiscountType } from './product-pricing.types'
 
 export enum IProductStatus {
   available,
@@ -11,9 +12,13 @@ export interface IBulkPricingRule {
   amount: number
   quantity_max: number
   quantity_min: number
-  type: string
+  type: IBulkPricingDiscountType
 }
+
 export interface IProduct {
+  data: IProductData
+}
+export interface IProductData {
   sku: string
   id: number
   brand_id: number

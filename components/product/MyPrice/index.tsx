@@ -1,9 +1,9 @@
 import { CURRENCY_PREFIX } from 'helpers/constant.helpers'
 import { IProductPrice } from 'types/product-pricing.types'
-import { IProduct } from 'types/product.types'
+import { IProductData } from 'types/product.types'
 
 interface IProps {
-  product: IProduct
+  product: IProductData
   productPrice: IProductPrice
 }
 

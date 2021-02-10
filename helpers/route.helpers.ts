@@ -60,41 +60,41 @@ export const pageRoutes = {
     name: 'Contact Us',
     url: '/contact',
   } as INavItem,
-  cartPage: {
-    key: 'cart',
-    name: 'Cart',
-    url: '/cart',
-  } as INavItem,
-  privacyPage: {
-    key: 'privacy',
-    name: 'Privacy Statement',
-    url: '/privacy-statement',
-  } as INavItem,
-  termsOfUsePage: {
-    key: 'terms-of-use',
-    name: 'Terms of Use',
-    url: '/terms-of-use',
-  } as INavItem,
-  shippingPolicyPage: {
-    key: 'shipping-policy',
-    name: 'Shipping Policy',
-    url: '/shipping-policy',
-  } as INavItem,
-  returnAndRefundPage: {
-    key: 'return-and-refund-policy',
-    name: 'Return & Refund Policy',
-    url: '/return-and-refund',
-  } as INavItem,
-  productSearchPage: {
-    key: 'search',
-    name: 'Search Products',
-    url: '/products/search',
-  },
-  productListPage: (handle: string) =>
-    ({
-      key: 'product-list-page',
-      name: 'Product List',
-      url: `/products/${handle}`,
-      dynamicUrl: '/products/[collectionHandle]',
-    } as INavItem),
+  // cartPage: {
+  //   key: 'cart',
+  //   name: 'Cart',
+  //   url: '/cart',
+  // } as INavItem,
+  // privacyPage: {
+  //   key: 'privacy',
+  //   name: 'Privacy Statement',
+  //   url: '/privacy-statement',
+  // } as INavItem,
+  // termsOfUsePage: {
+  //   key: 'terms-of-use',
+  //   name: 'Terms of Use',
+  //   url: '/terms-of-use',
+  // } as INavItem,
+  // shippingPolicyPage: {
+  //   key: 'shipping-policy',
+  //   name: 'Shipping Policy',
+  //   url: '/shipping-policy',
+  // } as INavItem,
+  // returnAndRefundPage: {
+  //   key: 'return-and-refund-policy',
+  //   name: 'Return & Refund Policy',
+  //   url: '/return-and-refund',
+  // } as INavItem,
+  // productSearchPage: {
+  //   key: 'search',
+  //   name: 'Search Products',
+  //   url: '/products/search',
+  // },
+  // productListPage: (handle: string) =>
+  //   ({
+  //     key: 'product-list-page',
+  //     name: 'Product List',
+  //     url: `/products/${handle}`,
+  //     dynamicUrl: '/products/[collectionHandle]',
+  //   } as INavItem),
 }

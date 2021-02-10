@@ -16,7 +16,7 @@ import { getProductPricingRequest } from 'requests/product-pricing.request'
 import useSWR from 'swr'
 import { ICategory, ISimpleCategory } from 'types/category.types'
 import { IProductPrice, IProductPriceMap } from 'types/product-pricing.types'
-import { IProduct } from 'types/product.types'
+import { IProductData } from 'types/product.types'
 import { getHashFromPath } from 'helpers/route.helpers'
 import Button from '@components/common/Button'
 
@@ -37,7 +37,7 @@ const CategoryPage = () => {
   }, [categoryId])
 
   // Products
-  const [products, setProducts] = useState<IProduct[]>()
+  const [products, setProducts] = useState<IProductData[]>()
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
