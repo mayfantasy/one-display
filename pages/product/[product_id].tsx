@@ -15,12 +15,26 @@ import ProductPrice from 'components/product/ProductPrice'
 import { useCartId } from 'hooks/cart-id.hooks'
 import { useUI } from '@components/ui/context'
 import { useAddToCart } from 'hooks/cart.hooks'
+import BulkPricingTable from './BulkPricingTable'
+
+type ITabKey = 'description' | 'templates'
+interface ITab {
+  key: ITabKey
+  name: string
+}
+
+interface ITabContent {
+  key: ITabKey
+  content: React.ReactNode
+}
 
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1)
 
   const { product } = useProduct()
   const { price } = useProductPricing(product, quantity)
+
+  const [currentTab, setCurrentTab] = useState<ITabKey>('description')
 
   /**
    * ||===========
@@ -153,18 +167,61 @@ const ProductPage = () => {
                   </div>
                 </div>
 
+                <br />
+                <br />
+
                 {/* Bulk pricing goes here */}
                 <div>
-                  <pre>
-                    {JSON.stringify(product.bulk_pricing_rules, null, 2)}
-                  </pre>
+                  <BulkPricingTable rules={product.bulk_pricing_rules} />
                 </div>
               </div>
             </div>
 
+            <br />
+
             {/* Lower section */}
             <div>
-              <pre>{JSON.stringify(product, null, 2)}</pre>
+              {/* Tabs */}
+              <div className="flex">
+                {([
+                  { name: 'Description', key: 'description' },
+                  { name: 'Templates', key: 'templates' },
+                ] as ITab[]).map((t) => (
+                  <div
+                    key={t.key}
+                    onClick={() => setCurrentTab(t.key)}
+                    className={`text-center px-6 py-3 rounded-t cursor-pointer ${
+                      currentTab === t.key ? 'bg-gray-200 font-bold' : ''
+                    }`}
+                  >
+                    {t.name}
+                  </div>
+                ))}
+              </div>
+              {/* Content */}
+              <div className="bg-gray-200">
+                {([
+                  {
+                    key: 'description',
+                    content: (
+                      <div>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: product.description,
+                          }}
+                        />
+                      </div>
+                    ),
+                  },
+                  { key: 'templates', content: <div>Templates goes here</div> },
+                ] as ITabContent[]).map((c) => (
+                  <div key={c.key}>
+                    {currentTab === c.key && (
+                      <div className="p-6">{c.content}</div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </main>
         )}
