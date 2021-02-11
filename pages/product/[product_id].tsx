@@ -16,6 +16,7 @@ import { useCartId } from 'hooks/cart-id.hooks'
 import { useUI } from '@components/ui/context'
 import { useAddToCart } from 'hooks/cart.hooks'
 import BulkPricingTable from './BulkPricingTable'
+import { useTemplateList } from 'hooks/template.hooks'
 
 type ITabKey = 'description' | 'templates'
 interface ITab {
@@ -33,6 +34,7 @@ const ProductPage = () => {
 
   const { product } = useProduct()
   const { price } = useProductPricing(product, quantity)
+  const { templates } = useTemplateList(product)
 
   const [currentTab, setCurrentTab] = useState<ITabKey>('description')
 
@@ -191,7 +193,7 @@ const ProductPage = () => {
                     key={t.key}
                     onClick={() => setCurrentTab(t.key)}
                     className={`text-center px-6 py-3 rounded-t cursor-pointer ${
-                      currentTab === t.key ? 'bg-gray-200 font-bold' : ''
+                      currentTab === t.key ? 'bg-gray-100 font-bold' : ''
                     }`}
                   >
                     {t.name}
@@ -199,7 +201,7 @@ const ProductPage = () => {
                 ))}
               </div>
               {/* Content */}
-              <div className="bg-gray-200">
+              <div className="bg-gray-100">
                 {([
                   {
                     key: 'description',
@@ -213,11 +215,36 @@ const ProductPage = () => {
                       </div>
                     ),
                   },
-                  { key: 'templates', content: <div>Templates goes here</div> },
+                  {
+                    key: 'templates',
+                    content: templates ? (
+                      <div className="flex">
+                        {templates.map((t, i) => (
+                          <a className="text-center block mr-4" href={t}>
+                            <div className="flex justify-center">
+                              <img
+                                src="/pdf_file_icon.png"
+                                style={{ width: 40 }}
+                              />
+                            </div>
+                            <span className="underline">Template {i + 1}</span>
+                          </a>
+                        ))}
+                      </div>
+                    ) : (
+                      <div>
+                        <i className="text-gray-400">
+                          No print templates for this product.
+                        </i>
+                      </div>
+                    ),
+                  },
                 ] as ITabContent[]).map((c) => (
                   <div key={c.key}>
                     {currentTab === c.key && (
-                      <div className="p-6">{c.content}</div>
+                      <div className="p-6" style={{ minHeight: 300 }}>
+                        {c.content}
+                      </div>
                     )}
                   </div>
                 ))}

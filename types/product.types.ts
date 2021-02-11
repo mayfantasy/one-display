@@ -18,6 +18,12 @@ export interface IBulkPricingRule {
 export interface IProduct {
   data: IProductData
 }
+
+export interface ICustomField {
+  id: string
+  name: string
+  value: string
+}
 export interface IProductData {
   sku: string
   id: number
@@ -28,7 +34,7 @@ export interface IProductData {
   categories: number[]
   description: string
   fixed_cost_shipping_price: number
-
+  custom_fields: ICustomField[]
   inventory_level: number
   inventory_tracking: string
   inventory_warning_level: number

@@ -15,3 +15,9 @@ export const getProductByProductIdRequest = (
 ): Promise<AxiosResponse<{ result: { product: IProductData } }>> => {
   return api.get(`/api/products/detail/${id}`)
 }
+
+export const getProductTemplateList = (
+  objectId: string
+): Promise<AxiosResponse<{ result: { templates: string[] } }>> => {
+  return api.get(`/api/products/template/${objectId}`)
+}
