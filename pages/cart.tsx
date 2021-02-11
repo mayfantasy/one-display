@@ -78,7 +78,7 @@ export default function Cart() {
           <div className="px-4 sm:px-6 flex-1">
             <Text variant="pageHeading">My Cart</Text>
             <Text variant="sectionHeading">Review your Order</Text>
-            <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accents-2 border-b border-accents-2">
+            {/* <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accents-2 border-b border-accents-2">
               {items.map((item) => (
                 <CartItem
                   key={item.id}
@@ -86,7 +86,7 @@ export default function Cart() {
                   currencyCode={data?.currency.code!}
                 />
               ))}
-            </ul>
+            </ul> */}
             <div className="my-6">
               <Text>
                 Before you leave, take a look at these items. We picked them

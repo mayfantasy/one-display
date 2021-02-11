@@ -3,7 +3,7 @@ import { IBulkPricingDiscountType } from 'types/product-pricing.types'
 import { IBulkPricingRule } from 'types/product.types'
 
 interface IProps {
-  rules: IBulkPricingRule[]
+  rules?: IBulkPricingRule[]
 }
 
 const BulkPricingTable = (props: IProps) => {
@@ -53,7 +53,7 @@ const BulkPricingTable = (props: IProps) => {
         <th className="border px-2 py-1">Quantity</th>
         <th className="border px-2 py-1">Discount</th>
       </tr>
-      {rules.map((r) => (
+      {(rules || []).map((r) => (
         <tr key={r.id}>
           <td className="border px-2 py-1">{getRange(r)}</td>
           <td className="border px-2 py-1">{getDiscount(r)}</td>
