@@ -20,7 +20,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Head />
       <CookiesProvider>
         <ManagedUIContext>
           <Layout pageProps={pageProps}>

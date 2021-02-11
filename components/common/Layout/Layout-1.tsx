@@ -15,6 +15,7 @@ import { IBg } from 'types/ui.types'
 import Banner from './Banner'
 import Button from '../Button'
 import ForgotView from '@components/auth/ForgotView'
+import Head from 'next/head'
 
 const Loading = () => (
   <div className="w-80 h-80 flex items-center text-center justify-center p-3">
@@ -41,6 +42,8 @@ const FeatureBar = dynamic(
 
 interface Props {
   children?: React.ReactNode
+  pageTitle?: string
+  pageDescription?: string
   header?: {
     navColor?: string
   }
@@ -50,7 +53,13 @@ interface Props {
   }
 }
 
-const Layout: FC<Props> = ({ children, banner, header }) => {
+const Layout: FC<Props> = ({
+  children,
+  banner,
+  header,
+  pageTitle,
+  pageDescription,
+}) => {
   const {
     displaySidebar,
     displayModal,
@@ -61,36 +70,54 @@ const Layout: FC<Props> = ({ children, banner, header }) => {
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   const { locale = 'en-US' } = useRouter()
 
+  const title = `${pageTitle} | JW Beaver Inc.` || 'JW Beaver Inc.'
+  const description =
+    pageDescription ||
+    'Providing B2B services From Standard Sign Products to Customized Solutions'
+
   return (
-    <CommerceProvider locale={locale}>
-      <Navbar navColor={header?.navColor} />
-      <div style={{ zIndex: -1, marginTop: -60 }}>
-        {banner && <Banner bg={banner.bg}>{banner.content}</Banner>}
-        {children && <main>{children}</main>}
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta name="twitter:card" content={description}></meta>
+      </Head>
+      <CommerceProvider locale={locale}>
+        <Navbar navColor={header?.navColor} />
+        <div style={{ zIndex: -1, marginTop: -60 }}>
+          {banner && <Banner bg={banner.bg}>{banner.content}</Banner>}
+          {children && <main>{children}</main>}
 
-        {/* <Footer pages={pageProps.pages} /> */}
+          {/* <Footer pages={pageProps.pages} /> */}
 
-        <Sidebar open={displaySidebar} onClose={closeSidebar}>
-          <CartSidebarView />
-        </Sidebar>
+          <Sidebar open={displaySidebar} onClose={closeSidebar}>
+            <CartSidebarView />
+          </Sidebar>
 
-        <Modal open={displayModal} onClose={closeModal}>
-          {modalView === 'LOGIN_VIEW' && <LoginView />}
-          {modalView === 'SIGNUP_VIEW' && <SignUpView />}
-          {modalView === 'FORGOT_VIEW' && <ForgotView />}
-        </Modal>
+          <Modal open={displayModal} onClose={closeModal}>
+            {modalView === 'LOGIN_VIEW' && <LoginView />}
+            {modalView === 'SIGNUP_VIEW' && <SignUpView />}
+            {modalView === 'FORGOT_VIEW' && <ForgotView />}
+          </Modal>
 
-        <FeatureBar
-          title="This site uses cookies to improve your experience. By clicking, you agree to our Privacy Policy."
-          hide={acceptedCookies}
-          action={
-            <Button primary className="mx-5" onClick={() => onAcceptCookies()}>
-              Accept cookies
-            </Button>
-          }
-        />
-      </div>
-    </CommerceProvider>
+          <FeatureBar
+            title="This site uses cookies to improve your experience. By clicking, you agree to our Privacy Policy."
+            hide={acceptedCookies}
+            action={
+              <Button
+                primary
+                className="mx-5"
+                onClick={() => onAcceptCookies()}
+              >
+                Accept cookies
+              </Button>
+            }
+          />
+        </div>
+      </CommerceProvider>
+    </>
   )
 }
 

@@ -86,7 +86,7 @@ const ProductPage = () => {
   const images = product?.images.length ? product.images : []
 
   return (
-    <Layout>
+    <Layout pageTitle={product?.name}>
       <div>
         {product && (
           <main className="container m-auto">

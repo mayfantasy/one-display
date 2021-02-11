@@ -6,14 +6,16 @@ import Layout from '../Layout'
 
 interface IProps {
   children: React.ReactNode
+  pageTitle?: string
+  pageDescription?: string
 }
 
 const AccountLayout = (props: IProps) => {
-  const { children } = props
+  const { children, pageTitle, pageDescription } = props
   const router = useRouter()
 
   return (
-    <Layout>
+    <Layout pageTitle={pageTitle} pageDescription={pageDescription}>
       <div className="container m-auto flex flex-row py-32">
         <div className="w-40">
           <ul>

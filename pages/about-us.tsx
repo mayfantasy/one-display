@@ -3,6 +3,7 @@ import { Layout } from '@components/common'
 const AboutUsPage = () => {
   return (
     <Layout
+      pageTitle="About Us"
       banner={{
         bg: {
           src: '/bg/about-us.png',

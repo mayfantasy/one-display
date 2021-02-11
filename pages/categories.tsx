@@ -6,6 +6,7 @@ const CategoriesPage = () => {
   return (
     <>
       <Layout
+        pageTitle="Categories"
         banner={{
           bg: {
             src: '/bg/categories.jpeg',

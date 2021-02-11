@@ -108,7 +108,7 @@ const AccountInfoPage = () => {
   }, [handleValidation])
 
   return (
-    <AccountLayout>
+    <AccountLayout pageTitle="My Account">
       <div>
         <div className="max-w-xl overflow-scroll" style={{ width: 400 }}>
           {/* <h2 className="text-black  text-2xl text-center mb-4">

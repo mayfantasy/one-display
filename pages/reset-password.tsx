@@ -61,6 +61,7 @@ const ResetPasswordPage = () => {
   }, [handleValidation])
   return (
     <Layout
+      pageTitle="Reset Password"
       banner={{
         bg: { src: '/bg/home.png', mask: 'rgba(0,0,0,0.2)' },
         content: (

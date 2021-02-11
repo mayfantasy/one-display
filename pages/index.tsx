@@ -85,6 +85,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout
+      pageTitle="Home"
       banner={{
         bg: { src: '/bg/home.png', mask: 'rgba(0,0,0,0.2)' },
         content: (

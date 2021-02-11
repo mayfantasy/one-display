@@ -114,6 +114,7 @@ const CategoryPage = () => {
 
   return (
     <Layout
+      pageTitle={category?.name}
       banner={{
         bg: {
           src: '/bg/categories.jpeg',

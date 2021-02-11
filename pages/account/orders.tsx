@@ -5,7 +5,7 @@ import { useOrders } from 'hooks/orders.hooks'
 const AccountOrdersPage = () => {
   const { orders, loading } = useOrders()
   return (
-    <AccountLayout>
+    <AccountLayout pageTitle="My Orders">
       <div>
         <OrderCollapsable />
         {loading && <span>Loading orders...</span>}

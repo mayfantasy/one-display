@@ -4,6 +4,7 @@ import Subscribe from '@components/form/Subscribe'
 const ContactPage = () => {
   return (
     <Layout
+      pageTitle="Contact"
       banner={{
         bg: {
           src: '/bg/contact.png',
