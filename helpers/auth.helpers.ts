@@ -40,20 +40,28 @@ const getLoginUrl = (
 
 export const generateLoginUrl = (customerId: number, checkoutUrl: string) => {
   const clientId = process.env.BIGCOMMERCE_STORE_API_CLIENT_ID!
-  const clientSecret = process.env.BIGCOMMERCE_STORE_API_TOKEN!
+  const clientSecret = process.env.BIGCOMMERCE_STORE_API_CLIENT_SECRET!
   const storeHash = process.env.BIGCOMMERCE_STORE_HASH!
   const storeUrl = 'https://jw-beaver-inc.mybigcommerce.com'
 
-  console.log(
-    '======',
-    customerId,
-    storeHash,
-    storeUrl,
-    clientId,
-    clientSecret,
-    checkoutUrl,
-    '======'
-  )
+  console.log('======')
+  console.log(customerId)
+  console.log(storeHash)
+  console.log(storeUrl)
+  console.log(clientId)
+  console.log(clientSecret)
+  console.log(checkoutUrl)
+  console.log('======')
+  // console.log(
+  //   '======',
+  //   customerId,
+  //   storeHash,
+  //   storeUrl,
+  //   clientId,
+  //   clientSecret,
+  //   checkoutUrl,
+  //   '======'
+  // )
 
   const loginUrl = getLoginUrl(
     customerId,
