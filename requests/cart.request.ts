@@ -50,6 +50,6 @@ export const removeCartItemRequest = (
 // Checkout Url
 export const createCheckoutUrlRequest = (
   cartId: string
-): Promise<AxiosResponse<{ result: { checkout: ICheckoutUrl } }>> => {
+): Promise<AxiosResponse<{ result: { url: string } }>> => {
   return api.post(`/api/cart/${cartId}/checkout-url`)
 }

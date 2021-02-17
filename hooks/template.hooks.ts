@@ -1,6 +1,6 @@
 import { TEMPLATE_LIST_CUSTOM_FIELD_KEY } from 'helpers/constant.helpers'
 import { useEffect, useState } from 'react'
-import { getProductTemplateList } from 'requests/products.request'
+import { getProductTemplateListRequest } from 'requests/products.request'
 import { IProductData } from 'types/product.types'
 
 export const useTemplateList = (product?: IProductData) => {
@@ -21,7 +21,7 @@ export const useTemplateList = (product?: IProductData) => {
       const objectId = getTemplateListObjectId(product)
       if (objectId) {
         setLoading(true)
-        getProductTemplateList(objectId)
+        getProductTemplateListRequest(objectId)
           .then((res) => {
             const templates = res.data.result.templates
             setTemplates(templates)

@@ -45,11 +45,12 @@ const ProductCard = (props: IProps) => {
             {/* Description */}
             <div className="mb-4">
               <div className="w-full top-10">
-                <h2 className="text-lg text-left mb-4">
+                <h2 className="text-lg text-left mb-4" style={{ height: 48 }}>
                   <strong>{product.name}</strong>
                 </h2>
                 <div
-                  className="text-left text-gray-600"
+                  style={{ height: 75 }}
+                  className="text-left text-gray-600 overflow-ellipsis overflow-hidden"
                   dangerouslySetInnerHTML={{ __html: product.description }}
                 />
               </div>
@@ -69,7 +70,7 @@ const ProductCard = (props: IProps) => {
           {/* <div className="absolute w-full">123</div> */}
         </a>
       </Link>
-      <div className="text-center">
+      {/* <div className="text-center">
         <Button
           aria-label="Add to Cart"
           primary
@@ -79,7 +80,7 @@ const ProductCard = (props: IProps) => {
         >
           Add to Cart
         </Button>
-      </div>
+      </div> */}
     </div>
   )
 }

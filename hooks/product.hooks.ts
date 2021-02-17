@@ -1,6 +1,11 @@
+import { getCategoryTreeByIdPath } from 'helpers/category.helpers'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { getProductByProductIdRequest } from 'requests/products.request'
+import {
+  getProductByProductIdRequest,
+  getProductsByCategoryIdRequest,
+} from 'requests/products.request'
+import { ISimpleCategory } from 'types/category.types'
 import { IProductData } from 'types/product.types'
 
 export const useProduct = () => {
@@ -23,4 +28,33 @@ export const useProduct = () => {
   }, [product_id])
 
   return { product, loading }
+}
+
+export const useCategoryProducts = () => {
+  const router = useRouter()
+  // Category & it's sub-categories
+  const categoryId = router.query.category_id as string
+  const [category, setCategory] = useState<ISimpleCategory>()
+
+  useEffect(() => {
+    if (categoryId) {
+      setCategory(getCategoryTreeByIdPath([Number(categoryId)]))
+    }
+  }, [categoryId])
+
+  // Products
+  const [products, setProducts] = useState<IProductData[]>()
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (categoryId) {
+      setLoading(true)
+      getProductsByCategoryIdRequest(categoryId).then((res) => {
+        setProducts(res.data.result.products)
+        setLoading(false)
+      })
+    }
+  }, [categoryId])
+
+  return { category, categoryId, products, loading }
 }

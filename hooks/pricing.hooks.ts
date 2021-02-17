@@ -3,7 +3,11 @@ import { getPriceFromBulkPricing } from 'helpers/pricing.helpers'
 import { useEffect, useState } from 'react'
 import { getProductPricingRequest } from 'requests/product-pricing.request'
 import { getProductByProductIdRequest } from 'requests/products.request'
-import { IPricing, IProductPrice } from 'types/product-pricing.types'
+import {
+  IPricing,
+  IProductPrice,
+  IProductPriceMap,
+} from 'types/product-pricing.types'
 import { IProduct, IProductData } from 'types/product.types'
 
 export const useProductPricing = (
@@ -69,4 +73,34 @@ export const useProductPricing = (
   }, [quantity])
 
   return { price: bulkPrice, loading }
+}
+
+export const useProductsPricing = (products: IProductData[] | undefined) => {
+  const customerData = useCustomer()
+  const [pricing, setPricing] = useState<IProductPriceMap>()
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (
+      products?.length &&
+      customerData.data &&
+      customerData.data.customerGroupId
+    ) {
+      setLoading(true)
+      getProductPricingRequest({
+        customer_group_id: customerData.data.customerGroupId,
+        items: products.map((p) => ({ product_id: p.id })),
+      }).then((res) => {
+        const data = res.data.result.pricing
+        const map = data.reduce((a, c) => {
+          a[c.product_id] = c
+          return a
+        }, {} as IProductPriceMap)
+        setPricing(map)
+        console.log(pricing)
+        setLoading(false)
+      })
+    }
+  }, [products, customerData.data])
+  return { pricing, loading }
 }

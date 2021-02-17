@@ -19,64 +19,15 @@ import { IProductPrice, IProductPriceMap } from 'types/product-pricing.types'
 import { IProductData } from 'types/product.types'
 import { getHashFromPath } from 'helpers/route.helpers'
 import Button from '@components/common/Button'
+import { useCategoryProducts } from 'hooks/product.hooks'
+import { useProductsPricing } from 'hooks/pricing.hooks'
 
 const CategoryPage = () => {
   const router = useRouter()
 
-  // Customer
-  const customerData = useCustomer()
-
-  // Category & it's sub-categories
-  const categoryId = router.query.category_id as string
-  const [category, setCategory] = useState<ISimpleCategory>()
-
-  useEffect(() => {
-    if (categoryId) {
-      setCategory(getCategoryTreeByIdPath([Number(categoryId)]))
-    }
-  }, [categoryId])
-
-  // Products
-  const [products, setProducts] = useState<IProductData[]>()
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    if (categoryId) {
-      setLoading(true)
-      getProductsByCategoryIdRequest(categoryId).then((res) => {
-        setProducts(res.data.result.products)
-        setLoading(false)
-      })
-    }
-  }, [categoryId])
-
-  // Pricing
-
-  const [pricing, setPricing] = useState<IProductPriceMap>()
-  const [pricingLoading, setPricingLoading] = useState(false)
-
-  useEffect(() => {
-    if (
-      products?.length &&
-      customerData.data &&
-      customerData.data.customerGroupId
-    ) {
-      setPricingLoading(true)
-      getProductPricingRequest({
-        customer_group_id: customerData.data.customerGroupId,
-        items: products.map((p) => ({ product_id: p.id })),
-      }).then((res) => {
-        const data = res.data.result.pricing
-        const map = data.reduce((a, c) => {
-          a[c.product_id] = c
-          return a
-        }, {} as IProductPriceMap)
-        setPricing(map)
-        console.log(pricing)
-        setPricingLoading(false)
-      })
-    }
-  }, [products, customerData.data])
+  // Hooks
+  const { category, categoryId, products } = useCategoryProducts()
+  const { pricing } = useProductsPricing(products)
 
   // Handle hash
   useEffect(() => {

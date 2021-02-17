@@ -14,8 +14,8 @@ import {
   _30_DAYS_COOKIE_DURATION,
 } from 'helpers/constant.helpers'
 import { getCartItemsCount } from 'helpers/cart.helpers'
-import Button from '@components/common/Button'
 import { useCheckoutUrl } from 'hooks/checkout.hooks'
+import Button from '@components/common/Button'
 
 const CartSidebarView: FC = () => {
   const { closeSidebar } = useUI()
@@ -127,12 +127,12 @@ const CartSidebarView: FC = () => {
                   </span>
                 </div>
               </div>
-              {url?.checkout_url && (
+              {url && (
                 <Button
                   primary
                   className="text-center"
                   onClick={() => {
-                    window.location.href = url.checkout_url
+                    window.location.href = url
                   }}
                 >
                   Proceed to Checkout

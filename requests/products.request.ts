@@ -16,8 +16,14 @@ export const getProductByProductIdRequest = (
   return api.get(`/api/products/detail/${id}`)
 }
 
-export const getProductTemplateList = (
+export const getProductTemplateListRequest = (
   objectId: string
 ): Promise<AxiosResponse<{ result: { templates: string[] } }>> => {
   return api.get(`/api/products/template/${objectId}`)
+}
+
+export const searchProductsRequest = (
+  keyword: string
+): Promise<AxiosResponse<{ result: { products: IProductData[] } }>> => {
+  return api.get(`/api/products/search?keyword=${keyword}`)
 }

@@ -3,7 +3,7 @@ import { createCheckoutUrlRequest } from 'requests/cart.request'
 import { ICheckoutUrl } from 'types/cart.types'
 
 export const useCheckoutUrl = (cartId?: string) => {
-  const [url, setUrl] = useState<ICheckoutUrl>()
+  const [url, setUrl] = useState<string>()
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export const useCheckoutUrl = (cartId?: string) => {
       setLoading(true)
       createCheckoutUrlRequest(cartId)
         .then((res) => {
-          const u = res.data.result.checkout
+          const u = res.data.result.url
           setUrl(u)
         })
         .finally(() => {
