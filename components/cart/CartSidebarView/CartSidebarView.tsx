@@ -123,7 +123,7 @@ const CartSidebarView: FC = () => {
                 <div className="flex justify-between border-t border-accents-3 py-3 font-bold mb-10">
                   <span>Total</span>
                   <span>
-                    {CURRENCY_PREFIX} {cart?.cart_amount.toFixed(2)}
+                    {CURRENCY_PREFIX} {cart?.base_amount.toFixed(2)}
                   </span>
                 </div>
               </div>
