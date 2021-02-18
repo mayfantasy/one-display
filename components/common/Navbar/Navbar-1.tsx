@@ -77,7 +77,7 @@ const Navbar = (props: IProps) => {
 
                 {/* SearchBar display */}
                 {displaySearchbar && (
-                  <div className="w-full flex flex-row items-center max-w-3xl">
+                  <div className="w-full flex flex-row items-center max-w-2xl md:max-w-3xl">
                     <Searchbar navColor={isSticked ? 'black' : navColor} />
                   </div>
                 )}

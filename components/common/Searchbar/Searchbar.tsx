@@ -41,7 +41,7 @@ const Searchbar: FC<Props> = ({ className, id = 'search', navColor }) => {
   }
 
   return (
-    <div className="w-full flex flex-row items-center">
+    <div className="w-full flex flex-row items-center px-2">
       <label className="hidden" htmlFor={id}>
         Search
       </label>
