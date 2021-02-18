@@ -1,16 +1,10 @@
 import { FC, useEffect, useState, useCallback } from 'react'
-import useLogin from '@framework/use-login'
 import { useUI } from '@components/ui/context'
 import { validate } from 'email-validator'
-import Image from 'next/image'
 import Divider from '@components/common/Divider'
 import Input from '@components/form/Input'
-import Link from 'next/link'
-import { pageRoutes } from 'helpers/route.helpers'
 import Button from '@components/common/Button'
-import { validatePassword } from 'helpers/form.helpers'
 import { forgotPasswordRequest } from 'requests/auth.request'
-import { CheckCircleTwoTone, CheckSquareTwoTone } from '@ant-design/icons'
 
 interface Props {}
 

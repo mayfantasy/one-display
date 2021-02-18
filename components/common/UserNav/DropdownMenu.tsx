@@ -3,9 +3,6 @@ import Link from 'next/link'
 import { FC, useRef, useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
-
-import { Avatar } from '@components/common'
-import { Moon, Sun } from '@components/icons'
 import { useUI } from '@components/ui/context'
 import ClickOutside from '@lib/click-outside'
 import ScrollLock, { TouchScrollable } from 'react-scrolllock'
@@ -79,26 +76,10 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
           aria-label="Menu"
           className="flex flex-row items-center cursor-pointer"
         >
-          {/* Avata */}
-          {/* <Avatar className="mr-2" /> */}
           <span className="mr-2">
             <ShoppingFilled className="text-2xl" />
           </span>
           <span>{$count}</span>
-
-          {/* Name and email */}
-          {/* <div>
-            <div className="-mb-2">
-              <small>
-                <strong>
-                  {customerData?.firstName} {customerData?.lastName}
-                </strong>
-              </small>
-            </div>
-            <div className="text-gray-500">
-              <small>{customerData?.email}</small>
-            </div>
-          </div> */}
         </div>
 
         {/* Dropdown */}

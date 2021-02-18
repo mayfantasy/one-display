@@ -1,17 +1,10 @@
 import { FC, useEffect } from 'react'
-import Link from 'next/link'
-import cn from 'classnames'
-import useCart from '@framework/cart/use-cart'
 import useCustomer from '@framework/use-customer'
-import { Heart, Bag } from '@components/icons'
 import { useUI } from '@components/ui/context'
 import DropdownMenu from './DropdownMenu'
-import { Avatar } from '@components/common'
 import Button from '../Button'
 import { useCookies } from 'react-cookie'
-import { ShoppingCartOutlined, ShoppingOutlined } from '@ant-design/icons'
 import { _3_YEARS_COOKIE_DURATION } from 'helpers/constant.helpers'
-import { ICart } from 'types/cart.types'
 
 interface IProps {
   className?: string

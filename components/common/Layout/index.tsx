@@ -3,9 +3,7 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import React, { FC } from 'react'
 import { useUI } from '@components/ui/context'
-import { Navbar, Footer } from '@components/common'
 import { useAcceptCookies } from '@lib/hooks/useAcceptCookies'
-import { Sidebar, Modal, LoadingDots } from '@components/ui'
 import { CartSidebarView } from '@components/cart'
 
 import LoginView from '@components/auth/LoginView'
@@ -16,25 +14,19 @@ import Banner from './Banner'
 import Button from '../Button'
 import ForgotView from '@components/auth/ForgotView'
 import Head from 'next/head'
-
-const Loading = () => (
-  <div className="w-80 h-80 flex items-center text-center justify-center p-3">
-    <LoadingDots />
-  </div>
-)
+import Navbar from '../Navbar'
+import Sidebar from '@components/ui/Sidebar'
+import Modal from '@components/ui/Modal'
 
 const dynamicProps = {
-  loading: () => <Loading />,
+  loading: () => <span>Loading...</span>,
 }
 
 const SignUpView = dynamic(
   () => import('@components/auth/SignUpView'),
   dynamicProps
 )
-const ForgotPassword = dynamic(
-  () => import('@components/auth/ForgotPassword'),
-  dynamicProps
-)
+
 const FeatureBar = dynamic(
   () => import('@components/common/FeatureBar'),
   dynamicProps

@@ -1,8 +1,4 @@
 import rangeMap from '@lib/range-map'
-import { Layout } from '@components/common'
-import { ProductCard } from '@components/product'
-import { Grid, Marquee, Hero } from '@components/ui'
-import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 
 import { getConfig } from '@framework/api'
@@ -10,6 +6,7 @@ import getAllProducts from '@framework/api/operations/get-all-products'
 import getSiteInfo from '@framework/api/operations/get-site-info'
 import getAllPages from '@framework/api/operations/get-all-pages'
 import Subscribe from '@components/form/Subscribe'
+import Layout from '@components/common/Layout'
 
 export async function getStaticProps({
   preview,

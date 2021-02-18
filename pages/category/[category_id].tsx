@@ -1,26 +1,13 @@
-import { Layout } from '@components/common'
 import ProductCard from '@components/product/ProductCard'
-
-import { ProductNode } from '@framework/api/operations/get-all-products'
-import useSearch from '@framework/products/use-search'
-import useCustomer from '@framework/use-customer'
-import {
-  getCategoryTreeByIdPath,
-  getSubCategoryBlockId,
-} from 'helpers/category.helpers'
+import { getSubCategoryBlockId } from 'helpers/category.helpers'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-import { getCategoryByIdRequest } from 'requests/category.request'
-import { getProductsByCategoryIdRequest } from 'requests/products.request'
-import { getProductPricingRequest } from 'requests/product-pricing.request'
-import useSWR from 'swr'
-import { ICategory, ISimpleCategory } from 'types/category.types'
-import { IProductPrice, IProductPriceMap } from 'types/product-pricing.types'
-import { IProductData } from 'types/product.types'
+import { useEffect } from 'react'
+
 import { getHashFromPath } from 'helpers/route.helpers'
-import Button from '@components/common/Button'
-import { useCategoryProducts } from 'hooks/product.hooks'
+
 import { useProductsPricing } from 'hooks/pricing.hooks'
+import { useCategoryProducts } from 'hooks/product.hooks'
+import Layout from '@components/common/Layout'
 
 const CategoryPage = () => {
   const router = useRouter()

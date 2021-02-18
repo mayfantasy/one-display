@@ -1,4 +1,4 @@
-import { Layout } from '@components/common'
+import Layout from '@components/common/Layout'
 
 const AboutUsPage = () => {
   return (

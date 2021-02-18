@@ -1,4 +1,4 @@
-import { Layout } from '@components/common'
+import Layout from '@components/common/Layout'
 import CategoryCard from '@components/product/CategoryCard'
 import { categoryTree } from 'helpers/category.helpers'
 

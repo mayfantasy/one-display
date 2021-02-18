@@ -1,4 +1,3 @@
-import { Layout } from '@components/common'
 import Button from '@components/common/Button'
 import QuantityInput from '@components/form/QuantityInput'
 import BasicPrice from '@components/product/BasicPrice'
@@ -17,6 +16,7 @@ import { useUI } from '@components/ui/context'
 import { useAddToCart } from 'hooks/cart.hooks'
 import BulkPricingTable from './BulkPricingTable'
 import { useTemplateList } from 'hooks/template.hooks'
+import Layout from '@components/common/Layout'
 
 type ITabKey = 'description' | 'templates'
 interface ITab {

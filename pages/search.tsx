@@ -1,4 +1,4 @@
-import { Layout } from '@components/common'
+import Layout from '@components/common/Layout'
 import ProductCard from '@components/product/ProductCard'
 import { useProductsPricing } from 'hooks/pricing.hooks'
 import { useSearch } from 'hooks/search.hooks'

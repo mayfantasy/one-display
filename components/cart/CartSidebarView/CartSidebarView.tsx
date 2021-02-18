@@ -1,21 +1,16 @@
-import { FC, useEffect, useState } from 'react'
-import cn from 'classnames'
-import { UserNav } from '@components/common'
-
+import { FC } from 'react'
 import { Bag, Cross, Check } from '@components/icons'
 import { useUI } from '@components/ui/context'
 import { useCart } from 'hooks/cart.hooks'
-import usePrice from '@framework/use-price'
 import CartItem from '../CartItem'
-import { ICart } from 'types/cart.types'
 
 import {
   CURRENCY_PREFIX,
   _30_DAYS_COOKIE_DURATION,
 } from 'helpers/constant.helpers'
-import { getCartItemsCount } from 'helpers/cart.helpers'
 import { useCheckoutUrl } from 'hooks/checkout.hooks'
 import Button from '@components/common/Button'
+import UserNav from '@components/common/UserNav/UserNav'
 
 const CartSidebarView: FC = () => {
   const { closeSidebar } = useUI()

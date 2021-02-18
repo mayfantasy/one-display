@@ -1,6 +1,6 @@
-import { Layout } from '@components/common'
 import Button from '@components/common/Button'
 import Divider from '@components/common/Divider'
+import Layout from '@components/common/Layout'
 import Input from '@components/form/Input'
 import { pageRoutes } from 'helpers/route.helpers'
 import { useRouter } from 'next/router'
