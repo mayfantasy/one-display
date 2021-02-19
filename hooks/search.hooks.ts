@@ -28,3 +28,38 @@ export const useSearch = () => {
 
   return { products, keyword, loading }
 }
+
+export const useSearchBar = () => {
+  const router = useRouter()
+  const queryKey = router.query.key as string
+  const [keyword, setKeyword] = useState('')
+
+  const { closeSearchbar } = useUI()
+
+  useEffect(() => {
+    router.prefetch('/search')
+    console.log(router.pathname)
+    if (router.pathname !== '/search') {
+      closeSearchbar()
+    }
+  }, [])
+
+  useEffect(() => {
+    if (queryKey) {
+      setKeyword(queryKey)
+    }
+  }, [router.query])
+
+  const handleSearch = () => {
+    router.push(
+      {
+        pathname: `/search`,
+        query: keyword ? { key: keyword } : {},
+      },
+      undefined,
+      { shallow: true }
+    )
+  }
+
+  return { handleSearch, keyword, setKeyword, closeSearchbar }
+}

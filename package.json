@@ -67,6 +67,7 @@
     "react": "^16.14.0",
     "react-cookie": "^4.0.3",
     "react-dom": "^16.14.0",
+    "react-loading-skeleton": "^2.1.1",
     "react-merge-refs": "^1.1.0",
     "react-photo-gallery": "^8.0.0",
     "react-scrolllock": "^5.0.1",

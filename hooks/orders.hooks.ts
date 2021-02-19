@@ -9,7 +9,7 @@ import {
   IOrderProductWithImages,
   IOrderShippingAddress,
 } from 'types/order.types'
-import { useCustomerId } from './customer-id.hooks'
+import { useCustomerId } from './customer.hooks'
 
 export const useOrders = () => {
   const customerId = useCustomerId()
@@ -17,8 +17,9 @@ export const useOrders = () => {
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     if (customerId) {
+      console.log(customerId)
       setLoading(true)
-      getCustomerOrderRequest(customerId)
+      getCustomerOrderRequest(customerId as number)
         .then((res) => {
           setOrders(res.data.result.orders)
         })

@@ -1,5 +1,5 @@
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons'
-import Button from '@components/common/Button'
+import Button from 'components/common/Button'
 import { ChangeEvent } from 'react'
 
 interface IProps {

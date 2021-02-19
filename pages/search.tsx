@@ -1,9 +1,10 @@
-import Layout from '@components/common/Layout'
+import Layout from 'components/common/Layout'
 import ProductCard from '@components/product/ProductCard'
 import { useProductsPricing } from 'hooks/pricing.hooks'
 import { useSearch } from 'hooks/search.hooks'
 
 import { useRouter } from 'next/router'
+import Skeleton from 'react-loading-skeleton'
 
 const SearchPage = () => {
   const { products, keyword, loading } = useSearch()
@@ -16,14 +17,24 @@ const SearchPage = () => {
           <h1 className="text-black text-4xl text-center leading-tight mb-8">
             <span className="max-w-lg inline-block">{`Search result for '${keyword}'`}</span>
           </h1>
-          <p className="text-gray-500 text-center">
-            <span className="max-w-lg inline-block text-2xl">
-              {count} result{count > 1 && 's'} found
-            </span>
-          </p>
+          {!loading && products && (
+            <p className="text-gray-500 text-center">
+              <span className="max-w-lg inline-block text-2xl">
+                {count} result{count > 1 && 's'} found
+              </span>
+            </p>
+          )}
         </div>
 
-        {products && (
+        {loading && (
+          <div>
+            <Skeleton height={200} />
+            <Skeleton height={200} />
+            <Skeleton height={200} />
+          </div>
+        )}
+
+        {!loading && products && (
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
               {products.map((p) => (

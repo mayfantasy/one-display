@@ -13,6 +13,8 @@ import { NAV_HEIGHT } from 'helpers/constant.helpers'
 import Searchbar from '../Searchbar'
 import Container from '@components/ui/Container'
 import UserNav from '../UserNav/UserNav'
+import { useRouter } from 'next/router'
+import { useSearchBar } from 'hooks/search.hooks'
 
 interface IProps {
   navColor?: string
@@ -21,7 +23,10 @@ const Navbar = (props: IProps) => {
   const { navColor } = props
   const [hasScrolled, setHasScrolled] = useState(false)
   const { displaySearchbar, openSearchbar, displayProductMenu } = useUI()
+
   const navItems = useNav()
+
+  const searchbarProps = useSearchBar()
 
   useEffect(() => {
     const handleScroll = throttle(() => {
@@ -76,17 +81,22 @@ const Navbar = (props: IProps) => {
                 {/* SearchBar display */}
                 {displaySearchbar && (
                   <div className="w-full flex flex-row items-center max-w-2xl md:max-w-3xl">
-                    <Searchbar navColor={isSticked ? 'black' : navColor} />
+                    <Searchbar
+                      navColor={isSticked ? 'black' : navColor}
+                      {...searchbarProps}
+                    />
                   </div>
                 )}
 
                 {/* Right section */}
                 <div className="flex flex-row items-center">
-                  <SearchOutlined
-                    className="text-2xl mr-4 cursor-pointer"
-                    style={{ color: isSticked ? 'black' : navColor }}
-                    onClick={() => openSearchbar()}
-                  />
+                  {!displaySearchbar && (
+                    <SearchOutlined
+                      className="text-2xl mr-4 cursor-pointer"
+                      style={{ color: isSticked ? 'black' : navColor }}
+                      onClick={() => openSearchbar()}
+                    />
+                  )}
                   <UserNav navColor={isSticked ? 'black' : navColor} />
                   {/* <Link href={pageRoutes.loginPage.url!}>
               <a>

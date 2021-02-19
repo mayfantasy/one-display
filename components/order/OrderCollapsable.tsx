@@ -1,5 +1,5 @@
 import { MinusCircleFilled, PlusCircleFilled } from '@ant-design/icons'
-import PriceItem from '@components/common/PriceItem'
+import PriceItem from 'components/common/PriceItem'
 import { format } from 'date-fns'
 import { useState } from 'react'
 import { IOrder } from 'types/order.types'

@@ -18,19 +18,8 @@ import Navbar from '../Navbar'
 import Sidebar from '@components/ui/Sidebar'
 import Modal from '@components/ui/Modal'
 
-const dynamicProps = {
-  loading: () => <span>Loading...</span>,
-}
-
-const SignUpView = dynamic(
-  () => import('@components/auth/SignUpView'),
-  dynamicProps
-)
-
-const FeatureBar = dynamic(
-  () => import('@components/common/FeatureBar'),
-  dynamicProps
-)
+const SignUpView = dynamic(() => import('@components/auth/SignUpView'))
+const FeatureBar = dynamic(() => import('components/common/FeatureBar'))
 
 interface Props {
   children?: React.ReactNode

@@ -8,7 +8,11 @@ import {
   _3_YEARS_COOKIE_DURATION,
 } from 'helpers/constant.helpers'
 import { ICart } from 'types/cart.types'
-import { useCartId } from './cart-id.hooks'
+import { useCookie } from './cookie.hooks'
+
+export const useCartId = () => {
+  return useCookie<string>('cart_id')
+}
 
 export const useCart = () => {
   const [cart, setCart] = useState<ICart>()

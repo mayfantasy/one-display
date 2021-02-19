@@ -6,7 +6,7 @@ import { Trash, Plus, Minus } from '@components/icons'
 import usePrice from '@framework/use-price'
 import useUpdateItem from '@framework/cart/use-update-item'
 import useRemoveItem from '@framework/cart/use-remove-item'
-import Button from '@components/common/Button'
+import Button from 'components/common/Button'
 import QuantityInput from '@components/form/QuantityInput'
 import { ICart, ILineItem } from 'types/cart.types'
 import {

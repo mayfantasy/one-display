@@ -1,4 +1,11 @@
-import { FC, useEffect, useMemo, useState } from 'react'
+import {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import cn from 'classnames'
 
 import { useRouter } from 'next/router'
@@ -9,37 +16,21 @@ interface Props {
   className?: string
   id?: string
   navColor?: string
+  handleSearch: () => void
+  keyword: string
+  setKeyword: (key: string) => void
+  closeSearchbar: () => void
 }
 
-const Searchbar: FC<Props> = ({ className, id = 'search', navColor }) => {
-  const router = useRouter()
-  const q = router.query.q as string
-  const [key, setKey] = useState('')
-
-  const { closeSearchbar } = useUI()
-
-  useEffect(() => {
-    router.prefetch('/search')
-  }, [])
-
-  useEffect(() => {
-    console.log(q)
-    if (q) {
-      setKey(q)
-    }
-  }, [router.query])
-
-  const handleSearch = () => {
-    router.push(
-      {
-        pathname: `/search`,
-        query: key ? { key } : {},
-      },
-      undefined,
-      { shallow: true }
-    )
-  }
-
+const Searchbar: FC<Props> = ({
+  className,
+  id = 'search',
+  navColor,
+  handleSearch,
+  keyword,
+  setKeyword,
+  closeSearchbar,
+}) => {
   return (
     <div className="w-full flex flex-row items-center px-2">
       <label className="hidden" htmlFor={id}>
@@ -61,9 +52,10 @@ const Searchbar: FC<Props> = ({ className, id = 'search', navColor }) => {
           style={{ color: navColor }}
           className="flex-1 border-none bg-transparent h-8 p-2 placeholder-gray-300 outline-none"
           id={id}
-          value={key}
+          value={keyword}
           onChange={(e) => {
-            setKey(e.target.value)
+            console.log(e.target.value)
+            setKeyword(e.target.value)
           }}
           placeholder="Search for products..."
           onKeyUp={(e) => {
@@ -76,7 +68,7 @@ const Searchbar: FC<Props> = ({ className, id = 'search', navColor }) => {
         <div
           style={{ color: navColor }}
           onClick={() => {
-            setKey('')
+            setKeyword('')
             closeSearchbar()
           }}
           className="text-black h-8 p-2 flex items-center cursor-pointer"

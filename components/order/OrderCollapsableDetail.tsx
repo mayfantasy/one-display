@@ -2,8 +2,8 @@ import { useOrderProducts, useOrderShippingAddress } from 'hooks/orders.hooks'
 import { IOrder } from 'types/order.types'
 import Image from 'next/image'
 import { CURRENCY_PREFIX } from 'helpers/constant.helpers'
-import PriceItem from '@components/common/PriceItem'
-import Divider from '@components/common/Divider'
+import PriceItem from 'components/common/PriceItem'
+import Divider from 'components/common/Divider'
 
 interface IProps {
   order: IOrder

@@ -1,4 +1,4 @@
-import Layout from '@components/common/Layout'
+import Layout from 'components/common/Layout'
 import Subscribe from '@components/form/Subscribe'
 
 const ContactPage = () => {
@@ -19,7 +19,7 @@ const ContactPage = () => {
                     Toronto Head Office
                   </h2>
                   <p className="mb-4">
-                    07 Ferrier Street
+                    107 Ferrier Street
                     <br />
                     Markham, ON
                     <br /> Canada, L3R3K6

@@ -1,9 +1,9 @@
 import { FC, useEffect, useState, useCallback } from 'react'
 import { useUI } from '@components/ui/context'
 import { validate } from 'email-validator'
-import Divider from '@components/common/Divider'
+import Divider from 'components/common/Divider'
 import Input from '@components/form/Input'
-import Button from '@components/common/Button'
+import Button from 'components/common/Button'
 import { forgotPasswordRequest } from 'requests/auth.request'
 
 interface Props {}

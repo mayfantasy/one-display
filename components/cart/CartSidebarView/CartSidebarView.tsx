@@ -9,8 +9,8 @@ import {
   _30_DAYS_COOKIE_DURATION,
 } from 'helpers/constant.helpers'
 import { useCheckoutUrl } from 'hooks/checkout.hooks'
-import Button from '@components/common/Button'
-import UserNav from '@components/common/UserNav/UserNav'
+import Button from 'components/common/Button'
+import UserNav from 'components/common/UserNav/UserNav'
 
 const CartSidebarView: FC = () => {
   const { closeSidebar } = useUI()

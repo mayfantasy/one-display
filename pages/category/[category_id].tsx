@@ -7,13 +7,14 @@ import { getHashFromPath } from 'helpers/route.helpers'
 
 import { useProductsPricing } from 'hooks/pricing.hooks'
 import { useCategoryProducts } from 'hooks/product.hooks'
-import Layout from '@components/common/Layout'
+import Layout from 'components/common/Layout'
+import Skeleton from 'react-loading-skeleton'
 
 const CategoryPage = () => {
   const router = useRouter()
 
   // Hooks
-  const { category, categoryId, products } = useCategoryProducts()
+  const { category, loading, categoryId, products } = useCategoryProducts()
   const { pricing } = useProductsPricing(products)
 
   // Handle hash
@@ -89,12 +90,16 @@ const CategoryPage = () => {
                   >
                     {sc.name}
                   </h3>
-                  {getProductLinesBySubCategoryId(sc.id)}
+                  {loading && <Skeleton height={200} className="w-full" />}
+                  {!loading && getProductLinesBySubCategoryId(sc.id)}
                 </div>
               ))}
             </div>
           ) : (
-            getProductLinesBySubCategoryId(Number(categoryId))
+            <>
+              {loading && <Skeleton height={200} className="w-full" />}
+              {!loading && getProductLinesBySubCategoryId(Number(categoryId))}
+            </>
           )}
         </div>
       </div>

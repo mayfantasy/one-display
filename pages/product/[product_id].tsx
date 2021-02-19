@@ -1,4 +1,4 @@
-import Button from '@components/common/Button'
+import Button from 'components/common/Button'
 import QuantityInput from '@components/form/QuantityInput'
 import BasicPrice from '@components/product/BasicPrice'
 import SquareImage from '@components/SquareImage'
@@ -11,12 +11,14 @@ import { IImage } from 'types/category.types'
 import { IProductImageData } from 'types/image.types'
 import { IProductData } from 'types/product.types'
 import ProductPrice from 'components/product/ProductPrice'
-import { useCartId } from 'hooks/cart-id.hooks'
 import { useUI } from '@components/ui/context'
 import { useAddToCart } from 'hooks/cart.hooks'
 import BulkPricingTable from './BulkPricingTable'
 import { useTemplateList } from 'hooks/template.hooks'
-import Layout from '@components/common/Layout'
+import Layout from 'components/common/Layout'
+import { useCustomerId } from 'hooks/customer.hooks'
+import { useProductQuantity } from 'hooks/product-quantity.hooks'
+import Skeleton from 'react-loading-skeleton'
 
 type ITabKey = 'description' | 'templates'
 interface ITab {
@@ -30,37 +32,21 @@ interface ITabContent {
 }
 
 const ProductPage = () => {
-  const [quantity, setQuantity] = useState(1)
+  const customerId = useCustomerId()
+  const {
+    quantity,
+    setQuantity,
+    handleQuantity,
+    increaseQuantity,
+  } = useProductQuantity()
 
-  const { product } = useProduct()
+  const { product, loading: loadingProduct } = useProduct()
   const { price } = useProductPricing(product, quantity)
   const { templates } = useTemplateList(product)
 
+  const { openModal } = useUI()
+
   const [currentTab, setCurrentTab] = useState<ITabKey>('description')
-
-  /**
-   * ||===========
-   * || Quantity
-   */
-  const handleQuantity = (e: ChangeEvent<HTMLInputElement>) => {
-    const val = Number(e.target.value)
-    if (Number.isInteger(val) && val > 0) {
-      setQuantity(val)
-    }
-  }
-
-  // increase quantity
-  const increaseQuantity = (n = 1) => {
-    const val = Number(quantity) + n
-    if (Number.isInteger(val)) {
-      if (val > 0) {
-        setQuantity(val)
-      }
-      if (val <= 0) {
-        setQuantity(1)
-      }
-    }
-  }
 
   /**
    * ||===========
@@ -77,7 +63,10 @@ const ProductPage = () => {
    * ||===========
    * || Add to cart
    */
-  const { addToCart, loading } = useAddToCart(product?.id, quantity)
+  const { addToCart, loading: addingToCart } = useAddToCart(
+    product?.id,
+    quantity
+  )
 
   /**
    * ||===========
@@ -86,12 +75,24 @@ const ProductPage = () => {
   const images = product?.images.length ? product.images : []
 
   return (
-    <Layout pageTitle={product?.name}>
-      <div>
-        {product && (
-          <main className="container m-auto">
+    <Layout pageTitle={product?.name || ''}>
+      <div className="mt-24 container m-auto">
+        {loadingProduct && (
+          <div className="md:flex">
+            <div className="md:w-1/2 md:pr-1">
+              <Skeleton height={300} />
+            </div>
+            <div className="md:w-1/2">
+              <Skeleton height={45} />
+              <Skeleton height={36} />
+              <Skeleton height={90} />
+            </div>
+          </div>
+        )}
+        {!loadingProduct && product && (
+          <main>
             {/* Upper section */}
-            <div className="mt-24 md:flex">
+            <div className="md:flex">
               {/* Images */}
               <div className="md:w-1/2 w-full md:pr-1 pr-0">
                 <SquareImage
@@ -158,15 +159,28 @@ const ProductPage = () => {
                     />
                   </div>
 
-                  <div>
-                    <Button
-                      aria-label="Add to Cart"
-                      primary
-                      onClick={addToCart}
-                    >
-                      Add to Cart
-                    </Button>
-                  </div>
+                  {customerId && (
+                    <div>
+                      <Button
+                        aria-label="Add to Cart"
+                        primary
+                        onClick={addToCart}
+                      >
+                        Add to Cart
+                      </Button>
+                    </div>
+                  )}
+                  {!customerId && (
+                    <div>
+                      <Button
+                        aria-label="Add to Cart"
+                        primary
+                        onClick={openModal}
+                      >
+                        Login to buy this product
+                      </Button>
+                    </div>
+                  )}
                 </div>
 
                 <br />
