@@ -141,47 +141,50 @@ const ProductPage = () => {
                 />
 
                 <br />
-
-                {/* Price */}
-                <div className="mb-2">
-                  {/* <pre>{JSON.stringify(price, null, 2)}</pre> */}
-                  {price && <ProductPrice price={price} />}
-                </div>
-
-                {/* Quantity */}
-                <div className="flex">
-                  <div className="mr-2">
-                    <QuantityInput
-                      quantity={quantity}
-                      increaseQuantity={increaseQuantity}
-                      handleQuantity={handleQuantity}
-                      handleBlur={() => setQuantity(quantity)}
-                    />
+                {!customerId && (
+                  <div>
+                    <Button
+                      aria-label="Login to view price and purchase"
+                      primary
+                      onClick={openModal}
+                    >
+                      Login to view price and purchase
+                    </Button>
                   </div>
+                )}
+                {customerId && (
+                  <>
+                    {/* Price */}
+                    <div className="mb-2">
+                      {/* <pre>{JSON.stringify(price, null, 2)}</pre> */}
+                      {price && <ProductPrice price={price} />}
+                    </div>
 
-                  {customerId && (
-                    <div>
-                      <Button
-                        aria-label="Add to Cart"
-                        primary
-                        onClick={addToCart}
-                      >
-                        Add to Cart
-                      </Button>
+                    {/* Quantity */}
+                    <div className="flex">
+                      <div className="mr-2">
+                        <QuantityInput
+                          quantity={quantity}
+                          increaseQuantity={increaseQuantity}
+                          handleQuantity={handleQuantity}
+                          handleBlur={() => setQuantity(quantity)}
+                        />
+                      </div>
+
+                      {customerId && (
+                        <div>
+                          <Button
+                            aria-label="Add to Cart"
+                            primary
+                            onClick={addToCart}
+                          >
+                            Add to Cart
+                          </Button>
+                        </div>
+                      )}
                     </div>
-                  )}
-                  {!customerId && (
-                    <div>
-                      <Button
-                        aria-label="Add to Cart"
-                        primary
-                        onClick={openModal}
-                      >
-                        Login to buy this product
-                      </Button>
-                    </div>
-                  )}
-                </div>
+                  </>
+                )}
 
                 <br />
                 <br />

@@ -6,6 +6,9 @@ import BasicPrice from '../BasicPrice'
 import MyPrice from '../MyPrice'
 import SquareImage from '@components/SquareImage'
 import { useAddToCart } from 'hooks/cart.hooks'
+import { useCustomerId } from 'hooks/customer.hooks'
+import Button from '@components/common/Button'
+import { useUI } from '@components/ui/context'
 
 interface IProps {
   product: IProductData
@@ -17,6 +20,8 @@ const ProductCard = (props: IProps) => {
 
   // Handle add to cart
   const { addToCart, loading } = useAddToCart(product.id)
+  const customerId = useCustomerId()
+  const { openModal } = useUI()
 
   // Render
   return (
@@ -45,14 +50,22 @@ const ProductCard = (props: IProps) => {
             </div>
 
             {/* Pricing */}
-            <div>
-              <div className="w-full top-0">
-                {productPrice ? (
-                  <MyPrice productPrice={productPrice} product={product} />
-                ) : (
-                  <BasicPrice product={product} />
-                )}
+            {customerId && (
+              <div className="mb-4">
+                <div className="w-full top-0">
+                  {productPrice ? (
+                    <MyPrice productPrice={productPrice} product={product} />
+                  ) : (
+                    <BasicPrice product={product} />
+                  )}
+                </div>
               </div>
+            )}
+
+            <div>
+              <Button aria-label="Login to view price and purchase" primary>
+                View Detail
+              </Button>
             </div>
           </div>
           {/* <div className="absolute w-full">123</div> */}
