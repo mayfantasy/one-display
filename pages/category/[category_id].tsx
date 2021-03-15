@@ -42,14 +42,22 @@ const CategoryPage = () => {
     )
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-        {subCategoryProducts &&
+        {subCategoryProducts && subCategoryProducts.length ? (
           subCategoryProducts.map((p) => (
             <ProductCard
               key={p.id}
               product={p}
               productPrice={pricing?.[p.id]}
             />
-          ))}
+          ))
+        ) : (
+          <div>
+            <i className="text-gray-500">
+              No items yet. Please contact us for the latest product
+              information.
+            </i>
+          </div>
+        )}
       </div>
     )
   }
