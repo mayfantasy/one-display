@@ -28,6 +28,23 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/01-Acrylic-Sign-Products.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/01-Acrylic-Sign-Products.jpg',
+        width: 1,
+        height: 1,
+      },
+      {
+        src: '/menu-categories/01-Acrylic-Sign-Products.jpg',
+        width: 1,
+        height: 1,
+      },
+    ],
     children: [
       {
         id: 101,
@@ -138,6 +155,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/02-Backdrop-Stands-&-Pop-Up-Display.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/02-Backdrop-Stands-&-Pop-Up-Display.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 43,
@@ -216,6 +245,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/03-Banner-Stands-copy.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/03-Banner-Stands-copy.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 46,
@@ -256,6 +297,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/04-Brochure-&-Newspaper-Holders.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/04-Brochure-&-Newspaper-Holders.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 49,
@@ -288,6 +341,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/05-Crowd-Control-Systems.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/05-Crowd-Control-Systems.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 51,
@@ -328,6 +393,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/06-Flags.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/06-Flags.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 54,
@@ -376,6 +453,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/07-Floor-Sign-Holder.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/07-Floor-Sign-Holder.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 58,
@@ -432,6 +521,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/08-Metal-A-Frame-Sign-Holders.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/08-Metal-A-Frame-Sign-Holders.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 63,
@@ -480,6 +581,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/09-Metal-Lawn-Sign-Holders.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/09-Metal-Lawn-Sign-Holders.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 67,
@@ -512,6 +625,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/10-PVC-A-Boards.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/10-PVC-A-Boards.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 69,
@@ -543,6 +668,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/11-Sign-Brackets-&-Banner-Hangers.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/11-Sign-Brackets-&-Banner-Hangers.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 71,
@@ -567,6 +704,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/12-Frame-Sign-Holders.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/12-Frame-Sign-Holders.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 72,
@@ -618,6 +767,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/13-Standoffs-&-Cable-wire-System.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/13-Standoffs-&-Cable-wire-System.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 74,
@@ -683,6 +844,13 @@ export const categoryTree: ISimpleCategory[] = [
         name: 'Cable–Wire System',
         is_visible: true,
         url: '/standoffs-cable-wire-system/cable-wire-system/',
+        images: [
+          {
+            src: '/menu-categories/',
+            height: 1,
+            width: 1,
+          },
+        ],
         children: [
           {
             id: 98,
@@ -735,6 +903,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/14-Way–Finding-Signs.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/14-Way–Finding-Signs.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [
       {
         id: 77,
@@ -783,6 +963,18 @@ export const categoryTree: ISimpleCategory[] = [
       width: 500,
       height: 500,
     },
+    banner_image: {
+      src: '/banner-categories/15-Wind-Resistant-Sign-Holders.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/15-Wind-Resistant-Sign-Holders.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
     children: [],
   },
 ]

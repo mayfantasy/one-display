@@ -6,6 +6,7 @@ export interface ISimpleCategory {
   url?: string
   main_image?: IImage
   images?: IImage[]
+  banner_image?: IImage
   description?: string
   children?: ISimpleCategory[]
 }

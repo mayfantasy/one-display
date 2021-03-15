@@ -21,6 +21,7 @@ import { pageRoutes } from 'helpers/route.helpers'
 import Link from 'next/link'
 import Gallery from 'react-photo-gallery'
 import { useRouter } from 'next/router'
+import { url } from 'inspector'
 
 interface IProps {}
 
@@ -148,13 +149,27 @@ const ProductMenu = (props: IProps) => {
                 )}
 
                 {/* Images */}
-                {activeSubCategory && (
-                  <div className="w-2/4 overflow-scroll">
-                    <Gallery
-                      columns={2}
-                      photos={activeSubCategory.images || []}
-                    />
-                  </div>
+                {activeCategory && (
+                  // Image gallary
+
+                  // <div className="w-2/4 overflow-scroll">
+                  //   <Gallery
+                  //     columns={2}
+                  //     photos={activeCategory?.images || []}
+                  //   />
+                  // </div>
+
+                  // Image backround
+                  <div
+                    className="w-full h-full"
+                    style={{
+                      backgroundImage: `url(
+                        ${activeCategory?.images?.[0]?.src || ''}
+                      )`,
+                      backgroundPosition: 'center center',
+                      backgroundSize: 'cover',
+                    }}
+                  />
                 )}
               </div>
             </div>

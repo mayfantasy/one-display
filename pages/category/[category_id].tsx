@@ -1,5 +1,8 @@
 import ProductCard from '@components/product/ProductCard'
-import { getSubCategoryBlockId } from 'helpers/category.helpers'
+import {
+  getCategoryTreeByIdPath,
+  getSubCategoryBlockId,
+} from 'helpers/category.helpers'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
@@ -56,7 +59,9 @@ const CategoryPage = () => {
       pageTitle={category?.name}
       banner={{
         bg: {
-          src: '/bg/categories.jpeg',
+          src:
+            getCategoryTreeByIdPath([category?.id || -1])?.banner_image?.src ||
+            '',
           mask: 'rgba(0,0,0,0.4)',
           height: '500px',
         },
