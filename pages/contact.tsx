@@ -26,12 +26,15 @@ const ContactPage = () => {
                   </p>
 
                   <p>
-                    Toll Free: <b>(983)-371-3850</b>
-                    <br />
-                    Tel: <b>(362)-396-8839</b>
+                    {/* Toll Free: <b>(983)-371-3850</b>
+                    <br /> */}
+                    Tel: <b>(905)-947-8180</b>
                     <br /> Email:{' '}
-                    <a className="font-bold" href="mailto:info@jwbeaver.com">
-                      info@jwbeaver.com
+                    <a
+                      className="font-bold"
+                      href="mailto:wholesale@jwbeaver.com"
+                    >
+                      wholesale@jwbeaver.com
                     </a>
                   </p>
                 </div>
@@ -47,17 +50,15 @@ const ContactPage = () => {
                 <p className="mb-4">
                   Monday to Friday
                   <br />
-                  <b>9:30 AM - 6:00 PM EST</b>
-                  <br />
-                  <b>6:30 AM - 3:00 PM PST</b>
+                  <b>9:00 AM - 5:30 PM EST</b>
                 </p>
                 <p className="mb-4">
-                  Saturday
+                  Saturday & Sunday
                   <br />
-                  <b>9:30 AM - 6:00 PM EST</b>
+                  <b>Closed</b>
                 </p>
                 <p>
-                  Sunday
+                  Statutory Holidays
                   <br />
                   <b>Closed</b>
                 </p>

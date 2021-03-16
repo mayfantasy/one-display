@@ -180,7 +180,7 @@ export const categoryTree: ISimpleCategory[] = [
       {
         id: 44,
         parent_id: 25,
-        name: 'BEAVERTM  Pop-Up Display System',
+        name: 'BEAVER™ Pop-Up Display System',
         is_visible: true,
         url: '/backdrop-stands-pop-up-display/beavertm-pop-up-display-system/',
         children: [
@@ -891,7 +891,7 @@ export const categoryTree: ISimpleCategory[] = [
     ],
   },
   {
-    id: 37,
+    id: 109,
     parent_id: 0,
     name: 'Way–Finding Signs',
     is_visible: true,
@@ -917,32 +917,32 @@ export const categoryTree: ISimpleCategory[] = [
     ],
     children: [
       {
-        id: 77,
-        parent_id: 37,
+        id: 110,
+        parent_id: 109,
         name: 'Washroom Sign',
         is_visible: true,
         url: '/way-finding-signs/washroom-sign/',
         children: [],
       },
       {
-        id: 78,
-        parent_id: 37,
+        id: 111,
+        parent_id: 109,
         name: '“PUSH” & “PULL” Sign',
         is_visible: true,
         url: '/way-finding-signs/push-pull-sign/',
         children: [],
       },
       {
-        id: 79,
-        parent_id: 37,
+        id: 112,
+        parent_id: 109,
         name: '“NO SMOKING” Sign',
         is_visible: true,
         url: '/way-finding-signs/no-smoking-sign/',
         children: [],
       },
       {
-        id: 80,
-        parent_id: 37,
+        id: 113,
+        parent_id: 109,
         name: 'Aluminum Sign Panel',
         is_visible: true,
         url: '/way-finding-signs/aluminum-sign-panel/',
