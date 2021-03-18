@@ -34,7 +34,7 @@ const SignUpView: FC<Props> = () => {
     <div>
       <div
         className="p-4 max-w-xl overflow-scroll"
-        style={{ width: 400, height: 400 }}
+        style={{ width: 400, height: 400, maxWidth: '95%' }}
       >
         <h2 className="text-black text-2xl text-center mb-4">
           <b>Sign Up</b>

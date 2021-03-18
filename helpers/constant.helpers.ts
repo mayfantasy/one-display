@@ -1,4 +1,5 @@
 export const NAV_HEIGHT = 60
+export const MOB_NAV_HEIGHT = 120
 export const CHANNEL_ID = 548139
 export const CURRENCY_CODE = 'CAD'
 export const CURRENCY_PREFIX = 'CA$'

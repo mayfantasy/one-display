@@ -67,7 +67,7 @@ const ProductMenu = (props: IProps) => {
 
               <div className="flex flex-row h-full">
                 {/* Category list */}
-                <ul className="w-1/4 h-full overflow-scroll">
+                <ul className="w-1/2 md:w-1/4 h-full overflow-scroll">
                   {categoryTree.map((c) => {
                     const isActive = activeCategory?.id === c.id
                     return (
@@ -83,7 +83,7 @@ const ProductMenu = (props: IProps) => {
                         <Link href={pageRoutes.categoryPage(c.id).url!}>
                           <a
                             className={`block h-full p-3 ${
-                              isActive ? 'bg-gray-200' : ''
+                              isActive ? '' : ''
                             } flex flex-row justify-between items-center`}
                           >
                             <span
@@ -104,7 +104,7 @@ const ProductMenu = (props: IProps) => {
 
                 {/* Subcategory List */}
                 {!!activeCategory?.children?.length && (
-                  <ul className="w-1/4 h-full overflow-scroll">
+                  <ul className="w-1/2 md:w-1/4 h-full overflow-scroll">
                     {activeCategory.children.map((sc) => {
                       const isActive = activeSubCategory?.id === sc.id
                       return (
@@ -123,7 +123,7 @@ const ProductMenu = (props: IProps) => {
                           >
                             <a
                               className={`block h-full p-3 ${
-                                isActive ? 'bg-gray-200' : ''
+                                isActive ? '' : ''
                               } flex flex-row justify-between`}
                             >
                               <span
@@ -161,7 +161,7 @@ const ProductMenu = (props: IProps) => {
 
                   // Image backround
                   <div
-                    className="w-full h-full"
+                    className="w-full h-full hidden md:block"
                     style={{
                       backgroundImage: `url(
                         ${activeCategory?.images?.[0]?.src || ''}

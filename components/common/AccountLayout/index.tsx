@@ -16,9 +16,9 @@ const AccountLayout = (props: IProps) => {
 
   return (
     <Layout pageTitle={pageTitle} pageDescription={pageDescription}>
-      <div className="container m-auto flex flex-row py-32">
-        <div className="w-40">
-          <ul>
+      <div className="container m-auto md:flex md:flex-row py-32">
+        <div className="w-full md:w-40">
+          <ul className="flex md:block">
             {[pageRoutes.accountInfoPage, pageRoutes.accountOrdersPage].map(
               (n) => (
                 <li

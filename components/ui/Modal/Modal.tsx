@@ -31,7 +31,7 @@ const Modal: FC<IProps> = ({
         <ScrollLock>
           <div className="fixed text-primary flex items-center inset-0 z-50 justify-center bg-black bg-opacity-50">
             <div
-              style={{ backgroundColor: bgColor || 'white' }}
+              style={{ backgroundColor: bgColor || 'white', maxWidth: '95%' }}
               className="p-8 border border-accents-2 relative rounded"
               role="dialog"
             >

@@ -69,7 +69,7 @@ const Layout: FC<Props> = ({
         <Navbar navColor={header?.navColor} />
         <div style={{ zIndex: -1, marginTop: -60 }}>
           {banner && <Banner bg={banner.bg}>{banner.content}</Banner>}
-          {children && <main>{children}</main>}
+          {children && <main className="px-2 md:px-0">{children}</main>}
 
           {/* <Footer pages={pageProps.pages} /> */}
 
