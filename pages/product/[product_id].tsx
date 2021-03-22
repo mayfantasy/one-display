@@ -19,6 +19,8 @@ import Layout from 'components/common/Layout'
 import { useCustomerId } from 'hooks/customer.hooks'
 import { useProductQuantity } from 'hooks/product-quantity.hooks'
 import Skeleton from 'react-loading-skeleton'
+import { getCategoryTreeByIdPath } from 'helpers/category.helpers'
+import BreadCrumb from '@components/common/BreadCrumb'
 
 type ITabKey = 'description' | 'templates'
 interface ITab {
@@ -90,7 +92,7 @@ const ProductPage = () => {
           </div>
         )}
         {!loadingProduct && product && (
-          <main>
+          <main className="py-4">
             {/* Upper section */}
             <div className="md:flex">
               {/* Images */}
@@ -123,6 +125,13 @@ const ProductPage = () => {
 
               {/*Info & Actions */}
               <div className="md:w-1/2 w-full md:pl-1 pl-0">
+                {/* Breadcrumb */}
+                <div className="py-1">
+                  <BreadCrumb
+                    category={product.categories[0]}
+                    subCategory={product.categories[1]}
+                  />
+                </div>
                 {/* Title */}
                 <h1 className="text-3xl font-bold">{product?.name}</h1>
                 {/* Model $ */}

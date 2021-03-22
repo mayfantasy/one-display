@@ -48,11 +48,23 @@ const ProductMenu = (props: IProps) => {
     <div>
       {displayProductMenu && (
         <ScrollLock>
-          <div style={{ top: NAV_HEIGHT }} className="fixed w-full p-4 z-20">
+          <div
+            // style={{ top: NAV_HEIGHT }}
+            className="fixed md:w-full p-4 z-20 top-10"
+          >
+            <div
+              className="absolute w-full h-full top-0 left-0"
+              onClick={() => {
+                closeProductMenu()
+              }}
+            />
             <div
               role="dialog"
-              className="bg-white container m-auto rounded p-6 border shadow-lg"
-              style={{ height: `calc(100vh - ${NAV_HEIGHT * 2}px)` }}
+              className="relative z-10 bg-white container m-auto rounded p-6 border shadow-lg w-full"
+              style={{
+                height: `calc(100vh - ${NAV_HEIGHT * 2}px)`,
+                maxWidth: 1024,
+              }}
               // ref={ref}
             >
               <div className="flex flex-row justify-end">

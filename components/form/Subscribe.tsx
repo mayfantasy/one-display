@@ -43,7 +43,7 @@ const Subscribe = (props: IProps) => {
         )}
         {!success && (
           <input
-            style={{ width: 280 }}
+            style={{ width: 230 }}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="h-8 text-black p-2 border-none rounded-l"

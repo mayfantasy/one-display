@@ -22,7 +22,12 @@ interface IProps {
 const Navbar = (props: IProps) => {
   const { navColor } = props
   const [hasScrolled, setHasScrolled] = useState(false)
-  const { displaySearchbar, openSearchbar, displayProductMenu } = useUI()
+  const {
+    displaySearchbar,
+    openSearchbar,
+    displayProductMenu,
+    closeProductMenu,
+  } = useUI()
 
   const navItems = useNav()
 
@@ -49,82 +54,89 @@ const Navbar = (props: IProps) => {
         return (
           <>
             {/* ==================================== */}
-            {/* Moble */}
+            {/* Mobile */}
             <div
-              className="z-90 top-0 w-full md:hidden px-2 md:px-0"
+              className="z-90 top-0 w-full md:hidden  md:px-0"
+              onClick={() => {
+                if (displayProductMenu) {
+                  closeProductMenu()
+                }
+              }}
               style={{
                 backgroundColor: isSticked ? 'white' : 'transparent',
               }}
             >
-              <Container>
-                <div style={{ height: NAV_HEIGHT }} className="">
-                  {/* Logo */}
-                  <div className="flex justify-between">
-                    <div className="header__logo text-center">
-                      <Link href={pageRoutes.homePage.url!}>
-                        <a className="inline-block">
-                          <img
-                            src="/logo/logo.png"
-                            style={{ height: 50, width: 50 }}
-                          />
-                        </a>
-                      </Link>
-                    </div>
-
-                    {/* Right section */}
-                    <div
-                      className="text-center flex items-center p-2"
-                      style={{ height: 60 }}
-                    >
-                      {!displaySearchbar && (
-                        <div className="inline-block">
-                          <SearchOutlined
-                            className="text-2xl mr-4 cursor-pointer"
-                            style={{ color: isSticked ? 'black' : navColor }}
-                            onClick={() => openSearchbar()}
-                          />
-                        </div>
-                      )}
-                      <div className="inline-block">
-                        <UserNav navColor={isSticked ? 'black' : navColor} />
-                      </div>
-                    </div>
+              <div style={{ height: NAV_HEIGHT }} className="">
+                {/* Logo */}
+                <div className="flex justify-between">
+                  <div className="header__logo text-center">
+                    <Link href={pageRoutes.homePage.url!}>
+                      <a className="inline-block">
+                        <img
+                          src="/logo/logo.png"
+                          style={{ height: 50, width: 50 }}
+                        />
+                      </a>
+                    </Link>
                   </div>
 
-                  {/* Nav Display */}
-                  {!displaySearchbar && (
-                    <nav
-                      className=""
-                      style={{
-                        backgroundColor: isSticked ? 'white' : 'transparent',
-                        height: NAV_HEIGHT,
-                      }}
-                    >
-                      {navItems.map((item) => (
-                        <div className="inline-block w-1/4 h-6">
-                          <NavItem
-                            navItem={item}
-                            key={item.key}
-                            navColor={isSticked ? 'black' : navColor}
-                          />
-                        </div>
-                      ))}
-                    </nav>
-                  )}
-
-                  {/* SearchBar display */}
-                  {displaySearchbar && (
-                    <div className="w-full flex flex-row items-center max-w-2xl md:max-w-3xl">
-                      <Searchbar
-                        navColor={isSticked ? 'black' : navColor}
-                        {...searchbarProps}
-                      />
+                  {/* Right section */}
+                  <div
+                    className="text-center flex items-center p-2"
+                    style={{ height: 60 }}
+                  >
+                    {!displaySearchbar && (
+                      <div className="inline-block">
+                        <SearchOutlined
+                          className="text-2xl mr-4 cursor-pointer"
+                          style={{ color: isSticked ? 'black' : navColor }}
+                          onClick={() => openSearchbar()}
+                        />
+                      </div>
+                    )}
+                    <div className="inline-block">
+                      <UserNav navColor={isSticked ? 'black' : navColor} />
                     </div>
-                  )}
-
-                  {/* Product Menu */}
+                  </div>
                 </div>
-              </Container>
+
+                {/* Nav Display */}
+                {!displaySearchbar && (
+                  <nav
+                    className=""
+                    style={{
+                      backgroundColor: isSticked ? 'white' : 'transparent',
+                      height: NAV_HEIGHT,
+                    }}
+                  >
+                    {navItems.map((item) => (
+                      <div
+                        className="inline-block w-1/4 h-6"
+                        style={{ fontSize: '0.5rem' }}
+                      >
+                        <NavItem
+                          navItem={item}
+                          key={item.key}
+                          navColor={isSticked ? 'black' : navColor}
+                        />
+                      </div>
+                    ))}
+                  </nav>
+                )}
+
+                {/* SearchBar display */}
+                {displaySearchbar && (
+                  <div className="w-full flex flex-row items-center max-w-2xl md:max-w-3xl">
+                    <Searchbar
+                      navColor={isSticked ? 'black' : navColor}
+                      {...searchbarProps}
+                    />
+                  </div>
+                )}
+
+                {/* Product Menu */}
+              </div>
+
               <ProductMenu />
             </div>
 
@@ -132,6 +144,11 @@ const Navbar = (props: IProps) => {
             {/* Desktop */}
             <div
               className="z-90 top-0 w-full hidden md:block"
+              onClick={() => {
+                if (displayProductMenu) {
+                  closeProductMenu()
+                }
+              }}
               style={{ backgroundColor: isSticked ? 'white' : 'transparent' }}
             >
               <Container>
