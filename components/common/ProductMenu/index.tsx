@@ -63,11 +63,12 @@ const ProductMenu = (props: IProps) => {
               className="relative z-10 bg-white container m-auto rounded p-6 border shadow-lg w-full"
               style={{
                 height: `calc(100vh - ${NAV_HEIGHT * 2}px)`,
+                maxHeight: 800,
                 maxWidth: 1024,
               }}
               // ref={ref}
             >
-              <div className="flex flex-row justify-end">
+              {/* <div className="flex flex-row justify-end">
                 <CloseOutlined
                   onClick={() => {
                     closeProductMenu()
@@ -75,7 +76,7 @@ const ProductMenu = (props: IProps) => {
                   aria-label="Close panel"
                   className=""
                 />
-              </div>
+              </div> */}
 
               <div className="flex flex-row h-full">
                 {/* Category list */}

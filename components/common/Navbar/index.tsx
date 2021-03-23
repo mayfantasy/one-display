@@ -56,7 +56,7 @@ const Navbar = (props: IProps) => {
             {/* ==================================== */}
             {/* Mobile */}
             <div
-              className="z-90 top-0 w-full md:hidden  md:px-0"
+              className="z-90 top-0 w-full md:hidden md:px-0"
               onClick={() => {
                 if (displayProductMenu) {
                   closeProductMenu()
@@ -64,6 +64,9 @@ const Navbar = (props: IProps) => {
               }}
               style={{
                 backgroundColor: isSticked ? 'white' : 'transparent',
+                boxShadow: isSticked
+                  ? '0 2px 5px 0 rgb(154 161 174 / 50%)'
+                  : 'none',
               }}
             >
               <div style={{ height: NAV_HEIGHT }} className="">
@@ -149,7 +152,12 @@ const Navbar = (props: IProps) => {
                   closeProductMenu()
                 }
               }}
-              style={{ backgroundColor: isSticked ? 'white' : 'transparent' }}
+              style={{
+                backgroundColor: isSticked ? 'white' : 'transparent',
+                boxShadow: isSticked
+                  ? '0 2px 5px 0 rgb(154 161 174 / 50%)'
+                  : 'none',
+              }}
             >
               <Container>
                 <div

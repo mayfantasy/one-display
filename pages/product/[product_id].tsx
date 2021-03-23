@@ -199,7 +199,7 @@ const ProductPage = () => {
                 <br />
 
                 {/* Bulk pricing goes here */}
-                {!!product.bulk_pricing_rules.length && (
+                {!!product.bulk_pricing_rules.length && customerId && (
                   <div>
                     <BulkPricingTable rules={product.bulk_pricing_rules} />
                   </div>

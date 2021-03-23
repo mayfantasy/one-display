@@ -1,3 +1,38 @@
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 4030773, 2021-03-23T18:34:35-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Biennale-UltraLight by Latinotype
+ * URL: https://www.myfonts.com/fonts/latinotype/biennale/ultra-light/
+ * 
+ * Webfont: Biennale-Regular by Latinotype
+ * URL: https://www.myfonts.com/fonts/latinotype/biennale/regular/
+ * 
+ * 
+ * Webfonts copyright: Copyright Â© 2019 by Daniel Hernandez &amp; Rodrigo Fuenzalida. All rights reserved.
+ * 
+ * Â© 2021 MyFonts Inc
+*/
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3d8135");
+  
+@font-face {
+  font-family: "Biennale-Regular";
+  src: url('/web-fonts/BiennaleRegular/font.woff2') format('woff2'), url('web-fonts/BiennaleRegular/font.woff') format('woff');
+}
+@font-face {
+  font-family: "Biennale-UltraLight";
+  src: url('/web-fonts/BiennaleUltraLight/font.woff2') format('woff2'), url('web-fonts/BiennaleUltraLight/font.woff') format('woff');
+}
+
+
 @tailwind base;
 
 @tailwind components;
@@ -5,10 +40,21 @@
 @tailwind utilities;
 
 
+
+
+
 @layer base {
   body {
-    @apply text-xs
+    font-family: "Biennale-UltraLight";
+    @apply text-xs;
   }
+  h1,h2,h3,h4,h5 {
+    font-family: "Biennale-Regular";
+  }
+  b, strong {
+    font-family: "Biennale-Regular";
+  }
+
 }
 
 .responsive-square {
