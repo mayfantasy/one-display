@@ -115,7 +115,7 @@ const Navbar = (props: IProps) => {
                     {navItems.map((item) => (
                       <div
                         className="inline-block w-1/4 h-6"
-                        style={{ fontSize: '0.5rem' }}
+                        style={{ fontSize: '0.7rem' }}
                       >
                         <NavItem
                           navItem={item}
