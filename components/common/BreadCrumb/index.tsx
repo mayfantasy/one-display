@@ -20,7 +20,7 @@ const BreadCrumb = (props: IProps) => {
           {getCategoryTreeByIdPath([category])?.name}
         </a>
       </Link>
-      <span className="ml-1 mr-1">/</span>
+      <span className="ml-3 mr-3">{'>'}</span>
       {subCategory ? (
         <span className="inline-block hover:text-black">
           <Link

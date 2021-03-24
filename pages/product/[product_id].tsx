@@ -78,7 +78,7 @@ const ProductPage = () => {
 
   return (
     <Layout pageTitle={product?.name || ''}>
-      <div className="mt-24 container m-auto">
+      <div className="mt-32 container m-auto">
         {loadingProduct && (
           <div className="md:flex">
             <div className="md:w-1/2 md:pr-1">
@@ -94,6 +94,13 @@ const ProductPage = () => {
         {!loadingProduct && product && (
           <main className="py-4">
             {/* Upper section */}
+            {/* Breadcrumb */}
+            <div className="py-1">
+              <BreadCrumb
+                category={product.categories[0]}
+                subCategory={product.categories[1]}
+              />
+            </div>
             <div className="md:flex">
               {/* Images */}
               <div className="md:w-1/2 w-full md:pr-1 pr-0">
@@ -125,13 +132,6 @@ const ProductPage = () => {
 
               {/*Info & Actions */}
               <div className="md:w-1/2 w-full md:pl-1 pl-0">
-                {/* Breadcrumb */}
-                <div className="py-1">
-                  <BreadCrumb
-                    category={product.categories[0]}
-                    subCategory={product.categories[1]}
-                  />
-                </div>
                 {/* Title */}
                 <h1 className="text-3xl font-bold">{product?.name}</h1>
                 {/* Model $ */}
