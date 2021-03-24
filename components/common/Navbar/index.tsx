@@ -64,9 +64,6 @@ const Navbar = (props: IProps) => {
               }}
               style={{
                 backgroundColor: isSticked ? 'white' : 'transparent',
-                boxShadow: isSticked
-                  ? '0 2px 5px 0 rgb(154 161 174 / 50%)'
-                  : 'none',
               }}
             >
               <div style={{ height: NAV_HEIGHT }} className="">
@@ -110,6 +107,9 @@ const Navbar = (props: IProps) => {
                     style={{
                       backgroundColor: isSticked ? 'white' : 'transparent',
                       height: NAV_HEIGHT,
+                      boxShadow: isSticked
+                        ? '0 5px 5px 0 rgb(154 161 174 / 50%)'
+                        : 'none',
                     }}
                   >
                     {navItems.map((item) => (
