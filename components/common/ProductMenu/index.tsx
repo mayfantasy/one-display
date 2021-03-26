@@ -61,9 +61,10 @@ const ProductMenu = (props: IProps) => {
               />
               <div
                 role="dialog"
-                className="relative z-10 bg-white container m-auto rounded p-6 border shadow-lg w-full"
+                className="relative z-10 bg-white container m-auto p-6 border shadow-lg w-full"
                 style={{
                   height: `calc(100vh - ${NAV_HEIGHT * 2}px)`,
+                  borderRadius: 10,
                   maxHeight: 800,
                   maxWidth: 1024,
                 }}
