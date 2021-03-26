@@ -12,7 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             schema_handle: 'jwbeaver_email_template',
             id: '290832771375432192',
           },
-          to_email: 'hans@mayfantasy.com',
+          to_email: 'info@jwbeaver.com',
           data: {
             customer_email: email,
           },
