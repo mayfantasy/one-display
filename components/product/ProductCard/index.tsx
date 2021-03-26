@@ -27,7 +27,10 @@ const ProductCard = (props: IProps) => {
   return (
     <div>
       <Link href={pageRoutes.productPage(product.id).url!}>
-        <a className="block w-full rounded border border-gray-300 hover:border-blue-700 overflow-hidden cursor-pointer bg-gray-100">
+        <a
+          style={{ borderRadius: 10 }}
+          className="block w-full border border-gray-300 hover:border-blue-700 overflow-hidden cursor-pointer bg-gray-100"
+        >
           {/* Image */}
           <SquareImage
             src={product.primary_image?.url_standard}

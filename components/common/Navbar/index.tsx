@@ -145,8 +145,15 @@ const Navbar = (props: IProps) => {
 
             {/* ==================================== */}
             {/* Desktop */}
+            <style jsx>{`
+              @media (min-width: 1024px) {
+                .larger-text {
+                  font-size: 0.9rem;
+                }
+              }
+            `}</style>
             <div
-              className="z-90 top-0 w-full hidden md:block"
+              className="z-90 top-0 w-full hidden md:block larger-text"
               onClick={() => {
                 if (displayProductMenu) {
                   closeProductMenu()

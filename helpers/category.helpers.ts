@@ -57,7 +57,7 @@ export const categoryTree: ISimpleCategory[] = [
       {
         id: 39,
         parent_id: 24,
-        name: 'Business card holder',
+        name: 'Business Card Holder',
         is_visible: true,
         url: '/acrylic-sign-products/business-card-holder/',
         images: [
@@ -74,7 +74,7 @@ export const categoryTree: ISimpleCategory[] = [
       {
         id: 40,
         parent_id: 24,
-        name: 'Literature & Brochure holder',
+        name: 'Literature & Brochure Holder',
         is_visible: true,
         url: '/acrylic-sign-products/literature-brochure-holder/',
         children: [],
@@ -747,7 +747,7 @@ export const categoryTree: ISimpleCategory[] = [
       {
         id: 73,
         parent_id: 35,
-        name: 'Magnetic Sign holder ',
+        name: 'Magnetic Sign holder',
         is_visible: true,
         url: '/frame-sign-holders/magnetic-sign-holder/',
         children: [],
@@ -757,7 +757,7 @@ export const categoryTree: ISimpleCategory[] = [
   {
     id: 36,
     parent_id: 0,
-    name: 'Standoffs & Cable wire System',
+    name: 'Standoffs & Cable Wire System',
     is_visible: true,
     url: '/standoffs-cable-wire-system/',
     description:

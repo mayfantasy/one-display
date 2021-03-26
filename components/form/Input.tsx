@@ -38,9 +38,10 @@ const Input = (props: IProps) => {
           type={password ? 'password' : 'text'}
           style={{
             width: width || '100%',
+            borderRadius: 100,
             ...(error ? { borderColor: 'red' } : {}),
           }}
-          className="border border-gray-400 rounded h-8 p-2 placeholder-gray-300"
+          className="border border-gray-400 h-8 p-2 placeholder-gray-300"
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange(e.target.value)}

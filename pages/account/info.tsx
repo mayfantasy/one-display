@@ -42,7 +42,10 @@ const AccountInfoPage = () => {
       )}
       {customerId && (
         <div>
-          <div className="max-w-xl overflow-scroll" style={{ width: 400 }}>
+          <div
+            className="max-w-xl overflow-scroll hide-scrollbar"
+            style={{ width: 400 }}
+          >
             {/* <h2 className="text-black  text-2xl text-center mb-4">
             <b>Update Account Info</b>
           </h2> */}

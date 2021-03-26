@@ -37,9 +37,10 @@ const Select = (props: IProps) => {
           name={name}
           style={{
             width: width || '100%',
+            borderRadius: 10,
             ...(error ? { borderColor: 'red' } : {}),
           }}
-          className="border border-gray-400 rounded h-12 p-2"
+          className="border border-gray-400 h-12 p-2"
           value={value}
           onChange={(e) => onChange(e.target.value)}
         >

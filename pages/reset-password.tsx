@@ -69,7 +69,7 @@ const ResetPasswordPage = () => {
             <div className="w-full mt-56">
               <div
                 style={{ width: 400 }}
-                className="p-4 max-w-xl m-auto overflow-scroll bg-white rounded shadow-lg"
+                className="p-4 max-w-xl m-auto overflow-scroll hide-scrollbar bg-white rounded shadow-lg"
               >
                 <h2 className="text-black text-2xl text-center mb-4">
                   <b>Reset Password</b>

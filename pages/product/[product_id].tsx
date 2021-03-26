@@ -95,7 +95,7 @@ const ProductPage = () => {
           <main className="py-4">
             {/* Upper section */}
             {/* Breadcrumb */}
-            <div className="py-1">
+            <div className="py-1 pb-5">
               <BreadCrumb
                 category={product.categories[0]}
                 subCategory={product.categories[1]}

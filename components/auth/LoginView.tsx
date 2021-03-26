@@ -69,8 +69,11 @@ const LoginView: FC<Props> = () => {
   return (
     <div>
       <div
-        style={{ width: 400, maxWidth: '95%' }}
-        className="p-4 max-w-xl m-auto overflow-scroll"
+        style={{
+          width: 400,
+          maxWidth: '95%',
+        }}
+        className="p-4 max-w-xl m-auto overflow-scroll hide-scrollbar"
       >
         <h2 className="text-black text-2xl text-center mb-4">
           <b>Login</b>
