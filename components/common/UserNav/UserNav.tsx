@@ -35,11 +35,11 @@ const UserNav: FC<IProps> = ({ className, children, navColor, ...props }) => {
             <DropdownMenu customer={customer} navColor={navColor} />
           </div>
         ) : (
-          <Button primary aria-label="Menu" onClick={() => openModal()}>
-            Login
-          </Button>
+          // <Button primary aria-label="Menu" onClick={() => openModal()}>
+          //   Login
+          // </Button>
 
-          // <></>
+          <></>
         )}
       </div>
     </div>
