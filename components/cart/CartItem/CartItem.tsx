@@ -127,7 +127,10 @@ const CartItem = (props: IProps) => {
         <span>
           {CURRENCY_PREFIX} {item.extended_list_price.toFixed(2)}
         </span>
-        <button className="flex justify-end" onClick={handleRemove}>
+        <button
+          className="flex justify-end outline-none"
+          onClick={handleRemove}
+        >
           <Trash />
         </button>
       </div>

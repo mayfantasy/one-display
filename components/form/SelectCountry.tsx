@@ -14,7 +14,10 @@ const SelectCountry = (props: IProps) => {
       onChange={onChange}
       label="Country"
       placeholder="Please select a country"
-      options={[{ label: 'Canada', value: 'CA' }]}
+      options={[
+        { label: 'Canada', value: 'CA' },
+        { label: 'USA', value: 'US' },
+      ]}
     />
   )
 }

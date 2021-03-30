@@ -193,7 +193,10 @@ export const UIProvider: FC = (props) => {
   const closeDropdown = () => dispatch({ type: 'CLOSE_DROPDOWN' })
 
   const openModal = () => dispatch({ type: 'OPEN_MODAL' })
-  const closeModal = () => dispatch({ type: 'CLOSE_MODAL' })
+  const closeModal = () => {
+    dispatch({ type: 'SET_MODAL_VIEW', view: 'LOGIN_VIEW' })
+    return dispatch({ type: 'CLOSE_MODAL' })
+  }
 
   const openToast = () => dispatch({ type: 'OPEN_TOAST' })
   const closeToast = () => dispatch({ type: 'CLOSE_TOAST' })

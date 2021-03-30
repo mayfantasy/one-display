@@ -40,7 +40,7 @@ const Button = (props: IProps) => {
         style={{
           ...(disabled
             ? {
-                backgroundColor: '#999',
+                background: '#999',
                 cursor: 'not-allowed',
               }
             : {}),

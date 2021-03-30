@@ -37,7 +37,7 @@ const CartSidebarView: FC = () => {
             </button>
           </div>
           <div className="space-y-1">
-            <UserNav />
+            <UserNav navColor="#444" />
           </div>
         </div>
       </header>
@@ -55,9 +55,9 @@ const CartSidebarView: FC = () => {
             <h2 className="pt-6 text-2xl font-bold tracking-wide text-center">
               Your cart is empty
             </h2>
-            <p className="text-accents-3 px-10 text-center pt-2">
+            {/* <p className="text-accents-3 px-10 text-center pt-2">
               Biscuit oat cake wafer icing ice cream tiramisu pudding cupcake.
-            </p>
+            </p> */}
           </div>
         ) : error ? (
           <div className="flex-1 px-4 flex flex-col justify-center items-center">

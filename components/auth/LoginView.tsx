@@ -55,12 +55,14 @@ const LoginView: FC<Props> = () => {
     // Test for Alphanumeric password
 
     // Unable to send form unless fields are valid.
-    if (dirty) {
-      setDisabled(
-        !validate(email) || password.length < 7 || !validatePassword(password)
-      )
-    }
-  }, [email, password, dirty])
+    setDisabled(
+      !validate(email) ||
+        password.length < 7 ||
+        !validatePassword(password) ||
+        !email ||
+        !password
+    )
+  }, [email, password])
 
   useEffect(() => {
     handleValidation()
@@ -85,7 +87,7 @@ const LoginView: FC<Props> = () => {
 
         <div className="mb-4">
           <Input
-            required
+            error={email && !validate(email) ? 'Invalid email' : undefined}
             name="email"
             value={email}
             onChange={setEmail}
@@ -94,7 +96,6 @@ const LoginView: FC<Props> = () => {
         </div>
         <div className="mb-8">
           <Input
-            required
             name="password"
             password
             value={password}

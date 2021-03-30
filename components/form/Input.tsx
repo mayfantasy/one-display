@@ -28,8 +28,8 @@ const Input = (props: IProps) => {
     <div>
       {label && (
         <h5 className="mb-2 text-grey-700">
+          {required && <span className="mr-2 text-red-500">*</span>}
           {label}
-          {required && <span className="ml-2 text-gray-500">(Required)</span>}
         </h5>
       )}
       <div>
@@ -41,7 +41,7 @@ const Input = (props: IProps) => {
             borderRadius: 100,
             ...(error ? { borderColor: 'red' } : {}),
           }}
-          className="border border-gray-400 h-8 p-2 placeholder-gray-300"
+          className="border border-gray-400 h-8 py-2 px-4 placeholder-gray-300 outline-none"
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange(e.target.value)}

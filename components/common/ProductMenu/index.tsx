@@ -70,16 +70,6 @@ const ProductMenu = (props: IProps) => {
                 }}
                 // ref={ref}
               >
-                {/* <div className="flex flex-row justify-end">
-                <CloseOutlined
-                  onClick={() => {
-                    closeProductMenu()
-                  }}
-                  aria-label="Close panel"
-                  className=""
-                />
-              </div> */}
-
                 <div className="flex flex-row h-full">
                   {/* Category list */}
                   <ul className="w-1/2 md:w-1/4 h-full overflow-scroll hide-scrollbar">

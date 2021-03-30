@@ -27,7 +27,7 @@ const QuantityInput = (props: IProps) => {
       </div>
       <div className="h-full w-15">
         <input
-          className="h-full w-full border-t border-b border-gray-400 p-2"
+          className="h-full w-full border-t border-b border-gray-400 p-2 outline-none"
           type="number"
           max={99}
           min={0}

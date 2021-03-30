@@ -7712,6 +7712,11 @@ url-parse@^1.4.3:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
 
+usa-states@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/usa-states/-/usa-states-0.0.5.tgz#3a88c972def5345ae9b87186fc4402385b861bb7"
+  integrity sha1-OojJct71NFrpuHGG/EQCOFuGG7c=
+
 use-subscription@1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/use-subscription/-/use-subscription-1.5.1.tgz#73501107f02fad84c6dd57965beb0b75c68c42d1"

@@ -28,8 +28,8 @@ const Select = (props: IProps) => {
     <div>
       {label && (
         <h5 className="mb-2 text-grey-700">
+          {required && <span className="mr-2 text-red-500">*</span>}
           {label}
-          {required && <span className="ml-2 text-gray-500">(Required)</span>}
         </h5>
       )}
       <div>

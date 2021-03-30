@@ -2,8 +2,10 @@ import Divider from 'components/common/Divider'
 import Checkbox from '@components/form/Checkbox'
 import Input from '@components/form/Input'
 import SelectCountry from '@components/form/SelectCountry'
-import SelectProvince from '@components/form/SelectProvince'
+import SelectCaProvince from '@components/form/SelectCaProvince'
 import { IClientAccountForm } from 'types/customer.types'
+import SelectUsState from '@components/form/SelectUsState'
+import { validatePassword } from 'helpers/form.helpers'
 
 interface IProps {
   form: IClientAccountForm
@@ -27,29 +29,41 @@ const AccountForm = (props: IProps) => {
           helper="Legal business name"
         />
       </div>
-      <div className="mb-4">
+      <div className="mb-8">
         <Input
           required
-          value={form.contactFirstName}
-          onChange={(v) => setField('contactFirstName', v)}
-          label="First Name"
-          placeholder="Jason"
+          value={form.dba}
+          onChange={(v) => setField('dba', v)}
+          label="Doing Business As (DBA Name)"
+          placeholder="Owner"
         />
       </div>
-      <div className="mb-4">
-        <Input
-          required
-          value={form.contactLastName}
-          onChange={(v) => setField('contactLastName', v)}
-          label="Last Name"
-          placeholder="Wang"
-        />
+      <div className="grid grid-cols-2 gap-2 mb-8">
+        <div>
+          <Input
+            required
+            value={form.contactFirstName}
+            onChange={(v) => setField('contactFirstName', v)}
+            label="First Name"
+            placeholder="Jason"
+          />
+        </div>
+        <div>
+          <Input
+            required
+            value={form.contactLastName}
+            onChange={(v) => setField('contactLastName', v)}
+            label="Last Name"
+            placeholder="Wang"
+          />
+        </div>
       </div>
+
       <div className="mb-8">
         <Input
           value={form.mobile}
           onChange={(v) => setField('mobile', v)}
-          label="Mobile"
+          label="Phone Number"
           placeholder="1-647-1111-1111"
         />
       </div>
@@ -61,15 +75,6 @@ const AccountForm = (props: IProps) => {
           onChange={(v) => setField('contactEmail', v)}
           label="Contact / Login Email"
           placeholder="jason-allen@jwbeaver.com"
-        />
-      </div>
-      <div className="mb-8">
-        <Input
-          required
-          value={form.dba}
-          onChange={(v) => setField('dba', v)}
-          label="Doing Business As (DBA Name)"
-          placeholder="Owner"
         />
       </div>
 
@@ -91,44 +96,56 @@ const AccountForm = (props: IProps) => {
       </div>
       <div className="mb-4">
         <Input
-          required
           value={form.address2}
           onChange={(v) => setField('address2', v)}
           label="Address 2"
           placeholder="Unit 203"
         />
       </div>
-      <div className="mb-4">
-        <Input
-          required
-          value={form.city}
-          onChange={(v) => setField('city', v)}
-          label="City"
-          placeholder="Toronto"
-        />
-      </div>
-      <div className="mb-4">
-        <SelectProvince
-          value={form.province}
-          onChange={(v) => setField('province', v)}
-        />
-      </div>
+
       <div className="mb-4">
         <SelectCountry
           value={form.country}
           onChange={(v) => setField('country', v)}
         />
       </div>
-      <div className="mb-4">
-        <Input
-          required
-          value={form.postal}
-          onChange={(v) => setField('postal', v)}
-          label="Postal Code"
-          placeholder="L4R 3R8"
-        />
+      {form.country === 'US' ? (
+        <div className="mb-4">
+          <SelectUsState
+            value={form.province}
+            onChange={(v) => setField('province', v)}
+          />
+        </div>
+      ) : (
+        <div className="mb-4">
+          <SelectCaProvince
+            value={form.province}
+            onChange={(v) => setField('province', v)}
+          />
+        </div>
+      )}
+      <div className="mb-8 grid grid-cols-2 gap-2">
+        <div>
+          <Input
+            required
+            value={form.city}
+            onChange={(v) => setField('city', v)}
+            label="City"
+            placeholder="Toronto"
+          />
+        </div>
+        <div>
+          <Input
+            required
+            value={form.postal}
+            onChange={(v) => setField('postal', v)}
+            label="Postal Code"
+            placeholder="L4R 3R8"
+          />
+        </div>
       </div>
-      <div className="mb-8">
+
+      {/* <div className="mb-8">
         <Input
           required
           value={form.mobile}
@@ -151,7 +168,7 @@ const AccountForm = (props: IProps) => {
           onChange={(v) => setField('fax', v)}
           label="Fax"
         />
-      </div>
+      </div> */}
 
       <Divider />
 
@@ -159,7 +176,7 @@ const AccountForm = (props: IProps) => {
       <h2 className="text-2xl mb-4">
         <b>Tax Info</b>
       </h2>
-      <div className="mb-4">
+      {/* <div className="mb-4">
         <Input
           required
           value={form.taxContactFirstName}
@@ -193,10 +210,11 @@ const AccountForm = (props: IProps) => {
           label="Telephone"
           placeholder="1-888-1111-1111"
         />
-      </div>
+      </div> */}
 
       <div className="mb-4">
         <Checkbox
+          inline
           checked={form.taxable}
           onChange={(v) => setField('taxable', v)}
           label="Taxable?"
@@ -205,7 +223,6 @@ const AccountForm = (props: IProps) => {
       {!form.taxable && (
         <div className="mb-4">
           <Input
-            required
             value={form.noneTaxableReason}
             onChange={(v) => setField('noneTaxableReason', v)}
             label="None Taxable Reason"
@@ -214,7 +231,6 @@ const AccountForm = (props: IProps) => {
       )}
       <div className="mb-4">
         <Input
-          required
           value={form.pst}
           onChange={(v) => setField('pst', v)}
           label="PST #"
@@ -222,7 +238,6 @@ const AccountForm = (props: IProps) => {
       </div>
       <div className="mb-8">
         <Input
-          required
           value={form.hst}
           onChange={(v) => setField('hst', v)}
           label="HST/GST #"
@@ -232,9 +247,9 @@ const AccountForm = (props: IProps) => {
       <Divider />
 
       {/* ========== Other ========== */}
-      <h2 className="text-2xl mb-4">
+      {/* <h2 className="text-2xl mb-4">
         <b>Other Info</b>
-      </h2>
+      </h2> */}
       <div className="mb-4">
         <Input
           required
@@ -246,6 +261,7 @@ const AccountForm = (props: IProps) => {
       </div>
       <div className="mb-8">
         <Checkbox
+          inline
           checked={form.subscribe}
           onChange={(v) => setField('subscribe', v)}
           label="Subscribe for exclusive offers"
@@ -258,18 +274,29 @@ const AccountForm = (props: IProps) => {
       </h2>
       <div className="mb-4">
         <Input
+          error={
+            form.password && !validatePassword(form.password)
+              ? 'Passwords must be longer than 7 chars and include numbers and letters.'
+              : undefined
+          }
           required
           password
           value={form.password}
           onChange={(v) => setField('password', v)}
           label="Create Password"
-          helper="Passwords must be longer than 7 chars and include numbers."
+          helper="Passwords must be longer than 7 chars and include numbers and letters."
         />
       </div>
       <div className="mb-8">
         <Input
           required
           password
+          error={
+            (form.password || form.confirmPassword) &&
+            form.password !== form.confirmPassword
+              ? 'Password entered incorrectly.'
+              : undefined
+          }
           value={form.confirmPassword || ''}
           onChange={(v) => setField('confirmPassword', v)}
           label="Confirm Password"

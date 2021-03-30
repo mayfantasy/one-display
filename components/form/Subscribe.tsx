@@ -74,7 +74,7 @@ const Subscribe = (props: IProps) => {
               style={{ width: 230 }}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="input h-8 text-black p-2 border-none"
+              className="input h-8 text-black py-2 px-4 border-none outline-none"
               placeholder="Enter email to get our best deals"
             />
           )}

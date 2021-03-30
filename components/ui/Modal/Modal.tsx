@@ -46,16 +46,6 @@ const Modal: FC<IProps> = ({
               className="p-8 border border-accents-2 absolute top-1/2 left-1/2"
               role="dialog"
             >
-              {/* <button
-                onClick={() => {
-                  onClose()
-                  setModalView('LOGIN_VIEW')
-                }}
-                aria-label="Close panel"
-                className="hover:text-gray-500 transition ease-in-out duration-150 focus:outline-none absolute right-0 top-0 m-6"
-              >
-                <Cross className="h-6 w-6" />
-              </button> */}
               <FocusTrap focusFirst>{children}</FocusTrap>
             </div>
           </div>

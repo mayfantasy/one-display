@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { validate as validateEmail } from 'email-validator'
 import { getCustomerRequest, signUpRequest } from 'requests/auth.request'
 import { IClientAccountForm } from 'types/customer.types'
+import { customerRegistrationNotificationRequest } from 'requests/customer-registration-notifiication.request'
 
 export const useAccountForm = (customerId?: number) => {
   const [success, setSuccess] = useState(false)
@@ -82,6 +83,11 @@ export const useAccountForm = (customerId?: number) => {
         console.log('Update form')
       } else {
         await signUpRequest(form)
+        customerRegistrationNotificationRequest({
+          email: form.contactEmail,
+          first_name: form.contactFirstName,
+          last_name: form.contactLastName,
+        })
       }
       setSuccess(true)
       setLoading(false)
@@ -93,16 +99,40 @@ export const useAccountForm = (customerId?: number) => {
 
   const handleValidation = useCallback(() => {
     // Unable to send form unless fields are valid.
-    if (dirty) {
-      setDisabled(
-        !validateEmail(form.contactEmail) || !validatePassword(form.password)
-      )
-    }
-  }, [form.contactEmail, form.password, dirty])
+    const finishedRequired =
+      form.companyName &&
+      form.dba &&
+      form.contactFirstName &&
+      form.contactLastName &&
+      form.contactEmail &&
+      form.address1 &&
+      form.city &&
+      form.postal &&
+      form.province &&
+      form.country &&
+      form.referredFrom &&
+      form.password &&
+      form.confirmPassword &&
+      form.password === form.confirmPassword
+    setDisabled(
+      !validateEmail(form.contactEmail) ||
+        !validatePassword(form.password) ||
+        !finishedRequired
+    )
+  }, [form])
 
   useEffect(() => {
     handleValidation()
   }, [handleValidation])
 
-  return { form, handleSubmit, success, error, loading, setForm, setField }
+  return {
+    form,
+    handleSubmit,
+    success,
+    error,
+    loading,
+    setForm,
+    setField,
+    disabled,
+  }
 }

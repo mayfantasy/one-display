@@ -46,7 +46,7 @@
 @layer base {
   body {
     font-family: "Biennale-UltraLight";
-    @apply text-xs;
+    @apply text-xs tracking-wider;
   }
   h1,h2,h3,h4,h5 {
     font-family: "Biennale-Regular";

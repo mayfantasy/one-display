@@ -6,7 +6,7 @@ import useSignup from '@framework/use-signup'
 import { validatePassword } from 'helpers/form.helpers'
 import Divider from 'components/common/Divider'
 import Input from '@components/form/Input'
-import SelectProvince from '@components/form/SelectProvince'
+import SelectCaProvince from '@components/form/SelectCaProvince'
 import SelectCountry from '@components/form/SelectCountry'
 import Checkbox from '@components/form/Checkbox'
 import Button from 'components/common/Button'
@@ -24,6 +24,7 @@ const SignUpView: FC<Props> = () => {
     error,
     loading,
     setForm,
+    disabled,
     setField,
     handleSubmit,
   } = useAccountForm()
@@ -51,7 +52,7 @@ const SignUpView: FC<Props> = () => {
             </h2>
             <p className="text-center text-gray-700">
               Your request has been submitted successfully. We are currently
-              reviewing your business information and we will contact your
+              reviewing your business information and we will contact you
               shortly.
             </p>
             <div className="flex justify-center mt-4">
@@ -74,10 +75,15 @@ const SignUpView: FC<Props> = () => {
                   Login
                 </a>
               </div>
-              <Button primary onClick={handleSubmit}>
+              <Button primary onClick={handleSubmit} disabled={disabled}>
                 Register
               </Button>
             </div>
+            {disabled && (
+              <p className="text-red-500 text-right">
+                <small>Please finish the form.</small>
+              </p>
+            )}
           </>
         )}
       </div>

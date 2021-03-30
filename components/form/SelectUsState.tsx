@@ -1,4 +1,4 @@
-import { canadianProvinces } from 'helpers/province.helpers'
+import { usaStates } from 'helpers/province.helpers'
 import Select from './Select'
 
 interface IProps {
@@ -6,7 +6,7 @@ interface IProps {
   onChange: (v: string) => void
 }
 
-const SelectProvince = (props: IProps) => {
+const SelectUsState = (props: IProps) => {
   const { value, onChange } = props
   return (
     <Select
@@ -14,8 +14,8 @@ const SelectProvince = (props: IProps) => {
       value={value}
       onChange={onChange}
       label="Province"
-      placeholder="Please select a province"
-      options={canadianProvinces.map((p) => ({
+      placeholder="Please select a state"
+      options={usaStates.map((p: any) => ({
         label: p.label,
         value: p.label,
       }))}
@@ -23,4 +23,4 @@ const SelectProvince = (props: IProps) => {
   )
 }
 
-export default SelectProvince
+export default SelectUsState

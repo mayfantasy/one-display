@@ -1,3 +1,4 @@
+const UsaStates = require('usa-states').UsaStates
 export const canadianProvinces = [
   { label: 'Newfoundland', value: 'NL' }, //
   { label: 'Prince Edward Island', value: 'PE' }, //	P.E.I./Î.-P.-É.	PE	11	Atlantic},
@@ -13,3 +14,9 @@ export const canadianProvinces = [
   { label: 'Northwest Territories', value: 'NT' }, //	N.W.T./T.N.-O.	NT	61	Territories},
   { label: 'Nunavut', value: 'NU' }, //	Nvt./Nt	NU
 ]
+
+const usaStatesList = new UsaStates()
+export const usaStates = usaStatesList.states.map((s: any) => ({
+  label: s.name,
+  value: s.abbreviation,
+}))
