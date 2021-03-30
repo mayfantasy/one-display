@@ -22,6 +22,12 @@ export const getProductTemplateListRequest = (
   return api.get(`/api/products/template/${objectId}`)
 }
 
+export const getPsdRequest = (
+  objectId: string
+): Promise<AxiosResponse<{ result: { psd: string } }>> => {
+  return api.get(`/api/products/psd/${objectId}`)
+}
+
 export const searchProductsRequest = (
   keyword: string
 ): Promise<AxiosResponse<{ result: { products: IProductData[] } }>> => {

@@ -6,3 +6,4 @@ export const CURRENCY_PREFIX = 'CA$'
 export const _3_YEARS_COOKIE_DURATION = 93312000
 export const _30_DAYS_COOKIE_DURATION = 2592000
 export const TEMPLATE_LIST_CUSTOM_FIELD_KEY = 'mf_template_list_object_id'
+export const PRODUCT_SECONDARY_DESCRIPTION_CUSTOM_FIELD_KEY = 'psd'

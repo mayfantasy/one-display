@@ -21,6 +21,7 @@ import { useProductQuantity } from 'hooks/product-quantity.hooks'
 import Skeleton from 'react-loading-skeleton'
 import { getCategoryTreeByIdPath } from 'helpers/category.helpers'
 import BreadCrumb from '@components/common/BreadCrumb'
+import { usePsd } from 'hooks/product-secondary-description'
 
 type ITabKey = 'description' | 'templates'
 interface ITab {
@@ -45,6 +46,7 @@ const ProductPage = () => {
   const { product, loading: loadingProduct } = useProduct()
   const { price } = useProductPricing(product, quantity)
   const { templates } = useTemplateList(product)
+  const { psd, loading: loadingPsd } = usePsd(product)
 
   const { openModal } = useUI()
 
@@ -235,11 +237,15 @@ const ProductPage = () => {
                     key: 'description',
                     content: (
                       <div>
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: product.description,
-                          }}
-                        />
+                        {loadingPsd ? (
+                          <div>Loading product description...</div>
+                        ) : (
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: psd || product.description,
+                            }}
+                          />
+                        )}
                       </div>
                     ),
                   },
