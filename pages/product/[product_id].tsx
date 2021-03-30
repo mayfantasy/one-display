@@ -146,6 +146,7 @@ const ProductPage = () => {
 
                 {/* Description */}
                 <div
+                  style={{ fontSize: '0.9rem' }}
                   dangerouslySetInnerHTML={{
                     __html: product.description,
                   }}
@@ -236,7 +237,7 @@ const ProductPage = () => {
                   {
                     key: 'description',
                     content: (
-                      <div>
+                      <div style={{ fontSize: '0.9rem' }}>
                         {loadingPsd ? (
                           <div>Loading product description...</div>
                         ) : (
