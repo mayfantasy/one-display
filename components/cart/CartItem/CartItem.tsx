@@ -9,6 +9,7 @@ import useRemoveItem from '@framework/cart/use-remove-item'
 import Button from 'components/common/Button'
 import QuantityInput from '@components/form/QuantityInput'
 import { ICart, ILineItem } from 'types/cart.types'
+import _ from 'lodash'
 import {
   updateCartItemRequest,
   removeCartItemRequest,
@@ -29,6 +30,7 @@ const CartItem = (props: IProps) => {
   const [quantity, setQuantity] = useState(item.quantity)
   useEffect(() => {
     // Reset the quantity state if the item quantity changes
+    console.log(item.quantity)
     if (item.quantity !== Number(quantity)) {
       setQuantity(item.quantity)
     }
@@ -39,6 +41,10 @@ const CartItem = (props: IProps) => {
 
     if (Number.isInteger(val) && val >= 0) {
       setQuantity(val)
+
+      _.debounce(() => {
+        updateQuantity(val)
+      }, 500)
     }
   }
 
@@ -108,7 +114,7 @@ const CartItem = (props: IProps) => {
       </div>
       <div className="flex-1 flex flex-col text-base">
         {/** TODO: Replace this. No `path` found at Cart */}
-        <Link href={`/product/${item.url.split('/')[3]}`}>
+        <Link href={`/product/${item.product_id}`}>
           <span className="font-bold mb-5 text-lg cursor-pointer">
             {item.name}
           </span>

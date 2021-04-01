@@ -1,6 +1,8 @@
 import { ChangeEvent, useState } from 'react'
+import { IProduct, IProductData } from 'types/product.types'
 
-export const useProductQuantity = () => {
+export const useProductQuantity = (product?: IProductData) => {
+  const inventoryLevel = product?.inventory_level || 1
   /**
    * ||===========
    * || Quantity
@@ -10,6 +12,9 @@ export const useProductQuantity = () => {
     const val = Number(e.target.value)
     if (Number.isInteger(val) && val > 0) {
       setQuantity(val)
+    }
+    if (val > inventoryLevel) {
+      setQuantity(inventoryLevel)
     }
   }
 
@@ -22,6 +27,9 @@ export const useProductQuantity = () => {
       }
       if (val <= 0) {
         setQuantity(1)
+      }
+      if (val > inventoryLevel) {
+        setQuantity(inventoryLevel)
       }
     }
   }

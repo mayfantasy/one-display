@@ -36,14 +36,14 @@ interface ITabContent {
 
 const ProductPage = () => {
   const customerId = useCustomerId()
+
+  const { product, loading: loadingProduct } = useProduct()
   const {
     quantity,
     setQuantity,
     handleQuantity,
     increaseQuantity,
-  } = useProductQuantity()
-
-  const { product, loading: loadingProduct } = useProduct()
+  } = useProductQuantity(product)
   const { price } = useProductPricing(product, quantity)
   const { templates } = useTemplateList(product)
   const { psd, loading: loadingPsd } = usePsd(product)
@@ -173,28 +173,32 @@ const ProductPage = () => {
                     </div>
 
                     {/* Quantity */}
-                    <div className="flex">
-                      <div className="mr-2">
-                        <QuantityInput
-                          quantity={quantity}
-                          increaseQuantity={increaseQuantity}
-                          handleQuantity={handleQuantity}
-                          handleBlur={() => setQuantity(quantity)}
-                        />
-                      </div>
-
-                      {customerId && (
-                        <div>
-                          <Button
-                            aria-label="Add to Cart"
-                            primary
-                            onClick={addToCart}
-                          >
-                            Add to Cart
-                          </Button>
+                    {product.inventory_level !== 0 ? (
+                      <div className="flex">
+                        <div className="mr-2">
+                          <QuantityInput
+                            quantity={quantity}
+                            increaseQuantity={increaseQuantity}
+                            handleQuantity={handleQuantity}
+                            handleBlur={() => setQuantity(quantity)}
+                          />
                         </div>
-                      )}
-                    </div>
+
+                        {customerId && (
+                          <div>
+                            <Button
+                              aria-label="Add to Cart"
+                              primary
+                              onClick={addToCart}
+                            >
+                              Add to Cart
+                            </Button>
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <Button>Out of Stock</Button>
+                    )}
                   </>
                 )}
 

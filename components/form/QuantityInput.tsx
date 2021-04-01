@@ -1,12 +1,12 @@
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons'
 import Button from 'components/common/Button'
-import { ChangeEvent } from 'react'
+import { ChangeEvent, FocusEventHandler } from 'react'
 
 interface IProps {
   quantity: number
   increaseQuantity: (quantity: number) => void
   handleQuantity: (e: ChangeEvent<HTMLInputElement>) => void
-  handleBlur: () => void
+  handleBlur: FocusEventHandler<HTMLInputElement>
 }
 const QuantityInput = (props: IProps) => {
   const { quantity, increaseQuantity, handleQuantity, handleBlur } = props
