@@ -467,6 +467,14 @@ export const categoryTree: ISimpleCategory[] = [
     ],
     children: [
       {
+        id: 117,
+        parent_id: 30,
+        name: 'Prize Wheel',
+        is_visible: true,
+        url: '/floor-sign-holder/prize-wheel/',
+        children: [],
+      },
+      {
         id: 58,
         parent_id: 30,
         name: 'Easel',
@@ -594,6 +602,14 @@ export const categoryTree: ISimpleCategory[] = [
       },
     ],
     children: [
+      {
+        id: 116,
+        parent_id: 32,
+        name: 'Metal Lawn Frame',
+        is_visible: true,
+        url: '/metal-lawn-sign-holders/metal-lawn-frame/',
+        children: [],
+      },
       {
         id: 67,
         parent_id: 32,
@@ -977,4 +993,31 @@ export const categoryTree: ISimpleCategory[] = [
     ],
     children: [],
   },
+  // {
+  //   id: 114,
+  //   parent_id: 0,
+  //   name: 'Accessories',
+  //   is_visible: true,
+  //   url: '/accessories/',
+  //   description:
+  //     '',
+  //   main_image: {
+  //     src: '/categories/Wind Resistant.jpg',
+  //     width: 500,
+  //     height: 500,
+  //   },
+  //   banner_image: {
+  //     src: '/banner-categories/',
+  //     width: 2,
+  //     height: 1,
+  //   },
+  //   images: [
+  //     {
+  //       src: '/menu-categories/',
+  //       height: 1,
+  //       width: 1,
+  //     },
+  //   ],
+  //   children: [],
+  // },
 ]

@@ -14,10 +14,12 @@ const ProductPrice = (props: IProps) => {
   }
 
   const isCheaper = price.price.as_entered !== price.calculated_price.as_entered
-  const regularPrice = <span>{price.price.as_entered.toFixed(2)}</span>
+  const regularPrice = (
+    <span className="text-lg">{price.price.as_entered.toFixed(2)}</span>
+  )
   const calculatedPrice = (
     <span>
-      <span className="line-through text-gray-500">{regularPrice}</span>{' '}
+      <span className="line-through text-gray-500 text-lg">{regularPrice}</span>{' '}
       <span className="text-red-500 text-xl">
         {price.calculated_price.as_entered.toFixed(2)}
       </span>
