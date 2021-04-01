@@ -670,6 +670,14 @@ export const categoryTree: ISimpleCategory[] = [
         url: '/pvc-a-boards/plastic-hinge-handle/',
         children: [],
       },
+      {
+        id: 118,
+        parent_id: 33,
+        name: 'Yellow PVC Sign Holder',
+        is_visible: true,
+        url: '/pvc-a-boards/yellow-pvc-sign-holder/',
+        children: [],
+      },
     ],
   },
   {
@@ -993,31 +1001,30 @@ export const categoryTree: ISimpleCategory[] = [
     ],
     children: [],
   },
-  // {
-  //   id: 114,
-  //   parent_id: 0,
-  //   name: 'Accessories',
-  //   is_visible: true,
-  //   url: '/accessories/',
-  //   description:
-  //     '',
-  //   main_image: {
-  //     src: '/categories/Wind Resistant.jpg',
-  //     width: 500,
-  //     height: 500,
-  //   },
-  //   banner_image: {
-  //     src: '/banner-categories/',
-  //     width: 2,
-  //     height: 1,
-  //   },
-  //   images: [
-  //     {
-  //       src: '/menu-categories/',
-  //       height: 1,
-  //       width: 1,
-  //     },
-  //   ],
-  //   children: [],
-  // },
+  {
+    id: 114,
+    parent_id: 0,
+    name: 'Accessories',
+    is_visible: true,
+    url: '/accessories/',
+    description: '',
+    main_image: {
+      src: '/categories/Accessories.jpg',
+      width: 500,
+      height: 500,
+    },
+    banner_image: {
+      src: '/banner-categories/16-Accessories.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/16-Accessories.png',
+        height: 1,
+        width: 1,
+      },
+    ],
+    children: [],
+  },
 ]
