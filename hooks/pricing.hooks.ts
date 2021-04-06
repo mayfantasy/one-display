@@ -58,7 +58,7 @@ export const useProductPricing = (
   useEffect(() => {
     if (price) {
       const c = getPriceFromBulkPricing(
-        product?.bulk_pricing_rules || [],
+        price?.bulk_pricing || [],
         price.calculated_price.as_entered || 0,
         quantity || 1
       )
