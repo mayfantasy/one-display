@@ -18,7 +18,7 @@ const BulkPricingTable = (props: IProps) => {
       return (
         <span>
           {CURRENCY_PREFIX}
-          {rule.discount_amount}
+          {rule.discount_amount.toFixed(2)}
         </span>
       )
     }
@@ -29,7 +29,7 @@ const BulkPricingTable = (props: IProps) => {
       return (
         <span>
           {CURRENCY_PREFIX}
-          {rule.discount_amount} OFF
+          {rule.discount_amount.toFixed(2)} OFF
         </span>
       )
     }
