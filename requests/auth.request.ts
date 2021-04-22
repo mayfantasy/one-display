@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios'
-import { IResetPasswordPayload } from 'types/auth.types'
+import { ILoginCredentials, IResetPasswordPayload } from 'types/auth.types'
 import {
   IClientAccountForm,
   ICustomer,
@@ -34,4 +34,9 @@ export const getCustomerRequest = (
   id: number
 ): Promise<AxiosResponse<{ result: { customer: IClientAccountForm } }>> => {
   return api.get(`/api/customer/${id}`)
+}
+
+// Login
+export const loginRequest = (credentials: ILoginCredentials) => {
+  return api.post(`/api/auth/login`, credentials)
 }

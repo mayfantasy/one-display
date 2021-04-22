@@ -11,3 +11,8 @@ export interface IPasswordResetEncodeObject {
   customer_id: number
   email: string
 }
+
+export interface ILoginCredentials {
+  email: string
+  password: string
+}

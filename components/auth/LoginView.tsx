@@ -1,5 +1,4 @@
 import { FC, useEffect, useState, useCallback } from 'react'
-import useLogin from '@framework/use-login'
 import { useUI } from '@components/ui/context'
 import { validate } from 'email-validator'
 import Image from 'next/image'
@@ -9,6 +8,7 @@ import Link from 'next/link'
 import { pageRoutes } from 'helpers/route.helpers'
 import Button from 'components/common/Button'
 import { validatePassword } from 'helpers/form.helpers'
+import { useLogin } from 'hooks/login.hooks'
 
 interface Props {}
 
@@ -17,10 +17,6 @@ const LoginView: FC<Props> = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  // Submit status
-  const [loading, setLoading] = useState(false)
-  const [message, setMessage] = useState('')
-
   // Form status
   const [dirty, setDirty] = useState(false)
   const [disabled, setDisabled] = useState(false)
@@ -28,7 +24,7 @@ const LoginView: FC<Props> = () => {
   // Modal conotrol
   const { setModalView, closeModal } = useUI()
 
-  const login = useLogin()
+  const { login, loading, error } = useLogin()
 
   const handleLogin = async () => {
     if (!dirty && !disabled) {
@@ -36,19 +32,10 @@ const LoginView: FC<Props> = () => {
       handleValidation()
     }
 
-    try {
-      setLoading(true)
-      setMessage('')
-      await login({
-        email,
-        password,
-      })
-      setLoading(false)
-      closeModal()
-    } catch ({ errors }) {
-      setMessage(errors[0].message)
-      setLoading(false)
-    }
+    login({
+      email,
+      password,
+    })
   }
 
   const handleValidation = useCallback(() => {
@@ -81,7 +68,7 @@ const LoginView: FC<Props> = () => {
           <b>Login</b>
         </h2>
 
-        {message && <div className="py-1 text-red-500">{message}</div>}
+        {error && <div className="py-1 text-red-500">{error}</div>}
 
         <Divider />
 
