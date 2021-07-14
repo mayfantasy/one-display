@@ -18,7 +18,7 @@ export default function Home() {
               <p className="text-white text-center mb-8">
                 <span className="max-w-xl inline-block text-sm">
                   JW Beaver Inc Is A Canada Based <br />
-                  Leading Store Fixtures Hang-Up Displays And Signage Supplier.
+                  Leading Store Fixtures Pop-Up Displays And Signage Supplier.
                 </span>
               </p>
               <div className="flex flex-row justify-center text-white">
