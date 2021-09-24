@@ -71,7 +71,7 @@ const ContactPage = () => {
                   </div>
                 </div>
 
-                <div className="w-full bg-white bg-opacity-50 rounded p-3">
+                <div className="w-full rounded p-3">
                   <Subscribe />
                 </div>
               </div>
