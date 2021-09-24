@@ -57,7 +57,7 @@ export const pageRoutes = {
   },
   contactPage: {
     key: 'contact',
-    name: 'Contact Us',
+    name: 'Contact',
     url: '/contact',
   } as INavItem,
   // cartPage: {

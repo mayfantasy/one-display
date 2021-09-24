@@ -49,8 +49,9 @@ const Navbar = (props: IProps) => {
 
   return (
     <Navigation>
-      {(position) => {
-        const isSticked = position !== 'sticky-unfixed'
+      {(position: any) => {
+        const isSticked = hasScrolled || position !== 'sticky-unfixed'
+
         return (
           <>
             {/* ==================================== */}
@@ -115,7 +116,7 @@ const Navbar = (props: IProps) => {
                     {navItems.map((item) => (
                       <div
                         className="inline-block w-1/4 h-6"
-                        style={{ fontSize: '0.7rem' }}
+                        style={{ fontSize: '0.6rem' }}
                       >
                         <NavItem
                           navItem={item}
