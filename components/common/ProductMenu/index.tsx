@@ -48,33 +48,33 @@ const ProductMenu = (props: IProps) => {
 
   return (
     <>
-      <div>
+      <div className="container mx-auto">
         {displayProductMenu && (
           <ScrollLock>
             <div
               // style={{ top: NAV_HEIGHT }}
-              className="fixed md:w-full p-4 z-20 top-10"
+              className="fixed p-4 z-20 top-10"
             >
               <div
-                className="absolute w-full h-full top-0 left-0"
+                className="absolute h-full top-0 left-0"
                 onClick={() => {
                   closeProductMenu()
                 }}
               />
               <div
                 role="dialog"
-                className="relative z-10 bg-white container m-auto p-6 border shadow-lg w-full"
+                className="relative z-10 bg-white container m-auto p-6 border shadow-lg "
                 style={{
                   height: `calc(100vh - ${NAV_HEIGHT * 2}px)`,
                   borderRadius: 10,
                   maxHeight: 800,
-                  maxWidth: 1024,
+                  // maxWidth: 1024,
                 }}
                 // ref={ref}
               >
                 <div className="flex flex-row h-full">
                   {/* Category list */}
-                  <ul className="w-1/2 md:w-1/4 h-full overflow-scroll hide-scrollbar">
+                  <ul className="h-full overflow-scroll hide-scrollbar">
                     {categoryTree.map((c) => {
                       const isActive = activeCategory?.id === c.id
                       return (
@@ -168,7 +168,7 @@ const ProductMenu = (props: IProps) => {
 
                     // Image backround
                     <div
-                      className="w-full hidden md:block"
+                      className="hidden md:block"
                       style={{
                         backgroundPosition: 'center center',
                         backgroundSize: 'cover',
