@@ -18,7 +18,7 @@ const CategoriesPage = () => {
               <div className="w-full mt-36">
                 <h1 className="text-white text-5xl text-center leading-tight mb-8">
                   <span className="max-w-lg inline-block">
-                    Product Categories
+                    Product Catalogue
                   </span>
                 </h1>
                 <p className="text-white text-center">

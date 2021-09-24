@@ -38,7 +38,7 @@ export const pageRoutes = {
   } as INavItem,
   categoryListPage: {
     key: 'categories',
-    name: 'Categories',
+    name: 'Catalogue',
     url: '/categories',
   } as INavItem,
   categoryPage: (categoryId: number) => {
