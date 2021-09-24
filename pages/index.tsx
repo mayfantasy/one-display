@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <Layout
       pageTitle="Home"
+      pageDescription="Get our Low Price Guarantee, online or in store, on a huge selection of display and signage hardware, store supplies and more!"
       banner={{
         bg: { src: '/bg/home.png', mask: 'rgba(0,0,0,0.2)' },
         content: (

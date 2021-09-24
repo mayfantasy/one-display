@@ -22,12 +22,14 @@ import Link from 'next/link'
 import Gallery from 'react-photo-gallery'
 import { useRouter } from 'next/router'
 import { url } from 'inspector'
+import useWindowDimensions from 'hooks/window-size.hooks'
 
 interface IProps {}
 
 const ProductMenu = (props: IProps) => {
   const {} = props
   const router = useRouter()
+  const windowDimention = useWindowDimensions()
 
   const [activeCategory, setActiveCategory] = useState<
     ISimpleCategory | undefined
@@ -166,15 +168,21 @@ const ProductMenu = (props: IProps) => {
 
                     // Image backround
                     <div
-                      className="w-full h-full hidden md:block"
+                      className="w-full hidden md:block"
                       style={{
-                        backgroundImage: `url(
-                        ${activeCategory?.images?.[0]?.src || ''}
-                      )`,
                         backgroundPosition: 'center center',
                         backgroundSize: 'cover',
                       }}
-                    />
+                    >
+                      <img
+                        style={
+                          windowDimention.width > 1024
+                            ? { height: '100%', width: 'auto' }
+                            : { height: 'auto', width: '100%' }
+                        }
+                        src={activeCategory?.images?.[0]?.src || ''}
+                      />
+                    </div>
                   )}
                 </div>
               </div>
