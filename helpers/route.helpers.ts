@@ -60,6 +60,11 @@ export const pageRoutes = {
     name: 'Contact',
     url: '/contact',
   } as INavItem,
+  priceMatchPolicyPage: {
+    key: 'price-match-policy',
+    name: 'Price Match Policy',
+    url: '/price-match-policy',
+  },
   // cartPage: {
   //   key: 'cart',
   //   name: 'Cart',
