@@ -35,21 +35,33 @@ export default function Home() {
 
           <div className="container m-auto">
             <div className="w-full mt-56">
-              <h1 className="text-white text-6xl leading-tight mb-4 flex justify-center">
+              <h1 className="text-white text-6xl leading-tight mb-4 flex justify-center  text-center md:text-left">
                 <i className="max-w-l">
                   <strong
                     className="max-w-xl inline-block"
                     style={{
                       color: '#EB7135',
-                      fontSize: 110,
+                      fontSize: 80,
                       lineHeight: 0.8,
                       fontWeight: 'bolder',
                     }}
                   >
-                    PRICE MATCH
+                    <span>PRICE</span>
+                    <br />
+                    <span>MATCH</span>
                   </strong>
                   <br />
-                  <strong className="inline-block mr-4">GUARANTEE</strong>{' '}
+                  <strong
+                    style={{
+                      color: 'white',
+                      fontSize: 50,
+                      lineHeight: 0.8,
+                      fontWeight: 'bolder',
+                    }}
+                    className="inline-block mr-4"
+                  >
+                    GUARANTEE
+                  </strong>{' '}
                   <Link href={pageRoutes.priceMatchPolicyPage.url || ''}>
                     <Button primary>View Details</Button>
                   </Link>
@@ -60,6 +72,7 @@ export default function Home() {
         ),
       }}
       header={{ navColor: 'white' }}
+      contentClasses="bg-gray-800"
     >
       <div className="flex flex-row justify-center text-white py-6 bg-gray-800">
         <Subscribe />

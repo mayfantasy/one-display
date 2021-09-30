@@ -32,6 +32,8 @@ interface Props {
     bg: IBg
     content?: React.ReactNode
   }
+  contentBgColor?: string
+  contentClasses?: string
 }
 
 const Layout: FC<Props> = ({
@@ -40,6 +42,8 @@ const Layout: FC<Props> = ({
   header,
   pageTitle,
   pageDescription,
+  contentBgColor,
+  contentClasses,
 }) => {
   const {
     displaySidebar,
@@ -69,7 +73,9 @@ const Layout: FC<Props> = ({
         <Navbar navColor={header?.navColor} />
         <div style={{ zIndex: -1, marginTop: -60 }}>
           {banner && <Banner bg={banner.bg}>{banner.content}</Banner>}
-          {children && <main className="px-2 md:px-0">{children}</main>}
+          {children && (
+            <main className={`px-2 md:px-0 ${contentClasses}`}>{children}</main>
+          )}
 
           {/* <Footer pages={pageProps.pages} /> */}
 
