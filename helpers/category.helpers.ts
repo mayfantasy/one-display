@@ -33,6 +33,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/01%20Acrylic%20Sign%20Products.pdf',
     images: [
       {
         src: '/menu-categories/01-Acrylic-Sign-Products.jpg',
@@ -160,6 +162,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/02%20Backdrop%20Stands%20%26%20Pop-Up%20Display.pdf',
     images: [
       {
         src: '/menu-categories/02-Backdrop-Stands-&-Pop-Up-Display.jpg',
@@ -250,6 +254,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/03%20Banner%20Stands%20copy.pdf',
     images: [
       {
         src: '/menu-categories/03-Banner-Stands-copy.jpg',
@@ -302,6 +308,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/04%20Brochure%20%26%20Newspaper%20Holders.pdf',
     images: [
       {
         src: '/menu-categories/04-Brochure-&-Newspaper-Holders.jpg',
@@ -346,6 +354,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/05%20Crowd%20Control%20Systems.pdf',
     images: [
       {
         src: '/menu-categories/05-Crowd-Control-Systems.jpg',
@@ -398,6 +408,7 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl: 'https://storage.googleapis.com/catalogue-pdfs/06%20Flags.pdf',
     images: [
       {
         src: '/menu-categories/06-Flags.jpg',
@@ -458,6 +469,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/07%20Floor%20Sign%20Holder.pdf',
     images: [
       {
         src: '/menu-categories/07-Floor-Sign-Holder.jpg',
@@ -534,6 +547,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/08%20Metal%20A-Frame%20Sign%20Holders.pdf',
     images: [
       {
         src: '/menu-categories/08-Metal-A-Frame-Sign-Holders.jpg',
@@ -594,6 +609,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/09%20Metal%20Lawn%20Sign%20Holders.pdf',
     images: [
       {
         src: '/menu-categories/09-Metal-Lawn-Sign-Holders.jpg',
@@ -646,6 +663,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/10%20PVC%20A-Boards.pdf',
     images: [
       {
         src: '/menu-categories/10-PVC-A-Boards.jpg',
@@ -697,6 +716,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/11%20Sign%20Brackets%20%26%20Banner%20Hangers.pdf',
     images: [
       {
         src: '/menu-categories/11-Sign-Brackets-&-Banner-Hangers.jpg',
@@ -733,6 +754,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/12%20Frame%20Sign%20Holders.pdf',
     images: [
       {
         src: '/menu-categories/12-Frame-Sign-Holders.jpg',
@@ -796,6 +819,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/13%20Standoffs%20%26%20Cable%20wire%20System.pdf',
     images: [
       {
         src: '/menu-categories/13-Standoffs-&-Cable-wire-System.jpg',
@@ -932,6 +957,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/14%20Way%E2%80%93Finding%20Signs.pdf',
     images: [
       {
         src: '/menu-categories/14-Way–Finding-Signs.jpg',
@@ -992,6 +1019,8 @@ export const categoryTree: ISimpleCategory[] = [
       width: 2,
       height: 1,
     },
+    pdfUrl:
+      'https://storage.googleapis.com/catalogue-pdfs/15%20Wind%20Resistant%20Sign%20Holders.pdf',
     images: [
       {
         src: '/menu-categories/15-Wind-Resistant-Sign-Holders.jpg',

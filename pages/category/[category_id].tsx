@@ -12,6 +12,9 @@ import { useProductsPricing } from 'hooks/pricing.hooks'
 import { useCategoryProducts } from 'hooks/product.hooks'
 import Layout from 'components/common/Layout'
 import Skeleton from 'react-loading-skeleton'
+import Button from '@components/common/Button'
+import { useCustomerId } from 'hooks/customer.hooks'
+import { useUI } from '@components/ui/context'
 
 const CategoryPage = () => {
   const router = useRouter()
@@ -19,6 +22,9 @@ const CategoryPage = () => {
   // Hooks
   const { category, loading, categoryId, products } = useCategoryProducts()
   const { pricing } = useProductsPricing(products)
+
+  const customerId = useCustomerId()
+  const { openModal } = useUI()
 
   // Handle hash
   useEffect(() => {
@@ -83,6 +89,23 @@ const CategoryPage = () => {
                 <span className="max-w-lg inline-block">
                   {category?.description}
                 </span>
+              </p>
+              <br />
+              <p className="text-center">
+                {!customerId && (
+                  <Button
+                    aria-label="Login to view price and purchase"
+                    primary
+                    onClick={openModal}
+                  >
+                    Login to view Catalogue
+                  </Button>
+                )}
+                {customerId && (
+                  <a href={category?.pdfUrl} target="_blank">
+                    <Button primary>Download Catalogue</Button>
+                  </a>
+                )}
               </p>
             </div>
           </div>

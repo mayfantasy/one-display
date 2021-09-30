@@ -9,6 +9,7 @@ export interface ISimpleCategory {
   banner_image?: IImage
   description?: string
   children?: ISimpleCategory[]
+  pdfUrl?: string
 }
 
 export interface IImage {
