@@ -48,12 +48,17 @@ const SignUpView: FC<Props> = () => {
         {success ? (
           <div>
             <h2 className="text-3xl flex flex-row items-center justify-center text-green-500">
-              Success
+              Submitted.
             </h2>
-            <p className="text-center text-gray-700">
+            {/* <p className="text-center text-gray-700">
               Your request has been submitted successfully. We are currently
               reviewing your business information and we will contact you
               shortly.
+            </p> */}
+            <p className="text-center text-gray-700">
+              Your request has been submitted successfully. Please wait while we
+              are reviewing your business information. We will contact you once
+              your account is active. Thank you!
             </p>
             <div className="flex justify-center mt-4">
               <Button primary onClick={closeModal} className="w-16 text-center">
