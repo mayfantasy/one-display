@@ -72,6 +72,14 @@ const ProductPage = () => {
     quantity
   )
 
+  const onBackToTop = () => {
+    if (window) {
+      window.scrollTo({
+        top: 0,
+      })
+    }
+  }
+
   /**
    * ||===========
    * || Render
@@ -81,6 +89,15 @@ const ProductPage = () => {
   return (
     <Layout pageTitle={product?.name || ''}>
       <div className="mt-32 container m-auto">
+        <div>
+          <Button
+            onClick={onBackToTop}
+            primary
+            className="fixed bottom-2 right-2"
+          >
+            Back to Top
+          </Button>
+        </div>
         {loadingProduct && (
           <div className="md:flex">
             <div className="md:w-1/2 md:pr-1">
