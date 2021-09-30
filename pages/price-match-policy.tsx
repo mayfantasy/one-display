@@ -13,7 +13,7 @@ const PriceMatchPolicyPage = () => {
       pageTitle="Price Match Policy"
       banner={{
         bg: {
-          src: '/bg/price-match-policy.jpg',
+          src: '/bg/price-match-guarantee.jpg',
           mask: 'rgba(0,0,0,0.4)',
           height: '300px',
         },
