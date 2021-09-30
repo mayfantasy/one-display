@@ -91,22 +91,24 @@ const CategoryPage = () => {
                 </span>
               </p>
               <br />
-              <p className="text-center">
-                {!customerId && (
-                  <Button
-                    aria-label="Login to view price and purchase"
-                    primary
-                    onClick={openModal}
-                  >
-                    Login to view Catalogue
-                  </Button>
-                )}
-                {customerId && (
-                  <a href={category?.pdfUrl} target="_blank">
-                    <Button primary>Download Catalogue</Button>
-                  </a>
-                )}
-              </p>
+              {category?.pdfUrl && (
+                <p className="text-center">
+                  {!customerId && (
+                    <Button
+                      aria-label="Login to view price and purchase"
+                      primary
+                      onClick={openModal}
+                    >
+                      Login to view Catalogue
+                    </Button>
+                  )}
+                  {customerId && (
+                    <a href={category?.pdfUrl} target="_blank">
+                      <Button primary>Download Catalogue</Button>
+                    </a>
+                  )}
+                </p>
+              )}
             </div>
           </div>
         ),
