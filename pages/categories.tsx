@@ -1,8 +1,13 @@
 import Layout from 'components/common/Layout'
 import CategoryCard from '@components/product/CategoryCard'
 import { categoryTree } from 'helpers/category.helpers'
+import Button from '@components/common/Button'
+import { useUI } from '@components/ui/context'
+import { useCustomerId } from 'hooks/customer.hooks'
 
 const CategoriesPage = () => {
+  const customerId = useCustomerId()
+  const { openModal } = useUI()
   return (
     <>
       <Layout
@@ -28,6 +33,26 @@ const CategoriesPage = () => {
                     liqua. Ut enim ad minim veniam, quis nostrud exercitation
                     ullamco
                   </span>
+                </p>
+                <br />
+                <p className="text-center">
+                  {!customerId && (
+                    <Button
+                      aria-label="Login to view price and purchase"
+                      primary
+                      onClick={openModal}
+                    >
+                      Login to view Catalogue
+                    </Button>
+                  )}
+                  {customerId && (
+                    <a
+                      href="https://storage.googleapis.com/catalogue-pdfs/combinepdf.pdf"
+                      target="_blank"
+                    >
+                      <Button primary>Download Catalogue</Button>
+                    </a>
+                  )}
                 </p>
               </div>
             </div>

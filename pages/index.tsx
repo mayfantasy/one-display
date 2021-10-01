@@ -35,38 +35,16 @@ export default function Home() {
 
           <div className="container m-auto">
             <div className="w-full mt-56">
-              <h1 className="text-white text-6xl leading-tight mb-4 flex justify-center  text-center md:text-left">
-                <i className="max-w-l">
-                  <strong
-                    className="max-w-xl inline-block"
-                    style={{
-                      color: '#EB7135',
-                      fontSize: 80,
-                      lineHeight: 0.8,
-                      fontWeight: 'bolder',
-                    }}
-                  >
-                    <span>PRICE</span>
-                    <br />
-                    <span>MATCH</span>
-                  </strong>
-                  <br />
-                  <strong
-                    style={{
-                      color: 'white',
-                      fontSize: 50,
-                      lineHeight: 0.8,
-                      fontWeight: 'bolder',
-                    }}
-                    className="inline-block mr-4"
-                  >
-                    GUARANTEE
-                  </strong>{' '}
+              <div className="flex flex-row justify-center align-bottom">
+                <div className="w-6/12">
+                  <img className="w-full" src="/words/home-banner-text.png" />
+                </div>
+                <div className="flex flex-col justify-end relative">
                   <Link href={pageRoutes.priceMatchPolicyPage.url || ''}>
                     <Button primary>View Details</Button>
                   </Link>
-                </i>
-              </h1>
+                </div>
+              </div>
             </div>
           </div>
         ),
