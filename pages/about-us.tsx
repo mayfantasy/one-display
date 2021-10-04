@@ -10,7 +10,8 @@ const AboutUsPage = () => {
       pageTitle="About Us"
       banner={{
         bg: {
-          src: '/bg/about-us.png',
+          // src: '/bg/about-us.png',
+          src: '/bg/categories.jpeg',
           mask: 'rgba(0,0,0,0.4)',
           height: '500px',
         },

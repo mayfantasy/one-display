@@ -14,7 +14,8 @@ const CategoriesPage = () => {
         pageTitle="Categories"
         banner={{
           bg: {
-            src: '/bg/categories.jpeg',
+            // src: '/bg/categories.jpeg',
+            src: '/bg/about-us.png',
             mask: 'rgba(0,0,0,0.4)',
             height: '500px',
           },
