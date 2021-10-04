@@ -36,7 +36,7 @@ export default function Home() {
           <div className="container m-auto">
             <div className="w-full mt-56">
               <div className="flex flex-row justify-center align-bottom">
-                <div className="w-6/12">
+                <div className="w-6/12 xl:mr-36 xl:-ml-20">
                   <img className="w-full" src="/words/home-banner-text.png" />
                 </div>
                 <div className="flex flex-col justify-end relative">
