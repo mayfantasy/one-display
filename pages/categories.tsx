@@ -17,11 +17,11 @@ const CategoriesPage = () => {
             // src: '/bg/categories.jpeg',
             src: '/bg/about-us.png',
             mask: 'rgba(0,0,0,0.4)',
-            height: '500px',
+            // height: '500px',
           },
           content: (
             <div className="container m-auto">
-              <div className="w-full mt-36">
+              <div className="w-full mt-56">
                 <h1 className="text-white text-5xl text-center leading-tight mb-8">
                   <span className="max-w-lg inline-block">
                     Product Catalogue
@@ -61,13 +61,13 @@ const CategoriesPage = () => {
         }}
         header={{ navColor: 'white' }}
       >
-        <div className="container m-auto py-4">
+        {/* <div className="container m-auto py-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {categoryTree.map((c) => (
               <CategoryCard key={c.id} category={c} />
             ))}
           </div>
-        </div>
+        </div> */}
       </Layout>
     </>
   )
