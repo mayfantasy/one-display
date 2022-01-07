@@ -10,7 +10,7 @@ import { CookiesProvider } from 'react-cookie'
 const Noop: FC = ({ children }) => <>{children}</>
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  // const Layout = (Component as any).Layout || Noop
+  const Layout = (Component as any).Layout || Noop
 
   useEffect(() => {
     if (window && window.location.pathname !== '/') {
