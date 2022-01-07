@@ -13,18 +13,51 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as any).Layout || Noop
 
   useEffect(() => {
-    document.body.classList?.remove('loading')
+    if (window && window.location.pathname !== '/') {
+      window.location.href = '/'
+    }
   }, [])
 
+  // return (
+  //   <>
+  //     <CookiesProvider>
+  //       <ManagedUIContext>
+  //         <Layout pageProps={pageProps}>
+  //           <Component {...pageProps} />
+  //         </Layout>
+  //       </ManagedUIContext>
+  //     </CookiesProvider>
+  //   </>
+  // )
+
   return (
-    <>
-      <CookiesProvider>
-        <ManagedUIContext>
-          <Layout pageProps={pageProps}>
-            <Component {...pageProps} />
-          </Layout>
-        </ManagedUIContext>
-      </CookiesProvider>
-    </>
+    <div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          margin: '100px auto',
+        }}
+      >
+        <div>
+          <h1 style={{ fontSize: 30 }}>Coming Soon...</h1>
+          <p style={{ fontSize: 15 }}>
+            <strong>Our website is currently under construction.</strong>
+          </p>
+          <p style={{ fontSize: 15 }}>
+            <strong>
+              Please contact{' '}
+              <a
+                href="mailto:wholesale@jwbeaver.com"
+                style={{ textDecoration: 'underline', color: 'blue' }}
+              >
+                wholesale@jwbeaver.com
+              </a>{' '}
+              if you have any questions.
+            </strong>
+          </p>
+        </div>
+      </div>
+    </div>
   )
 }
