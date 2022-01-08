@@ -55,7 +55,7 @@ const Layout: FC<Props> = ({
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   const { locale = 'en-US' } = useRouter()
 
-  const title = `${pageTitle} | JW Beaver Inc.` || 'JW Beaver Inc.'
+  const title = `${pageTitle} | One Display` || 'One Display'
   const description =
     pageDescription ||
     'Providing B2B services From Standard Sign Products to Customized Solutions'

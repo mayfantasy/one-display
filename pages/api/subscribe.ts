@@ -12,7 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             schema_handle: 'jwbeaver_email_template',
             id: '290832771375432192',
           },
-          to_email: 'info@jwbeaver.com',
+          to_email: 'info@onedisplay.ca',
           data: {
             customer_email: email,
           },
@@ -20,7 +20,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         res.statusCode = 200
         res.json({ result: { subscribe: true } })
       }
-    } catch (e) {
+    } catch (e: any) {
       res.statusCode = 500
       res.json({ error: e.message })
     }

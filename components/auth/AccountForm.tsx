@@ -25,7 +25,7 @@ const AccountForm = (props: IProps) => {
           value={form.companyName}
           onChange={(v) => setField('companyName', v)}
           label="Company Name"
-          placeholder="JW Beaver Inc."
+          placeholder="One Display"
           helper="Legal business name"
         />
       </div>
@@ -74,7 +74,7 @@ const AccountForm = (props: IProps) => {
           value={form.contactEmail}
           onChange={(v) => setField('contactEmail', v)}
           label="Contact / Login Email"
-          placeholder="jason-allen@jwbeaver.com"
+          placeholder="jason-allen@onedisplay.com"
         />
       </div>
 
