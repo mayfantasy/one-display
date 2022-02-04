@@ -12,7 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             schema_handle: 'jwbeaver_email_template',
             id: '290832771375432192',
           },
-          to_email: 'info@onedisplay.ca',
+          to_email: 'sales@onedisplay.ca',
           data: {
             customer_email: email,
           },
