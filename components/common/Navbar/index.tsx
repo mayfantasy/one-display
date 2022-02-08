@@ -71,14 +71,11 @@ const Navbar = (props: IProps) => {
                 {/* Logo */}
                 <div className="flex justify-between">
                   <div className="header__logo text-center">
-                    {/* <Link href={pageRoutes.homePage.url!}>
-                      <a className="inline-block">
-                        <img
-                          src="/logo/logo.png"
-                          style={{ height: 50, width: 50 }}
-                        />
+                    <Link href={pageRoutes.homePage.url!}>
+                      <a className="inline-block h-full">
+                        <img src="/logo/logo.png" className="h-14" />
                       </a>
-                    </Link> */}
+                    </Link>
                   </div>
 
                   {/* Right section */}
@@ -173,13 +170,13 @@ const Navbar = (props: IProps) => {
                   className="flex flex-row justify-between"
                 >
                   {/* Left Logo */}
-                  {/* <div className="header__logo">
+                  <div className="header__logo">
                     <Link href={pageRoutes.homePage.url!}>
-                      <a>
-                        <Image src="/logo/logo.png" width="60" height="60" />
+                      <a className="inline-block h-full">
+                        <img src="/logo/logo.png" className="h-full" />
                       </a>
                     </Link>
-                  </div> */}
+                  </div>
 
                   {/* Nav Display */}
                   {!displaySearchbar && (
