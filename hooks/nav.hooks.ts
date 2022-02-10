@@ -19,7 +19,7 @@ export const useNav = (): INavItem[] => {
         }
       },
     },
-    pageRoutes.categoryListPage,
+    // pageRoutes.categoryListPage,
     pageRoutes.contactPage,
   ]
 }
