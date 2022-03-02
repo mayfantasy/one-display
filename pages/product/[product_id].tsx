@@ -84,7 +84,9 @@ const ProductPage = () => {
    * ||===========
    * || Render
    */
-  const images = product?.images.length ? product.images : []
+  const images = product?.images.length
+    ? product.images.sort((a, b) => a.sort_order - b.sort_order)
+    : []
 
   return (
     <Layout pageTitle={product?.name || ''}>
