@@ -915,7 +915,7 @@ export const categoryTree: ISimpleCategory[] = [
     children: [],
   },
   {
-    id: 115,
+    id: 120,
     parent_id: 0,
     name: 'Sidewalk Sign Holder',
     is_visible: true,
@@ -941,7 +941,7 @@ export const categoryTree: ISimpleCategory[] = [
     children: [
       {
         id: 31,
-        parent_id: 115,
+        parent_id: 120,
         name: 'Metal A-Frame Sign Holders',
         is_visible: true,
         url: '/metal-a-frame-sign-holders/',
@@ -1003,7 +1003,7 @@ export const categoryTree: ISimpleCategory[] = [
       },
       {
         id: 33,
-        parent_id: 115,
+        parent_id: 120,
         name: 'PVC A-Boards',
         is_visible: true,
         url: '/pvc-a-boards/',
@@ -1057,7 +1057,7 @@ export const categoryTree: ISimpleCategory[] = [
       },
       {
         id: 38,
-        parent_id: 115,
+        parent_id: 120,
         name: 'Wind Resistant Sign Holders',
         is_visible: true,
         url: '/wind-resistant-sign-holders/',
