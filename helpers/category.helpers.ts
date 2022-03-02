@@ -134,14 +134,14 @@ export const categoryTree: ISimpleCategory[] = [
           },
         ],
       },
-      {
-        id: 42,
-        parent_id: 24,
-        name: 'Clear Ballot Boxes',
-        is_visible: true,
-        url: '/acrylic-sign-products/clear-ballot-boxes/',
-        children: [],
-      },
+      // {
+      //   id: 42,
+      //   parent_id: 24,
+      //   name: 'Clear Ballot Boxes',
+      //   is_visible: false,
+      //   url: '/acrylic-sign-products/clear-ballot-boxes/',
+      //   children: [],
+      // },
     ],
   },
   {
@@ -181,51 +181,51 @@ export const categoryTree: ISimpleCategory[] = [
           '/backdrop-stands-pop-up-display/telescoping-backdrop-banner-stands/',
         children: [],
       },
-      {
-        id: 44,
-        parent_id: 25,
-        name: 'BEAVER™ Pop-Up Display System',
-        is_visible: true,
-        url: '/backdrop-stands-pop-up-display/beavertm-pop-up-display-system/',
-        children: [
-          {
-            id: 86,
-            parent_id: 44,
-            name: 'Curve Table Top',
-            is_visible: true,
-            url:
-              '/backdrop-stands-pop-up-display/beavertm-pop-up-display-system/curve-table-top/',
-            children: [],
-          },
-          {
-            id: 87,
-            parent_id: 44,
-            name: 'Curve 8-FT. High',
-            is_visible: true,
-            url:
-              '/backdrop-stands-pop-up-display/beavertm-pop-up-display-system/curve-8-ft-high/',
-            children: [],
-          },
-          {
-            id: 88,
-            parent_id: 44,
-            name: 'Straight 8-FT. High',
-            is_visible: true,
-            url:
-              '/backdrop-stands-pop-up-display/beavertm-pop-up-display-system/straight-8-ft-high/',
-            children: [],
-          },
-          {
-            id: 89,
-            parent_id: 44,
-            name: 'Parts',
-            is_visible: true,
-            url:
-              '/backdrop-stands-pop-up-display/beavertm-pop-up-display-system/parts/',
-            children: [],
-          },
-        ],
-      },
+      // {
+      //   id: 44,
+      //   parent_id: 25,
+      //   name: 'BEAVER™ Pop-Up Display System',
+      //   is_visible: false,
+      //   url: '/backdrop-stands-pop-up-display/beavertm-pop-up-display-system/',
+      //   children: [
+      //     {
+      //       id: 86,
+      //       parent_id: 44,
+      //       name: 'Curve Table Top',
+      //       is_visible: true,
+      //       url:
+      //         '/backdrop-stands-pop-up-display/beavertm-pop-up-display-system/curve-table-top/',
+      //       children: [],
+      //     },
+      //     {
+      //       id: 87,
+      //       parent_id: 44,
+      //       name: 'Curve 8-FT. High',
+      //       is_visible: true,
+      //       url:
+      //         '/backdrop-stands-pop-up-display/beavertm-pop-up-display-system/curve-8-ft-high/',
+      //       children: [],
+      //     },
+      //     {
+      //       id: 88,
+      //       parent_id: 44,
+      //       name: 'Straight 8-FT. High',
+      //       is_visible: true,
+      //       url:
+      //         '/backdrop-stands-pop-up-display/beavertm-pop-up-display-system/straight-8-ft-high/',
+      //       children: [],
+      //     },
+      //     {
+      //       id: 89,
+      //       parent_id: 44,
+      //       name: 'Parts',
+      //       is_visible: true,
+      //       url:
+      //         '/backdrop-stands-pop-up-display/beavertm-pop-up-display-system/parts/',
+      //       children: [],
+      //     },
+      //   ],
+      // },
       {
         id: 45,
         parent_id: 25,
@@ -280,62 +280,62 @@ export const categoryTree: ISimpleCategory[] = [
         url: '/banner-stands/retractable-banner-stand/',
         children: [],
       },
-      {
-        id: 48,
-        parent_id: 26,
-        name: 'Floor Standing Banner Stand',
-        is_visible: true,
-        url: '/banner-stands/floor-standing-banner-stand/',
-        children: [],
-      },
+      // {
+      //   id: 48,
+      //   parent_id: 26,
+      //   name: 'Floor Standing Banner Stand',
+      //   is_visible: false,
+      //   url: '/banner-stands/floor-standing-banner-stand/',
+      //   children: [],
+      // },
     ],
   },
-  {
-    id: 27,
-    parent_id: 0,
-    name: 'Brochure & Newspaper Holders',
-    is_visible: true,
-    url: '/brochure-newspaper-holders/',
-    description:
-      'Popular brochure and newspaper holder are perfect fit for selling and displaying literature, magazines and newspapers for retails store, restaurant and supermarket.',
-    main_image: {
-      src: '/categories/Brochure _ Newspaper Holders.jpg',
-      width: 500,
-      height: 500,
-    },
-    banner_image: {
-      src: '/banner-categories/04-Brochure-&-Newspaper-Holders.png',
-      width: 2,
-      height: 1,
-    },
-    pdfUrl:
-      'https://storage.googleapis.com/catalogue-pdfs/04%20Brochure%20%26%20Newspaper%20Holders.pdf',
-    images: [
-      {
-        src: '/menu-categories/04-Brochure-&-Newspaper-Holders.jpg',
-        height: 1,
-        width: 1,
-      },
-    ],
-    children: [
-      {
-        id: 49,
-        parent_id: 27,
-        name: 'Brochure / Magazine Holder',
-        is_visible: true,
-        url: '/brochure-newspaper-holders/brochure-magazine-holder/',
-        children: [],
-      },
-      {
-        id: 50,
-        parent_id: 27,
-        name: 'Newspaper Holders',
-        is_visible: true,
-        url: '/brochure-newspaper-holders/newspaper-holders/',
-        children: [],
-      },
-    ],
-  },
+  // {
+  //   id: 27,
+  //   parent_id: 0,
+  //   name: 'Brochure & Newspaper Holders',
+  //   is_visible: true,
+  //   url: '/brochure-newspaper-holders/',
+  //   description:
+  //     'Popular brochure and newspaper holder are perfect fit for selling and displaying literature, magazines and newspapers for retails store, restaurant and supermarket.',
+  //   main_image: {
+  //     src: '/categories/Brochure _ Newspaper Holders.jpg',
+  //     width: 500,
+  //     height: 500,
+  //   },
+  //   banner_image: {
+  //     src: '/banner-categories/04-Brochure-&-Newspaper-Holders.png',
+  //     width: 2,
+  //     height: 1,
+  //   },
+  //   pdfUrl:
+  //     'https://storage.googleapis.com/catalogue-pdfs/04%20Brochure%20%26%20Newspaper%20Holders.pdf',
+  //   images: [
+  //     {
+  //       src: '/menu-categories/04-Brochure-&-Newspaper-Holders.jpg',
+  //       height: 1,
+  //       width: 1,
+  //     },
+  //   ],
+  //   children: [
+  //     {
+  //       id: 49,
+  //       parent_id: 27,
+  //       name: 'Brochure / Magazine Holder',
+  //       is_visible: true,
+  //       url: '/brochure-newspaper-holders/brochure-magazine-holder/',
+  //       children: [],
+  //     },
+  //     {
+  //       id: 50,
+  //       parent_id: 27,
+  //       name: 'Newspaper Holders',
+  //       is_visible: true,
+  //       url: '/brochure-newspaper-holders/newspaper-holders/',
+  //       children: [],
+  //     },
+  //   ],
+  // },
   {
     id: 28,
     parent_id: 0,
@@ -380,14 +380,14 @@ export const categoryTree: ISimpleCategory[] = [
         url: '/crowd-control-systems/stanchion-sign-holder/',
         children: [],
       },
-      {
-        id: 53,
-        parent_id: 28,
-        name: 'Sphere Post Stanchion & Rope',
-        is_visible: true,
-        url: '/crowd-control-systems/sphere-post-stanchion-rope/',
-        children: [],
-      },
+      // {
+      //   id: 53,
+      //   parent_id: 28,
+      //   name: 'Sphere Post Stanchion & Rope',
+      //   is_visible: false,
+      //   url: '/crowd-control-systems/sphere-post-stanchion-rope/',
+      //   children: [],
+      // },
     ],
   },
   {
@@ -433,14 +433,14 @@ export const categoryTree: ISimpleCategory[] = [
         url: '/flags/feather-flag-pole/',
         children: [],
       },
-      {
-        id: 56,
-        parent_id: 29,
-        name: 'Block Flag Pole',
-        is_visible: true,
-        url: '/flags/block-flag-pole/',
-        children: [],
-      },
+      // {
+      //   id: 56,
+      //   parent_id: 29,
+      //   name: 'Block Flag Pole',
+      //   is_visible: false,
+      //   url: '/flags/block-flag-pole/',
+      //   children: [],
+      // },
       {
         id: 57,
         parent_id: 29,
@@ -479,14 +479,14 @@ export const categoryTree: ISimpleCategory[] = [
       },
     ],
     children: [
-      {
-        id: 117,
-        parent_id: 30,
-        name: 'Prize Wheel',
-        is_visible: true,
-        url: '/floor-sign-holder/prize-wheel/',
-        children: [],
-      },
+      // {
+      //   id: 117,
+      //   parent_id: 30,
+      //   name: 'Prize Wheel',
+      //   is_visible: false,
+      //   url: '/floor-sign-holder/prize-wheel/',
+      //   children: [],
+      // },
       {
         id: 58,
         parent_id: 30,
@@ -529,68 +529,7 @@ export const categoryTree: ISimpleCategory[] = [
       },
     ],
   },
-  {
-    id: 31,
-    parent_id: 0,
-    name: 'Metal A-Frame Sign Holders',
-    is_visible: true,
-    url: '/metal-a-frame-sign-holders/',
-    description:
-      'Sidewalk sign holders are one of the most cost effective and excellent marketing tools for outdoor and indoor advertising. Our own manufacturer provides high quality and versatile ways of durable products to meet the market demand.',
-    main_image: {
-      src: '/categories/Metal Aframe Sign Holder.jpg',
-      width: 500,
-      height: 500,
-    },
-    banner_image: {
-      src: '/banner-categories/08-Metal-A-Frame-Sign-Holders.png',
-      width: 2,
-      height: 1,
-    },
-    pdfUrl:
-      'https://storage.googleapis.com/catalogue-pdfs/08%20Metal%20A-Frame%20Sign%20Holders.pdf',
-    images: [
-      {
-        src: '/menu-categories/08-Metal-A-Frame-Sign-Holders.jpg',
-        height: 1,
-        width: 1,
-      },
-    ],
-    children: [
-      {
-        id: 63,
-        parent_id: 31,
-        name: 'Angled Metal A-Frames',
-        is_visible: true,
-        url: '/metal-a-frame-sign-holders/angled-metal-a-frames/',
-        children: [],
-      },
-      {
-        id: 64,
-        parent_id: 31,
-        name: 'Heavy Duty Metal A-Frame ',
-        is_visible: true,
-        url: '/metal-a-frame-sign-holders/heavy-duty-metal-a-frame/',
-        children: [],
-      },
-      {
-        id: 65,
-        parent_id: 31,
-        name: 'Chalkboard A-Frame',
-        is_visible: true,
-        url: '/metal-a-frame-sign-holders/chalkboard-a-frame/',
-        children: [],
-      },
-      {
-        id: 66,
-        parent_id: 31,
-        name: 'Aluminum Snap A-Frame',
-        is_visible: true,
-        url: '/metal-a-frame-sign-holders/aluminum-snap-a-frame/',
-        children: [],
-      },
-    ],
-  },
+
   {
     id: 32,
     parent_id: 0,
@@ -619,14 +558,14 @@ export const categoryTree: ISimpleCategory[] = [
       },
     ],
     children: [
-      {
-        id: 116,
-        parent_id: 32,
-        name: 'Metal Lawn Frame',
-        is_visible: true,
-        url: '/metal-lawn-sign-holders/metal-lawn-frame/',
-        children: [],
-      },
+      // {
+      //   id: 116,
+      //   parent_id: 32,
+      //   name: 'Metal Lawn Frame',
+      //   is_visible: false,
+      //   url: '/metal-lawn-sign-holders/metal-lawn-frame/',
+      //   children: [],
+      // },
       {
         id: 67,
         parent_id: 32,
@@ -645,97 +584,44 @@ export const categoryTree: ISimpleCategory[] = [
       },
     ],
   },
-  {
-    id: 33,
-    parent_id: 0,
-    name: 'PVC A-Boards',
-    is_visible: true,
-    url: '/pvc-a-boards/',
-    description:
-      'Our exclusive PVC A-Board is made of durable PVC Board with removable feature. White powder coated metal wrap provides extra protection of the PVC Board. ',
-    main_image: {
-      src: '/categories/PVC A-Board.jpg',
-      width: 500,
-      height: 500,
-    },
-    banner_image: {
-      src: '/banner-categories/10-PVC-A-Boards.png',
-      width: 2,
-      height: 1,
-    },
-    pdfUrl:
-      'https://storage.googleapis.com/catalogue-pdfs/10%20PVC%20A-Boards.pdf',
-    images: [
-      {
-        src: '/menu-categories/10-PVC-A-Boards.jpg',
-        height: 1,
-        width: 1,
-      },
-    ],
-    children: [
-      {
-        id: 69,
-        parent_id: 33,
-        name: 'Metal Edge PVC A-Board ',
-        is_visible: true,
-        url: '/pvc-a-boards/metal-edge-pvc-a-board/',
-        children: [],
-      },
-      {
-        id: 70,
-        parent_id: 33,
-        name: 'Plastic Hinge Handle ',
-        is_visible: true,
-        url: '/pvc-a-boards/plastic-hinge-handle/',
-        children: [],
-      },
-      {
-        id: 118,
-        parent_id: 33,
-        name: 'Yellow PVC Sign Holder',
-        is_visible: true,
-        url: '/pvc-a-boards/yellow-pvc-sign-holder/',
-        children: [],
-      },
-    ],
-  },
-  {
-    id: 34,
-    parent_id: 0,
-    name: 'Sign Brackets & Banner Hangers',
-    is_visible: true,
-    url: '/sign-brackets-banner-hangers',
-    description: 'Sign Brackets & Banner Hangers',
-    main_image: {
-      src: '/categories/Sign Brackets.jpg',
-      width: 500,
-      height: 500,
-    },
-    banner_image: {
-      src: '/banner-categories/11-Sign-Brackets-&-Banner-Hangers.png',
-      width: 2,
-      height: 1,
-    },
-    pdfUrl:
-      'https://storage.googleapis.com/catalogue-pdfs/11%20Sign%20Brackets%20%26%20Banner%20Hangers.pdf',
-    images: [
-      {
-        src: '/menu-categories/11-Sign-Brackets-&-Banner-Hangers.jpg',
-        height: 1,
-        width: 1,
-      },
-    ],
-    children: [
-      {
-        id: 71,
-        parent_id: 34,
-        name: 'Architectural Sign Brackets',
-        is_visible: true,
-        url: '/sign-brackets-banner-hangers/architectural-sign-brackets/',
-        children: [],
-      },
-    ],
-  },
+
+  // {
+  //   id: 34,
+  //   parent_id: 0,
+  //   name: 'Sign Brackets & Banner Hangers',
+  //   is_visible: true,
+  //   url: '/sign-brackets-banner-hangers',
+  //   description: 'Sign Brackets & Banner Hangers',
+  //   main_image: {
+  //     src: '/categories/Sign Brackets.jpg',
+  //     width: 500,
+  //     height: 500,
+  //   },
+  //   banner_image: {
+  //     src: '/banner-categories/11-Sign-Brackets-&-Banner-Hangers.png',
+  //     width: 2,
+  //     height: 1,
+  //   },
+  //   pdfUrl:
+  //     'https://storage.googleapis.com/catalogue-pdfs/11%20Sign%20Brackets%20%26%20Banner%20Hangers.pdf',
+  //   images: [
+  //     {
+  //       src: '/menu-categories/11-Sign-Brackets-&-Banner-Hangers.jpg',
+  //       height: 1,
+  //       width: 1,
+  //     },
+  //   ],
+  //   children: [
+  //     {
+  //       id: 71,
+  //       parent_id: 34,
+  //       name: 'Architectural Sign Brackets',
+  //       is_visible: true,
+  //       url: '/sign-brackets-banner-hangers/architectural-sign-brackets/',
+  //       children: [],
+  //     },
+  //   ],
+  // },
   {
     id: 35,
     parent_id: 0,
@@ -1001,35 +887,7 @@ export const categoryTree: ISimpleCategory[] = [
       },
     ],
   },
-  {
-    id: 38,
-    parent_id: 0,
-    name: 'Wind Resistant Sign Holders',
-    is_visible: true,
-    url: '/wind-resistant-sign-holders/',
-    description:
-      'Wind Resistant Sign Holder with flexible spring legs will give you peace of mind that your outdoor advertising is safe. Upright snap frame with rounded corner is completely enclosed for moisture resistant.',
-    main_image: {
-      src: '/categories/Wind Resistant.jpg',
-      width: 500,
-      height: 500,
-    },
-    banner_image: {
-      src: '/banner-categories/15-Wind-Resistant-Sign-Holders.png',
-      width: 2,
-      height: 1,
-    },
-    pdfUrl:
-      'https://storage.googleapis.com/catalogue-pdfs/15%20Wind%20Resistant%20Sign%20Holders.pdf',
-    images: [
-      {
-        src: '/menu-categories/15-Wind-Resistant-Sign-Holders.jpg',
-        height: 1,
-        width: 1,
-      },
-    ],
-    children: [],
-  },
+
   {
     id: 114,
     parent_id: 0,
@@ -1055,5 +913,177 @@ export const categoryTree: ISimpleCategory[] = [
       },
     ],
     children: [],
+  },
+  {
+    id: 115,
+    parent_id: 0,
+    name: 'Sidewalk Sign Holder',
+    is_visible: true,
+    url: '/sidewalk-sign-holder/',
+    description: '',
+    main_image: {
+      src: '/categories/Sidewalk-Sign-Holder.jpg',
+      width: 500,
+      height: 500,
+    },
+    banner_image: {
+      src: '/banner-categories/17-Sidewalk-Sign-Holder.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/17-Sidewalk-Sign-Holder.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
+    children: [
+      {
+        id: 31,
+        parent_id: 115,
+        name: 'Metal A-Frame Sign Holders',
+        is_visible: true,
+        url: '/metal-a-frame-sign-holders/',
+        description:
+          'Sidewalk sign holders are one of the most cost effective and excellent marketing tools for outdoor and indoor advertising. Our own manufacturer provides high quality and versatile ways of durable products to meet the market demand.',
+        main_image: {
+          src: '/categories/Metal Aframe Sign Holder.jpg',
+          width: 500,
+          height: 500,
+        },
+        banner_image: {
+          src: '/banner-categories/08-Metal-A-Frame-Sign-Holders.png',
+          width: 2,
+          height: 1,
+        },
+        pdfUrl:
+          'https://storage.googleapis.com/catalogue-pdfs/08%20Metal%20A-Frame%20Sign%20Holders.pdf',
+        images: [
+          {
+            src: '/menu-categories/08-Metal-A-Frame-Sign-Holders.jpg',
+            height: 1,
+            width: 1,
+          },
+        ],
+        children: [
+          // {
+          //   id: 63,
+          //   parent_id: 31,
+          //   name: 'Angled Metal A-Frames',
+          //   is_visible: true,
+          //   url: '/metal-a-frame-sign-holders/angled-metal-a-frames/',
+          //   children: [],
+          // },
+          // {
+          //   id: 64,
+          //   parent_id: 31,
+          //   name: 'Heavy Duty Metal A-Frame ',
+          //   is_visible: true,
+          //   url: '/metal-a-frame-sign-holders/heavy-duty-metal-a-frame/',
+          //   children: [],
+          // },
+          // {
+          //   id: 65,
+          //   parent_id: 31,
+          //   name: 'Chalkboard A-Frame',
+          //   is_visible: false,
+          //   url: '/metal-a-frame-sign-holders/chalkboard-a-frame/',
+          //   children: [],
+          // },
+          // {
+          //   id: 66,
+          //   parent_id: 31,
+          //   name: 'Aluminum Snap A-Frame',
+          //   is_visible: false,
+          //   url: '/metal-a-frame-sign-holders/aluminum-snap-a-frame/',
+          //   children: [],
+          // },
+        ],
+      },
+      {
+        id: 33,
+        parent_id: 115,
+        name: 'PVC A-Boards',
+        is_visible: true,
+        url: '/pvc-a-boards/',
+        description:
+          'Our exclusive PVC A-Board is made of durable PVC Board with removable feature. White powder coated metal wrap provides extra protection of the PVC Board. ',
+        main_image: {
+          src: '/categories/PVC A-Board.jpg',
+          width: 500,
+          height: 500,
+        },
+        banner_image: {
+          src: '/banner-categories/10-PVC-A-Boards.png',
+          width: 2,
+          height: 1,
+        },
+        pdfUrl:
+          'https://storage.googleapis.com/catalogue-pdfs/10%20PVC%20A-Boards.pdf',
+        images: [
+          {
+            src: '/menu-categories/10-PVC-A-Boards.jpg',
+            height: 1,
+            width: 1,
+          },
+        ],
+        children: [
+          {
+            id: 69,
+            parent_id: 33,
+            name: 'Metal Edge PVC A-Board ',
+            is_visible: true,
+            url: '/pvc-a-boards/metal-edge-pvc-a-board/',
+            children: [],
+          },
+          {
+            id: 70,
+            parent_id: 33,
+            name: 'Plastic Hinge Handle ',
+            is_visible: true,
+            url: '/pvc-a-boards/plastic-hinge-handle/',
+            children: [],
+          },
+          // {
+          //   id: 118,
+          //   parent_id: 33,
+          //   name: 'Yellow PVC Sign Holder',
+          //   is_visible: false,
+          //   url: '/pvc-a-boards/yellow-pvc-sign-holder/',
+          //   children: [],
+          // },
+        ],
+      },
+      {
+        id: 38,
+        parent_id: 115,
+        name: 'Wind Resistant Sign Holders',
+        is_visible: true,
+        url: '/wind-resistant-sign-holders/',
+        description:
+          'Wind Resistant Sign Holder with flexible spring legs will give you peace of mind that your outdoor advertising is safe. Upright snap frame with rounded corner is completely enclosed for moisture resistant.',
+        main_image: {
+          src: '/categories/Wind Resistant.jpg',
+          width: 500,
+          height: 500,
+        },
+        banner_image: {
+          src: '/banner-categories/15-Wind-Resistant-Sign-Holders.png',
+          width: 2,
+          height: 1,
+        },
+        pdfUrl:
+          'https://storage.googleapis.com/catalogue-pdfs/15%20Wind%20Resistant%20Sign%20Holders.pdf',
+        images: [
+          {
+            src: '/menu-categories/15-Wind-Resistant-Sign-Holders.jpg',
+            height: 1,
+            width: 1,
+          },
+        ],
+        children: [],
+      },
+    ],
   },
 ]
