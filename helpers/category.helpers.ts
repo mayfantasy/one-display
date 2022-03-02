@@ -529,7 +529,210 @@ export const categoryTree: ISimpleCategory[] = [
       },
     ],
   },
-
+  {
+    id: 120,
+    parent_id: 0,
+    name: 'Sidewalk Sign Holder',
+    is_visible: true,
+    url: '/sidewalk-sign-holder/',
+    description: '',
+    main_image: {
+      src: '/categories/Sidewalk-Sign-Holder.jpg',
+      width: 500,
+      height: 500,
+    },
+    banner_image: {
+      src: '/banner-categories/17-Sidewalk-Sign-Holder.png',
+      width: 2,
+      height: 1,
+    },
+    images: [
+      {
+        src: '/menu-categories/17-Sidewalk-Sign-Holder.jpg',
+        height: 1,
+        width: 1,
+      },
+    ],
+    children: [
+      {
+        id: 63,
+        parent_id: 120,
+        name: 'Angled Metal A-Frames',
+        is_visible: true,
+        url: '/sidewalk-sign-holder/angled-metal-a-frames/',
+        children: [],
+      },
+      {
+        id: 64,
+        parent_id: 120,
+        name: 'Heavy Duty Metal A-Frame',
+        is_visible: true,
+        url: '/sidewalk-sign-holder/heavy-duty-metal-a-frame/',
+        children: [],
+      },
+      {
+        id: 69,
+        parent_id: 120,
+        name: 'Metal Edge PVC A-Board',
+        is_visible: true,
+        url: '/sidewalk-sign-holder/metal-edge-pvc-a-board/',
+        children: [],
+      },
+      {
+        id: 70,
+        parent_id: 120,
+        name: 'Plastic Hinge Handle',
+        is_visible: true,
+        url: '/sidewalk-sign-holder/plastic-hinge-handle/',
+        children: [],
+      },
+      {
+        id: 38,
+        parent_id: 120,
+        name: 'Wind Resistant Sign Holders',
+        is_visible: true,
+        url: '/wind-resistant-sign-holders/',
+        description:
+          'Wind Resistant Sign Holder with flexible spring legs will give you peace of mind that your outdoor advertising is safe. Upright snap frame with rounded corner is completely enclosed for moisture resistant.',
+        main_image: {
+          src: '/categories/Wind Resistant.jpg',
+          width: 500,
+          height: 500,
+        },
+        banner_image: {
+          src: '/banner-categories/15-Wind-Resistant-Sign-Holders.png',
+          width: 2,
+          height: 1,
+        },
+        pdfUrl:
+          'https://storage.googleapis.com/catalogue-pdfs/15%20Wind%20Resistant%20Sign%20Holders.pdf',
+        images: [
+          {
+            src: '/menu-categories/15-Wind-Resistant-Sign-Holders.jpg',
+            height: 1,
+            width: 1,
+          },
+        ],
+        children: [],
+      },
+      // {
+      //   id: 31,
+      //   parent_id: 120,
+      //   name: 'Metal A-Frame Sign Holders',
+      //   is_visible: true,
+      //   url: '/metal-a-frame-sign-holders/',
+      //   description:
+      //     'Sidewalk sign holders are one of the most cost effective and excellent marketing tools for outdoor and indoor advertising. Our own manufacturer provides high quality and versatile ways of durable products to meet the market demand.',
+      //   main_image: {
+      //     src: '/categories/Metal Aframe Sign Holder.jpg',
+      //     width: 500,
+      //     height: 500,
+      //   },
+      //   banner_image: {
+      //     src: '/banner-categories/08-Metal-A-Frame-Sign-Holders.png',
+      //     width: 2,
+      //     height: 1,
+      //   },
+      //   pdfUrl:
+      //     'https://storage.googleapis.com/catalogue-pdfs/08%20Metal%20A-Frame%20Sign%20Holders.pdf',
+      //   images: [
+      //     {
+      //       src: '/menu-categories/08-Metal-A-Frame-Sign-Holders.jpg',
+      //       height: 1,
+      //       width: 1,
+      //     },
+      //   ],
+      //   children: [
+      //     // {
+      //     //   id: 63,
+      //     //   parent_id: 31,
+      //     //   name: 'Angled Metal A-Frames',
+      //     //   is_visible: true,
+      //     //   url: '/metal-a-frame-sign-holders/angled-metal-a-frames/',
+      //     //   children: [],
+      //     // },
+      //     // {
+      //     //   id: 64,
+      //     //   parent_id: 31,
+      //     //   name: 'Heavy Duty Metal A-Frame ',
+      //     //   is_visible: true,
+      //     //   url: '/metal-a-frame-sign-holders/heavy-duty-metal-a-frame/',
+      //     //   children: [],
+      //     // },
+      //     // {
+      //     //   id: 65,
+      //     //   parent_id: 31,
+      //     //   name: 'Chalkboard A-Frame',
+      //     //   is_visible: false,
+      //     //   url: '/metal-a-frame-sign-holders/chalkboard-a-frame/',
+      //     //   children: [],
+      //     // },
+      //     // {
+      //     //   id: 66,
+      //     //   parent_id: 31,
+      //     //   name: 'Aluminum Snap A-Frame',
+      //     //   is_visible: false,
+      //     //   url: '/metal-a-frame-sign-holders/aluminum-snap-a-frame/',
+      //     //   children: [],
+      //     // },
+      //   ],
+      // },
+      // {
+      //   id: 33,
+      //   parent_id: 120,
+      //   name: 'PVC A-Boards',
+      //   is_visible: true,
+      //   url: '/pvc-a-boards/',
+      //   description:
+      //     'Our exclusive PVC A-Board is made of durable PVC Board with removable feature. White powder coated metal wrap provides extra protection of the PVC Board. ',
+      //   main_image: {
+      //     src: '/categories/PVC A-Board.jpg',
+      //     width: 500,
+      //     height: 500,
+      //   },
+      //   banner_image: {
+      //     src: '/banner-categories/10-PVC-A-Boards.png',
+      //     width: 2,
+      //     height: 1,
+      //   },
+      //   pdfUrl:
+      //     'https://storage.googleapis.com/catalogue-pdfs/10%20PVC%20A-Boards.pdf',
+      //   images: [
+      //     {
+      //       src: '/menu-categories/10-PVC-A-Boards.jpg',
+      //       height: 1,
+      //       width: 1,
+      //     },
+      //   ],
+      //   children: [
+      //     {
+      //       id: 69,
+      //       parent_id: 33,
+      //       name: 'Metal Edge PVC A-Board ',
+      //       is_visible: true,
+      //       url: '/pvc-a-boards/metal-edge-pvc-a-board/',
+      //       children: [],
+      //     },
+      //     {
+      //       id: 70,
+      //       parent_id: 33,
+      //       name: 'Plastic Hinge Handle ',
+      //       is_visible: true,
+      //       url: '/pvc-a-boards/plastic-hinge-handle/',
+      //       children: [],
+      //     },
+      //     // {
+      //     //   id: 118,
+      //     //   parent_id: 33,
+      //     //   name: 'Yellow PVC Sign Holder',
+      //     //   is_visible: false,
+      //     //   url: '/pvc-a-boards/yellow-pvc-sign-holder/',
+      //     //   children: [],
+      //     // },
+      //   ],
+      // },
+    ],
+  },
   {
     id: 32,
     parent_id: 0,
@@ -913,177 +1116,5 @@ export const categoryTree: ISimpleCategory[] = [
       },
     ],
     children: [],
-  },
-  {
-    id: 120,
-    parent_id: 0,
-    name: 'Sidewalk Sign Holder',
-    is_visible: true,
-    url: '/sidewalk-sign-holder/',
-    description: '',
-    main_image: {
-      src: '/categories/Sidewalk-Sign-Holder.jpg',
-      width: 500,
-      height: 500,
-    },
-    banner_image: {
-      src: '/banner-categories/17-Sidewalk-Sign-Holder.png',
-      width: 2,
-      height: 1,
-    },
-    images: [
-      {
-        src: '/menu-categories/17-Sidewalk-Sign-Holder.jpg',
-        height: 1,
-        width: 1,
-      },
-    ],
-    children: [
-      {
-        id: 31,
-        parent_id: 120,
-        name: 'Metal A-Frame Sign Holders',
-        is_visible: true,
-        url: '/metal-a-frame-sign-holders/',
-        description:
-          'Sidewalk sign holders are one of the most cost effective and excellent marketing tools for outdoor and indoor advertising. Our own manufacturer provides high quality and versatile ways of durable products to meet the market demand.',
-        main_image: {
-          src: '/categories/Metal Aframe Sign Holder.jpg',
-          width: 500,
-          height: 500,
-        },
-        banner_image: {
-          src: '/banner-categories/08-Metal-A-Frame-Sign-Holders.png',
-          width: 2,
-          height: 1,
-        },
-        pdfUrl:
-          'https://storage.googleapis.com/catalogue-pdfs/08%20Metal%20A-Frame%20Sign%20Holders.pdf',
-        images: [
-          {
-            src: '/menu-categories/08-Metal-A-Frame-Sign-Holders.jpg',
-            height: 1,
-            width: 1,
-          },
-        ],
-        children: [
-          // {
-          //   id: 63,
-          //   parent_id: 31,
-          //   name: 'Angled Metal A-Frames',
-          //   is_visible: true,
-          //   url: '/metal-a-frame-sign-holders/angled-metal-a-frames/',
-          //   children: [],
-          // },
-          // {
-          //   id: 64,
-          //   parent_id: 31,
-          //   name: 'Heavy Duty Metal A-Frame ',
-          //   is_visible: true,
-          //   url: '/metal-a-frame-sign-holders/heavy-duty-metal-a-frame/',
-          //   children: [],
-          // },
-          // {
-          //   id: 65,
-          //   parent_id: 31,
-          //   name: 'Chalkboard A-Frame',
-          //   is_visible: false,
-          //   url: '/metal-a-frame-sign-holders/chalkboard-a-frame/',
-          //   children: [],
-          // },
-          // {
-          //   id: 66,
-          //   parent_id: 31,
-          //   name: 'Aluminum Snap A-Frame',
-          //   is_visible: false,
-          //   url: '/metal-a-frame-sign-holders/aluminum-snap-a-frame/',
-          //   children: [],
-          // },
-        ],
-      },
-      {
-        id: 33,
-        parent_id: 120,
-        name: 'PVC A-Boards',
-        is_visible: true,
-        url: '/pvc-a-boards/',
-        description:
-          'Our exclusive PVC A-Board is made of durable PVC Board with removable feature. White powder coated metal wrap provides extra protection of the PVC Board. ',
-        main_image: {
-          src: '/categories/PVC A-Board.jpg',
-          width: 500,
-          height: 500,
-        },
-        banner_image: {
-          src: '/banner-categories/10-PVC-A-Boards.png',
-          width: 2,
-          height: 1,
-        },
-        pdfUrl:
-          'https://storage.googleapis.com/catalogue-pdfs/10%20PVC%20A-Boards.pdf',
-        images: [
-          {
-            src: '/menu-categories/10-PVC-A-Boards.jpg',
-            height: 1,
-            width: 1,
-          },
-        ],
-        children: [
-          {
-            id: 69,
-            parent_id: 33,
-            name: 'Metal Edge PVC A-Board ',
-            is_visible: true,
-            url: '/pvc-a-boards/metal-edge-pvc-a-board/',
-            children: [],
-          },
-          {
-            id: 70,
-            parent_id: 33,
-            name: 'Plastic Hinge Handle ',
-            is_visible: true,
-            url: '/pvc-a-boards/plastic-hinge-handle/',
-            children: [],
-          },
-          // {
-          //   id: 118,
-          //   parent_id: 33,
-          //   name: 'Yellow PVC Sign Holder',
-          //   is_visible: false,
-          //   url: '/pvc-a-boards/yellow-pvc-sign-holder/',
-          //   children: [],
-          // },
-        ],
-      },
-      {
-        id: 38,
-        parent_id: 120,
-        name: 'Wind Resistant Sign Holders',
-        is_visible: true,
-        url: '/wind-resistant-sign-holders/',
-        description:
-          'Wind Resistant Sign Holder with flexible spring legs will give you peace of mind that your outdoor advertising is safe. Upright snap frame with rounded corner is completely enclosed for moisture resistant.',
-        main_image: {
-          src: '/categories/Wind Resistant.jpg',
-          width: 500,
-          height: 500,
-        },
-        banner_image: {
-          src: '/banner-categories/15-Wind-Resistant-Sign-Holders.png',
-          width: 2,
-          height: 1,
-        },
-        pdfUrl:
-          'https://storage.googleapis.com/catalogue-pdfs/15%20Wind%20Resistant%20Sign%20Holders.pdf',
-        images: [
-          {
-            src: '/menu-categories/15-Wind-Resistant-Sign-Holders.jpg',
-            height: 1,
-            width: 1,
-          },
-        ],
-        children: [],
-      },
-    ],
   },
 ]
