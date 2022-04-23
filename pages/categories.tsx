@@ -36,7 +36,7 @@ const CategoriesPage = () => {
                   </span>
                 </p>
                 <br />
-                <p className="text-center">
+                {/* <p className="text-center">
                   {!customerId && (
                     <Button
                       aria-label="Login to view price and purchase"
@@ -54,7 +54,7 @@ const CategoriesPage = () => {
                       <Button primary>Download Catalogue</Button>
                     </a>
                   )}
-                </p>
+                </p> */}
               </div>
             </div>
           ),

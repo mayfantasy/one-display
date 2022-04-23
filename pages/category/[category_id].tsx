@@ -91,7 +91,7 @@ const CategoryPage = () => {
                 </span>
               </p>
               <br />
-              {category?.pdfUrl && (
+              {/* {category?.pdfUrl && (
                 <p className="text-center">
                   {!customerId && (
                     <Button
@@ -108,7 +108,7 @@ const CategoryPage = () => {
                     </a>
                   )}
                 </p>
-              )}
+              )} */}
             </div>
           </div>
         ),
