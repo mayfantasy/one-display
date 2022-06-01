@@ -42,7 +42,7 @@ export const generateLoginUrl = (customerId: number, checkoutUrl: string) => {
   const clientId = process.env.BIGCOMMERCE_STORE_API_CLIENT_ID!
   const clientSecret = process.env.BIGCOMMERCE_STORE_API_CLIENT_SECRET!
   const storeHash = process.env.BIGCOMMERCE_STORE_HASH!
-  const storeUrl = 'https://jw-beaver-inc.mybigcommerce.com'
+  const storeUrl = 'https://onedisplay.mybigcommerce.com'
 
   // console.log('======')
   // console.log(customerId)
